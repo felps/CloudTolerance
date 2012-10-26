@@ -18,7 +18,8 @@ public class WsInvokation implements Runnable {
 	public String wsdlUrl = wsEndpoint + "?wsdl";
 	public String serviceMethod;
 	public String paramMethod;
-	public String param;
+	public String paramClassName;
+	public String paramValue;
 
 	public void setWsdlUrl(String wsdlUrl) {
 		this.wsdlUrl = wsdlUrl;
@@ -40,12 +41,12 @@ public class WsInvokation implements Runnable {
 
 	public void setUpParameter() throws NoSuchMethodException,
 			SecurityException, IllegalAccessException,
-			IllegalArgumentException, InvocationTargetException {
+			IllegalArgumentException, InvocationTargetException, ClassNotFoundException {
 
 		if (paramMethod != null) {
 			Method m = serviceHandler.getClass().getMethod(paramMethod,
-					String.class);
-			m.invoke(serviceHandler, param);
+					Thread.currentThread().getContextClassLoader().loadClass(paramClassName));
+			m.invoke(serviceHandler, paramValue);
 		}
 
 	}
@@ -54,7 +55,7 @@ public class WsInvokation implements Runnable {
 		Object[] response = null;
 		try {
 			setUpParameter();
-			response = client.invoke(serviceMethod, serviceHandler);
+			response = client.invoke(serviceMethod, paramValue);
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
