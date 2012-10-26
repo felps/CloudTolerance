@@ -2,12 +2,31 @@ package webservices;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
 
 @WebService
 public class WeatherForecast extends FaultyWebService {
 
+	public WeatherForecast(double failStop, double faultyResponse) {
+		this.setFailstopProbability(failStop);
+		this.setFaultyResponseProbability(faultyResponse);
+	}
+
 	public static void main(String[] args) {
-		raise(args);
+		if (args.length != 2)
+			System.out
+					.println("USAGE: <WSname> <WS fail-stop probability> <WS faulty response probability>");
+
+		double failStop = Double.parseDouble(args[0]);
+		double faultyResponse = Double.parseDouble(args[1]);
+
+		WeatherForecast ws = new WeatherForecast(failStop, faultyResponse);
+
+		Endpoint.publish("http://0.0.0.0:2302/creditcard", ws);
+
+		System.out.println("Web service up and Running! \n"
+				+ "Fail-stop probability:       " + failStop + "\n"
+				+ "Faulty Response probability: " + faultyResponse);
 	}
 
 	@WebMethod

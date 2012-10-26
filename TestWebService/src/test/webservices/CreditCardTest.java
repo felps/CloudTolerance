@@ -1,12 +1,11 @@
 package webservices;
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import utils.exitmanager.*;
+import utils.exitmanager.ExitManagerMock;
 
 
 public class CreditCardTest {
@@ -14,7 +13,7 @@ public class CreditCardTest {
 	
 	@Before
 	public void setUp(){
-		cardService = new CreditCard();
+		cardService = new CreditCard(1,1);
 	}
 
 	@Test

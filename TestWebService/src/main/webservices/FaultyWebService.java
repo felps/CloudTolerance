@@ -17,23 +17,6 @@ public class FaultyWebService {
 		setExitManager(new ExitManagerImpl());
 	}
 
-	protected static void raise(String[] args) {
-		if (args.length != 2)
-			System.out
-					.println("USAGE: <WSname> <WS fail-stop probability> <WS faulty response probability>");
-
-		double failStop = Double.parseDouble(args[0]);
-		double faultyResponse = Double.parseDouble(args[1]);
-
-		FaultyWebService ws = new FaultyWebService(failStop, faultyResponse);
-
-		Endpoint.publish("0.0.0.0", ws);
-
-		System.out.println("Web service up and Running! \n"
-				+ "Fail-stop probability:       " + failStop + "\n"
-				+ "Faulty Response probability: " + faultyResponse);
-	}
-
 	public FaultyWebService() {
 		super();
 	}
