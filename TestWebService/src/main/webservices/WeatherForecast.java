@@ -22,7 +22,7 @@ public class WeatherForecast extends FaultyWebService {
 
 		WeatherForecast ws = new WeatherForecast(failStop, faultyResponse);
 
-		Endpoint.publish("http://0.0.0.0:2302/creditcard", ws);
+		Endpoint.publish("http://0.0.0.0:2402/weather", ws);
 
 		System.out.println("Web service up and Running! \n"
 				+ "Fail-stop probability:       " + failStop + "\n"
