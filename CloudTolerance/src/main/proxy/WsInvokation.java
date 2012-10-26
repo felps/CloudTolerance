@@ -1,14 +1,7 @@
 package proxy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.print.attribute.standard.Severity;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
@@ -22,12 +15,18 @@ public abstract class WsInvokation implements Runnable {
 	private String wsdlClazzName;
 	private Object serviceHandler ;
 	private Client client;
+	private String wsdlUrl = wsEndpoint+"?wsdl";
+	
+	public void setWsdlUrl(String wsdlUrl) {
+		this.wsdlUrl = wsdlUrl;
+	}
 
-	private void setResultSetter(ResultSetter resultSetter) {
+	public void setResultSetter(ResultSetter resultSetter) {
 		this.result = resultSetter;
 	}
 
-	public void prepareForInvoke(String wsdlUrl) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	public void prepareForInvoke() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
 
