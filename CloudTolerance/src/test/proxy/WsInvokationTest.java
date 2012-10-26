@@ -23,7 +23,7 @@ public class WsInvokationTest {
 	private static final String WEATHER_WSDL_ENDPOINT = "http://127.0.0.1:2402/weather?wsdl";
 	private static final String wEATHER_WS_ENDPOINT = "http://127.0.0.1:2402/weather";
 
-	private WsInvokation creditCardHandler;
+	private WsInvoker creditCardHandler;
 
 	@Test 
 	public void verifyCreditCardServiceAvailability() throws IOException {
@@ -71,7 +71,7 @@ public class WsInvokationTest {
 				.loadClass("webservices.IssuePayment").newInstance();
 		
 		ResultSetter results = new ResultSetter();
-		results.result = null;
+		results.setResult(null);
 		for (int i = 0; i < 10; i++) {
 			Object[] returnedValue = client.invoke("issuePayment", creditCard);
 
@@ -84,7 +84,7 @@ public class WsInvokationTest {
 	@Test
 	public void shouldInvokeIssuePaymentMethod() throws Exception {
 
-		WsInvokation creditCard = new WsInvokation();
+		WsInvoker creditCard = new WsInvoker();
 		ResultSetter returnedValues = new ResultSetter();
 
 		creditCard.wsdlUrl = CREDIT_CARD_WSDL_ENDPOINT;
@@ -96,7 +96,7 @@ public class WsInvokationTest {
 		creditCard.prepareForInvoke();
 		creditCard.run();
 
-		assertEquals(returnedValues.result[0], true);
+		assertEquals(returnedValues.getResult()[0], true);
 	}
 
 	@Test
@@ -109,7 +109,7 @@ public class WsInvokationTest {
 				.loadClass("webservices.GetTemperatureForecast").newInstance();
 		
 		ResultSetter results = new ResultSetter();
-		results.result = null;
+		results.setResult(null);
 		
 		String paramMethod = "setArg0";
 		Object paramValue = "BSB";
@@ -135,7 +135,7 @@ public class WsInvokationTest {
 
 		ResultSetter results = new ResultSetter();
 		String paramValue = "BSB";
-		results.result = null;
+		results.setResult(null);
 
 		Object[] returnedResult = client.invoke("getTemperatureForecast", paramValue);
 
@@ -147,7 +147,7 @@ public class WsInvokationTest {
 	@Test
 	public void shouldInvokeGetTemperatureForBSB() throws Exception {
 
-		WsInvokation weather = new WsInvokation();
+		WsInvoker weather = new WsInvoker();
 		ResultSetter returnedValues = new ResultSetter();
 
 		weather.wsdlUrl = WEATHER_WSDL_ENDPOINT;
@@ -159,7 +159,7 @@ public class WsInvokationTest {
 		weather.prepareForInvoke();
 		weather.run();
 
-		assertEquals("Should have returned 25 for BSB location", 25, returnedValues.result[0]);
+		assertEquals("Should have returned 25 for BSB location", 25, returnedValues.getResult()[0]);
 	}
 
 }

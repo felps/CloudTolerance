@@ -1,6 +1,6 @@
 package proxy;
 
-import javax.xml.ws.FaultAction;
+import java.util.List;
 
 import techniques.FaultToleranceTechnique;
 
@@ -9,13 +9,38 @@ public class GenericProxy {
 	public FaultToleranceTechnique technique;
 	public String configFile;
 	public String wsGroupName;
-	public WsInvokation[] invokersArchetype;
+	public List<WsInvoker> invokersArchetype;
 	
-	private void updateTechnique(FaultToleranceTechnique newTechnique) {
-		
+	public boolean addWebService(String wsdlURL) {
+		WsInvoker invoker = new WsInvoker();
+		try {
+			invoker.prepareForInvoke();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return invokersArchetype.add(invoker);
+	}
 
+	public void setupInvokation(WsInvoker service, String serviceName, String method,
+			String packageName, String arg0) {
+
+		service.wsdlClazzName = packageName + "." + serviceName;
+		service.serviceMethod = method;
+		service.paramValue = arg0;
+		
 	}
 	
+	private Object[] invokeMethod(List<WsInvoker> availableInvokersSet, String serviceMethod,
+			String parameterValue) {
+		technique.setAvailableInvokers(availableInvokersSet);
+		return technique.invokeMethod(serviceMethod, parameterValue);
+	}
+
 	
-	
+
 }

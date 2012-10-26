@@ -8,7 +8,7 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
 import utils.ResultSetter;
 
-public class WsInvokation implements Runnable {
+public class WsInvoker implements Runnable, Cloneable {
 
 	public ResultSetter result;
 	public String wsEndpoint;
@@ -21,10 +21,26 @@ public class WsInvokation implements Runnable {
 	public String paramClassName;
 	public String paramValue;
 
+	public Thread parentThread;
+	
 	public void setWsdlUrl(String wsdlUrl) {
 		this.wsdlUrl = wsdlUrl;
 	}
 
+	@Override
+	public WsInvoker clone(){
+		
+		WsInvoker copy = null;
+		
+		try {
+			copy = (WsInvoker) super.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return copy;
+	}
 	public void setResultSetter(ResultSetter resultSetter) {
 		this.result = resultSetter;
 	}
@@ -77,6 +93,6 @@ public class WsInvokation implements Runnable {
 	public void run() {
 		Object[] response;
 		response = invoke();
-		result.result = response;
+		result.setResult(response);
 	}
 }
