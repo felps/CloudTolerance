@@ -53,6 +53,7 @@ public class WsInvokation implements Runnable {
 
 	public Object[] invoke() {
 		Object[] response = null;
+
 		try {
 			setUpParameter();
 			response = client.invoke(serviceMethod, paramValue);
