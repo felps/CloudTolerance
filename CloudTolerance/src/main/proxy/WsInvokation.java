@@ -8,15 +8,18 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
 import utils.ResultSetter;
 
-public abstract class WsInvokation implements Runnable {
+public class WsInvokation implements Runnable {
 
-	private ResultSetter result;
-	private String wsEndpoint;
-	private String wsdlClazzName;
-	private Object serviceHandler ;
-	private Client client;
-	private String wsdlUrl = wsEndpoint+"?wsdl";
-	
+	public ResultSetter result;
+	public String wsEndpoint;
+	public String wsdlClazzName;
+	public Object serviceHandler;
+	public Client client;
+	public String wsdlUrl = wsEndpoint + "?wsdl";
+	public String serviceMethod;
+	public String paramMethod;
+	public String param;
+
 	public void setWsdlUrl(String wsdlUrl) {
 		this.wsdlUrl = wsdlUrl;
 	}
@@ -25,8 +28,9 @@ public abstract class WsInvokation implements Runnable {
 		this.result = resultSetter;
 	}
 
-	public void prepareForInvoke() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		
+	public void prepareForInvoke() throws InstantiationException,
+			IllegalAccessException, ClassNotFoundException {
+
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
 
@@ -34,17 +38,23 @@ public abstract class WsInvokation implements Runnable {
 				.loadClass(wsdlClazzName).newInstance();
 	}
 
-	public void setUpParameter(String paramMethod, String param) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	public void setUpParameter() throws NoSuchMethodException,
+			SecurityException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException {
 
-		Method m = serviceHandler.getClass().getMethod(paramMethod, String.class);
-		m.invoke(serviceHandler, param);
+		if (paramMethod != null) {
+			Method m = serviceHandler.getClass().getMethod(paramMethod,
+					String.class);
+			m.invoke(serviceHandler, param);
+		}
 
 	}
-	
-	public void invoke(String serviceMethod, String param, String paramMethod) {
+
+	public Object[] invoke() {
+		Object[] response = null;
 		try {
-			setUpParameter(paramMethod, param);
-			client.invoke(serviceMethod, serviceHandler);
+			setUpParameter();
+			response = client.invoke(serviceMethod, serviceHandler);
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -59,6 +69,12 @@ public abstract class WsInvokation implements Runnable {
 			e.printStackTrace();
 		}
 
-		return;
+		return response;
+	}
+
+	public void run() {
+		Object[] response;
+		response = invoke();
+		result.result = response;
 	}
 }
