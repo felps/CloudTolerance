@@ -12,7 +12,7 @@ public class ResultSetter {
 	public synchronized void setResult(Object[] result) {
 		this.result = result;
 		this.wasSet = true;
-		notifyAll();
+		notify();
 	}
 
 	public boolean wasSet() {

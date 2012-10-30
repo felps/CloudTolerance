@@ -69,24 +69,23 @@ public class Retry implements FaultToleranceTechnique {
 					parameterValue);
 
 			long msec = currentDate.getTime();
-			synchronized (invokingThread) {
-				try {
-					invokingThread.wait(timeout);
-				} catch (InterruptedException e) {
-					if (wsInvoker.result.wasSet()) {
-						System.out.println("Funfou direito!");
-						return wsInvoker.result.getResult();
-					} else if (currentDate.getTime() < msec + (timeout * 0.8))
-						System.out.println("Unforeseen awakening");
+			try {
+				synchronized (results) {
+					results.wait(timeout);
 				}
-
+			} catch (InterruptedException e) {
 				if (wsInvoker.result.wasSet()) {
-					System.out.println("Funfou mas no timeout!");
+					System.out.println("Funfou direito!");
 					return wsInvoker.result.getResult();
-				}
+				} else if (currentDate.getTime() < msec + (timeout * 0.8))
+					System.out.println("Unforeseen awakening");
+			}
+
+			if (wsInvoker.result.wasSet()) {
+				System.out.println("Funfou mas no timeout!");
+				return wsInvoker.result.getResult();
 			}
 		}
 		return null;
 	}
-
 }

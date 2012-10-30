@@ -1,8 +1,10 @@
 package proxy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import techniques.FaultToleranceTechnique;
+import techniques.Retry;
 
 public class GenericProxy {
 
@@ -11,8 +13,14 @@ public class GenericProxy {
 	public String wsGroupName;
 	public List<WsInvoker> invokersArchetype;
 	
-	public boolean addWebService(String wsdlURL) {
+	public GenericProxy() {
+		invokersArchetype = new ArrayList<WsInvoker>();
+		technique = new Retry();
+	}
+	public boolean addWebService(String wsdlURL, String wsServiceName) {
 		WsInvoker invoker = new WsInvoker();
+		invoker.wsdlUrl=wsdlURL;
+		invoker.wsdlClazzName = wsServiceName;
 		try {
 			invoker.prepareForInvoke();
 		} catch (InstantiationException e) {
@@ -23,6 +31,8 @@ public class GenericProxy {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		technique.addAvailableInvoker(invoker);
 		return invokersArchetype.add(invoker);
 	}
 
@@ -35,9 +45,8 @@ public class GenericProxy {
 		
 	}
 	
-	public Object[] invokeMethod(List<WsInvoker> availableInvokersSet, String serviceMethod,
+	public Object[] invokeMethod(String serviceMethod,
 			String parameterValue) {
-		technique.addAvailableInvokers(availableInvokersSet);
 		return technique.invokeMethod(serviceMethod, parameterValue);
 	}
 
