@@ -1,47 +1,58 @@
 package techniques;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import proxy.WsInvoker;
 import utils.ResultSetter;
 
-public class Retry implements FaultToleranceTechnique{
+public class Retry implements FaultToleranceTechnique {
 
 	private WsInvoker currentWS;
 	private List<WsInvoker> invokersAvailable;
 	private int retryAmmount;
 	private int timeout;
 
-	public void setAvailableInvokers(List<WsInvoker> invokers) {
-		invokersAvailable = invokers;
+	public Retry() {
+		invokersAvailable = new ArrayList<WsInvoker>();
+		setRetryParameters();
+	}
+
+	public void addAvailableInvoker(WsInvoker invokerAvailable) {
+		invokersAvailable.add(invokerAvailable);
+		currentWS = invokerAvailable;
+	}
+
+	public void addAvailableInvokers(List<WsInvoker> invokers) {
+		invokersAvailable.addAll(invokersAvailable);
 		currentWS = invokersAvailable.get(0);
 	}
-	
+
 	public Object[] invokeMethod(String serviceMethod, String parameterValue) {
-		setRetryParameters();
-		return invokeRetryMethod(serviceMethod,
-				parameterValue, timeout, retryAmmount) ;
+		return invokeRetryMethod(serviceMethod, parameterValue, timeout,
+				retryAmmount);
 	}
 
 	private void setRetryParameters() {
 
-		retryAmmount = 10;
-		timeout = 15000;
+		retryAmmount = 2;
+		timeout = 5000;
 	}
 
-	private void createThread(WsInvoker wsInvoker, String serviceMethod,
+	private Thread createThread(WsInvoker wsInvoker, String serviceMethod,
 			String parameterValue) {
-		// TODO Auto-generated method stub
 		wsInvoker.serviceMethod = serviceMethod;
 		wsInvoker.paramValue = parameterValue;
 
 		try {
-			wsInvoker.run();
+			Thread worker = new Thread(wsInvoker);
+			worker.run();
+			return worker;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public Object[] invokeRetryMethod(String serviceMethod,
@@ -50,23 +61,28 @@ public class Retry implements FaultToleranceTechnique{
 		WsInvoker wsInvoker = currentWS.clone();
 
 		ResultSetter results = new ResultSetter();
-		currentWS.result = results;
+		wsInvoker.result = results;
 
-		synchronized (results) {
-			for (int i = 0; i < retryAmmount; i++) {
-			
-				createThread(wsInvoker, serviceMethod, parameterValue);
+		for (int i = 0; i < retryAmmount; i++) {
 
-			    long msec = currentDate.getTime();
+			Thread invokingThread = createThread(wsInvoker, serviceMethod,
+					parameterValue);
+
+			long msec = currentDate.getTime();
+			synchronized (invokingThread) {
 				try {
-					
-					this.wait(timeout);
+					invokingThread.wait(timeout);
 				} catch (InterruptedException e) {
-					if (results.wasSet()) {
-						return results.getResult();
-					} else
-						if(currentDate.getTime() < msec + (timeout*0.8))
+					if (wsInvoker.result.wasSet()) {
+						System.out.println("Funfou direito!");
+						return wsInvoker.result.getResult();
+					} else if (currentDate.getTime() < msec + (timeout * 0.8))
 						System.out.println("Unforeseen awakening");
+				}
+
+				if (wsInvoker.result.wasSet()) {
+					System.out.println("Funfou mas no timeout!");
+					return wsInvoker.result.getResult();
 				}
 			}
 		}

@@ -35,9 +35,9 @@ public class GenericProxy {
 		
 	}
 	
-	private Object[] invokeMethod(List<WsInvoker> availableInvokersSet, String serviceMethod,
+	public Object[] invokeMethod(List<WsInvoker> availableInvokersSet, String serviceMethod,
 			String parameterValue) {
-		technique.setAvailableInvokers(availableInvokersSet);
+		technique.addAvailableInvokers(availableInvokersSet);
 		return technique.invokeMethod(serviceMethod, parameterValue);
 	}
 

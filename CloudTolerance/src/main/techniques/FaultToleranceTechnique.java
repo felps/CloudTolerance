@@ -6,7 +6,10 @@ import proxy.WsInvoker;
 
 public interface FaultToleranceTechnique {
 	
-	public void setAvailableInvokers(List<WsInvoker> invokersAvailable);
+	
+	public void addAvailableInvoker(WsInvoker invokerAvailable);
+	
+	public void addAvailableInvokers(List<WsInvoker> invokersAvailable);
 	
 	public Object[] invokeMethod(String serviceMethod,
 			String parameterValue);

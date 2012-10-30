@@ -14,6 +14,7 @@ import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
 
+import techniques.Retry;
 import utils.ResultSetter;
 
 public class RetryTechniqueTest {
@@ -25,7 +26,7 @@ public class RetryTechniqueTest {
 
 	private WsInvoker creditCardHandler;
 
-	@Test 
+	@Test
 	public void verifyCreditCardServiceAvailability() throws IOException {
 		// Create a URL for the desired page
 		URL url = new URL(CREDIT_CARD_WSDL_ENDPOINT);
@@ -69,7 +70,7 @@ public class RetryTechniqueTest {
 
 		Object creditCard = Thread.currentThread().getContextClassLoader()
 				.loadClass("webservices.IssuePayment").newInstance();
-		
+
 		ResultSetter results = new ResultSetter();
 		results.setResult(null);
 		for (int i = 0; i < 10; i++) {
@@ -104,26 +105,28 @@ public class RetryTechniqueTest {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		Client client = dcf.createClient(WEATHER_WSDL_ENDPOINT, this.getClass()
 				.getClassLoader());
-		
+
 		Object weather = Thread.currentThread().getContextClassLoader()
 				.loadClass("webservices.GetTemperatureForecast").newInstance();
-		
+
 		ResultSetter results = new ResultSetter();
 		results.setResult(null);
-		
+
 		String paramMethod = "setArg0";
 		Object paramValue = "BSB";
 		String paramClassName = "String";
-		
+
 		Method m = weather.getClass().getMethod(paramMethod, String.class);
 		// Thread.currentThread().getContextClassLoader().loadClass(paramClassName));
 		m.invoke(weather, "BSB");
-		
+
 		m = weather.getClass().getMethod("getArg0", null);
-		
+
 		Object response = m.invoke(weather, m.getParameterTypes());
-		assertEquals("Should have set the input as \"BSB\".","BSB", ((String) response) );
+		assertEquals("Should have set the input as \"BSB\".", "BSB",
+				((String) response));
 	}
+
 	@Test
 	public void shouldInvokeManuallyGetWeatherForecastMethod() throws Exception {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
@@ -137,29 +140,34 @@ public class RetryTechniqueTest {
 		String paramValue = "BSB";
 		results.setResult(null);
 
-		Object[] returnedResult = client.invoke("getTemperatureForecast", paramValue);
+		Object[] returnedResult = client.invoke("getTemperatureForecast",
+				paramValue);
 
 		System.out.println("Teste");
 		int intResponse = (Integer) returnedResult[0];
-		assertEquals("Should have returned 25 for BSB location", 25,  intResponse  );
+		assertEquals("Should have returned 25 for BSB location", 25,
+				intResponse);
 	}
-	
+
 	@Test
 	public void shouldInvokeGetTemperatureForBSB() throws Exception {
 
 		WsInvoker weather = new WsInvoker();
-		ResultSetter returnedValues = new ResultSetter();
+		Retry retryTechnique = new Retry();
 
 		weather.wsdlUrl = WEATHER_WSDL_ENDPOINT;
 		weather.wsdlClazzName = "webservices.GetTemperatureForecast";
 		weather.serviceMethod = "getTemperatureForecast";
 		weather.paramValue = "BSB";
-		weather.result = returnedValues;
-
 		weather.prepareForInvoke();
-		weather.run();
 
-		assertEquals("Should have returned 25 for BSB location", 25, returnedValues.getResult()[0]);
+
+		retryTechnique.addAvailableInvoker(weather);
+		Object[] returnedValues = retryTechnique.invokeMethod("getTemperatureForecast", "BSB");
+
+		assertFalse(returnedValues==null);
+		assertEquals("Should have returned 25 for BSB location", 25,
+				returnedValues[0]);
 	}
 
 }
