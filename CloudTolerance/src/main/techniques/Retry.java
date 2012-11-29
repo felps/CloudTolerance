@@ -41,13 +41,14 @@ public class Retry implements FaultToleranceTechnique {
 	}
 
 	private Thread createThread(WsInvoker wsInvoker, String serviceMethod,
-			String parameterValue) {
+			String parameterValue, ResultSetter results) {
 		wsInvoker.serviceMethod = serviceMethod;
 		wsInvoker.paramValue = parameterValue;
+		wsInvoker.result = results;
 
 		try {
 			Thread worker = new Thread(wsInvoker);
-			worker.run();
+			worker.start();
 			return worker;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,25 +66,26 @@ public class Retry implements FaultToleranceTechnique {
 
 		for (int i = 0; i < retryAmmount; i++) {
 
+			synchronized (wsInvoker.result) {
+
 			Thread invokingThread = createThread(wsInvoker, serviceMethod,
-					parameterValue);
+					parameterValue, results);
 
 			long msec = currentDate.getTime();
+			Object[] returnedObject = null;
 			try {
-				synchronized (results) {
-					results.wait(timeout);
-				}
+					returnedObject = wsInvoker.result.getResult();
 			} catch (InterruptedException e) {
 				if (wsInvoker.result.wasSet()) {
 					System.out.println("Funfou direito!");
-					return wsInvoker.result.getResult();
-				} else if (currentDate.getTime() < msec + (timeout * 0.8))
-					System.out.println("Unforeseen awakening");
+					return returnedObject;
+				}
 			}
 
 			if (wsInvoker.result.wasSet()) {
-				System.out.println("Funfou mas no timeout!");
-				return wsInvoker.result.getResult();
+				System.out.println("Funfou mas no timeout!" + ((new Date()).getTime() - msec) );
+				return returnedObject;
+			}
 			}
 		}
 		return null;

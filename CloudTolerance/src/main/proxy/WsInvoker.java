@@ -41,6 +41,7 @@ public class WsInvoker implements Runnable, Cloneable {
 		
 		return copy;
 	}
+	
 	public void setResultSetter(ResultSetter resultSetter) {
 		this.result = resultSetter;
 	}
@@ -93,6 +94,8 @@ public class WsInvoker implements Runnable, Cloneable {
 	public void run() {
 		Object[] response;
 		response = invoke();
-		result.setResult(response);
+		synchronized (result) {
+			result.setResult(response);
+		}
 	}
 }

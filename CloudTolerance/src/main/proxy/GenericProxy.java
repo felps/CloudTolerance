@@ -17,10 +17,12 @@ public class GenericProxy {
 		invokersArchetype = new ArrayList<WsInvoker>();
 		technique = new Retry();
 	}
+	
 	public boolean addWebService(String wsdlURL, String wsServiceName) {
 		WsInvoker invoker = new WsInvoker();
 		invoker.wsdlUrl=wsdlURL;
 		invoker.wsdlClazzName = wsServiceName;
+	
 		try {
 			invoker.prepareForInvoke();
 		} catch (InstantiationException e) {
