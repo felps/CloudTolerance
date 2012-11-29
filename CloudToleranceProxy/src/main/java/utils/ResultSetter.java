@@ -6,7 +6,7 @@ public class ResultSetter {
 	private boolean wasSet = false;
 
 	public synchronized Object[] getResult() throws InterruptedException {
-		System.out.println("Waiting for a notification on object " + this.toString());
+//		System.out.println("Waiting for a notification on object " + this.toString());
 		wait();
 		return result;
 	}
@@ -15,7 +15,7 @@ public class ResultSetter {
 		this.result = result;
 		this.wasSet = true;
 //		sleep();
-		System.out.println("Notifying completion on object " + this.toString());
+//		System.out.println("Notifying completion on object " + this.toString());
 		notify();
 	}
 

@@ -58,6 +58,7 @@ public class Retry implements FaultToleranceTechnique {
 
 	public Object[] invokeRetryMethod(String serviceMethod,
 			String parameterValue, int timeout, int retryAmmount) {
+
 		Date currentDate = new Date();
 		WsInvoker wsInvoker = currentWS.clone();
 

@@ -4,6 +4,7 @@
 	<groupId>CloudTolerance</groupId>
 	<artifactId>CloudTolerance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging> pom </packaging>
 
 	<properties>
 		<cxf.version>2.7.0</cxf.version>
@@ -18,5 +19,6 @@
 		</dependency>
 	</dependencies>
 </project>
+
 
 

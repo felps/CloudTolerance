@@ -1,31 +1,74 @@
 package proxy;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import techniques.Retry;
 import utils.ResultSetter;
 
-public class RetryTechniqueTest {
+public class FailSafeRetryTechniqueTest {
 
+	class RunCreditService implements Runnable{
+
+		public void run() {
+			String[] args;
+			args = new String[2];
+			args[0]="0.0"; // fail-stop probability
+			args[1]="0.0"; // faulty response probability
+			
+			realwebservices.CreditCard.main(args);
+		}
+		
+	}
+
+	class RunWeatherService implements Runnable{
+
+		public void run() {
+			String[] args;
+			args = new String[2];
+			args[0]="0.0"; // fail-stop probability
+			args[1]="0.0"; // faulty response probability
+			
+			realwebservices.WeatherForecast.main(args);
+		}
+		
+	}
+	
 	private static final String CREDIT_CARD_WSDL_ENDPOINT = "http://127.0.0.1:2302/creditcard?wsdl";
 	private static final String CREDIT_CARD_WS_ENDPOINT = "http://127.0.0.1:2302/creditcard";
 	private static final String WEATHER_WSDL_ENDPOINT = "http://127.0.0.1:2402/weather?wsdl";
-	private static final String wEATHER_WS_ENDPOINT = "http://127.0.0.1:2402/weather";
+	private static final String WEATHER_WS_ENDPOINT = "http://127.0.0.1:2402/weather";
 
 	private WsInvoker creditCardHandler;
 
+
+
+
+	@BeforeClass
+	public static void setEnvironment() throws InterruptedException {
+
+		FailSafeRetryTechniqueTest helper = new FailSafeRetryTechniqueTest();
+		RunCreditService creditServiceInitiliazer = helper.new RunCreditService();
+		new Thread(creditServiceInitiliazer).start();
+		
+		RunWeatherService weatherServiceInitializer = helper.new RunWeatherService();
+		new Thread(weatherServiceInitializer).start();
+		
+		Thread.sleep(5000);
+	}
+	
 	@Test
 	public void verifyCreditCardServiceAvailability() throws IOException {
 		// Create a URL for the desired page
@@ -69,7 +112,7 @@ public class RetryTechniqueTest {
 				.getClass().getClassLoader());
 
 		Object creditCard = Thread.currentThread().getContextClassLoader()
-				.loadClass("webservices.IssuePayment").newInstance();
+				.loadClass("realwebservices.IssuePayment").newInstance();
 
 		ResultSetter results = new ResultSetter();
 		results.setResult(null);
@@ -89,13 +132,14 @@ public class RetryTechniqueTest {
 		ResultSetter returnedValues = new ResultSetter();
 
 		creditCard.wsdlUrl = CREDIT_CARD_WSDL_ENDPOINT;
-		creditCard.wsdlClazzName = "webservices.IssuePayment";
+		creditCard.wsdlClazzName = "realwebservices.IssuePayment";
 		creditCard.serviceMethod = "issuePayment";
 		creditCard.paramMethod = null;
 		creditCard.result = returnedValues;
 
 		creditCard.prepareForInvoke();
-		creditCard.run();
+		new Thread(creditCard).start();
+		creditCard.result.wait();
 
 		assertEquals(returnedValues.getResult()[0], true);
 	}
@@ -107,7 +151,7 @@ public class RetryTechniqueTest {
 				.getClassLoader());
 
 		Object weather = Thread.currentThread().getContextClassLoader()
-				.loadClass("webservices.GetTemperatureForecast").newInstance();
+				.loadClass("realwebservices.GetTemperatureForecast").newInstance();
 
 		ResultSetter results = new ResultSetter();
 		results.setResult(null);
@@ -134,7 +178,7 @@ public class RetryTechniqueTest {
 				.getClassLoader());
 
 		Object weather = Thread.currentThread().getContextClassLoader()
-				.loadClass("webservices.GetTemperatureForecast").newInstance();
+				.loadClass("realwebservices.GetTemperatureForecast").newInstance();
 
 		ResultSetter results = new ResultSetter();
 		String paramValue = "BSB";
@@ -156,12 +200,12 @@ public class RetryTechniqueTest {
 		Retry retryTechnique = new Retry();
 
 		weather.wsdlUrl = WEATHER_WSDL_ENDPOINT;
-		weather.wsdlClazzName = "webservices.GetTemperatureForecast";
+		weather.wsdlClazzName = "realwebservices.GetTemperatureForecast";
 		weather.serviceMethod = "getTemperatureForecast";
 		weather.paramValue = "BSB";
 		weather.prepareForInvoke();
-
-
+		
+		
 		retryTechnique.addAvailableInvoker(weather);
 		Object[] returnedValues = retryTechnique.invokeMethod("getTemperatureForecast", "BSB");
 
