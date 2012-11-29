@@ -16,12 +16,15 @@ public class CreditCardServiceTest {
 	
 	@Before
 	public void setUp() {
+		System.out.println("Creating Web Service proxies");
 		if(credit.proxy == null)
 			credit.proxy = new GenericProxy();
 		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "webservices.IssuePayment");
 		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "webservices.VerifyCreditAvailability");
 		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "webservices.VerifyPassword");
+		System.out.println("Done creating Web Service proxies");
 	}
+	
 	@Test
 	public void testIssuePayment() {
 		boolean returnedValue = credit.issuePayment();
