@@ -10,6 +10,7 @@ public class WsInvokationThread implements Runnable{
 
 	public String methodName;
 	public Object[] methodParameters;
+	public Thread executionThread;
 	private Client client;
 	private Result resultSetter;
 	
