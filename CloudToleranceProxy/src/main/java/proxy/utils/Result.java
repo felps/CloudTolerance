@@ -12,7 +12,7 @@ public class Result {
 		return resultValue;
 	}
 
-	private void waitUntilIsSet() {
+	private synchronized void waitUntilIsSet() {
 		try {
 			wait();
 		} catch (InterruptedException e) {
@@ -23,11 +23,12 @@ public class Result {
 		return wasSet;
 	}
 	
-	public void setResultValue(Object newValue){
+	public synchronized void setResultValue(Object newValue){
 		if(!wasSet)
 		{
 			resultValue = newValue;
-			notifyAll();
+			wasSet = true;
+			notify();
 		}
 	}
 	
