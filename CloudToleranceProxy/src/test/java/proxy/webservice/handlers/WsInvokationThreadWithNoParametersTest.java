@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.Result;
+import proxy.utils.StartTestWebServices;
 
 public class WsInvokationThreadWithNoParametersTest {
 
@@ -20,40 +21,24 @@ public class WsInvokationThreadWithNoParametersTest {
 	private WsInvokationThread invokation;
 	private Result resultSetter;
 	
-
-	class RunCreditService implements Runnable{
-
-		public void run() {
-			String[] args;
-			args = new String[2];
-			args[0]="0.0"; // fail-stop probability
-			args[1]="0.0"; // faulty response probability
-			
-			realwebservices.CreditCard.main(args);
-		}
-		
-	}
-
-	
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
-
-		WsInvokationThreadWithNoParametersTest helper = new WsInvokationThreadWithNoParametersTest();
-		RunCreditService creditServiceInitiliazer = helper.new RunCreditService();
-		new Thread(creditServiceInitiliazer).start();
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		System.out.println("Beginng WsInvokationThreadNoParametersTest");
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		
+		StartTestWebServices.raiseCreditService();
 		Thread.sleep(5000);
-		System.out.println("Done creating Web Service proxies");
+		
 	}
 	
 	@Before
-	public void setUp() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		wsdlClazzName = "realwebservices.IssuePayment";
+	public void setUp() throws InstantiationException, IllegalAccessException, ClassNotFoundException, InterruptedException {
 		
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
-
-		serviceHandler = Thread.currentThread().getContextClassLoader()
-				.loadClass(wsdlClazzName).newInstance();
 
 		resultSetter = new Result();
 	}
@@ -64,11 +49,8 @@ public class WsInvokationThreadWithNoParametersTest {
 		Client client = dcf.createClient(wsdlUrl, this
 				.getClass().getClassLoader());
 
-		Object creditCard = Thread.currentThread().getContextClassLoader()
-				.loadClass("realwebservices.IssuePayment").newInstance();
-		
 		for (int i = 0; i < 10; i++) {
-			Object[] returnedValue = client.invoke("issuePayment", creditCard);
+			Object[] returnedValue = client.invoke("issuePayment");
 
 			System.out.println(returnedValue[0]);
 			if ((Boolean) returnedValue[0])

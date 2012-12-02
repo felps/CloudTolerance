@@ -1,8 +1,10 @@
 package proxy.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ResultTest {
@@ -20,6 +22,15 @@ public class ResultTest {
 		}
 	}
 
+	@BeforeClass
+	public static void setUpClass() {
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		System.out.println("Beginng ResultSetter Test");
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+	}
+	
 	@Before
 	public void setUp() {
 		resultSetter = new Result();

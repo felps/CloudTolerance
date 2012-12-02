@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.Result;
+import proxy.utils.StartTestWebServices;
 
 public class WsInvokationThreadWithParametersTest {
 
@@ -36,12 +37,16 @@ public class WsInvokationThreadWithParametersTest {
 
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		System.out.println("Beginng WsInvokationThreadWithParametersTest");
+		System.out.println("----------------------");
+		System.out.println("----------------------");
 
-		WsInvokationThreadWithParametersTest helper = new WsInvokationThreadWithParametersTest();
-		RunWeatherService weatherServiceInitiliazer = helper.new RunWeatherService();
-		new Thread(weatherServiceInitiliazer).start();
+		StartTestWebServices.raiseWeatherService();
 		Thread.sleep(4000);
-		System.out.println("Done creating Web Service proxies");
+		
+		System.out.println("Done raising Web Service");
 	}
 
 	@Before
@@ -113,6 +118,22 @@ public class WsInvokationThreadWithParametersTest {
 		returnedValue = (Integer) resultSetter.getResultValue();
 		assertEquals(30, returnedValue);
 
+	}
+	
+	@Test(timeout = 1000)
+	public void testUnthreadedRunMethodWithPreviuoslySetParameterArray() throws InstantiationException,
+			IllegalAccessException, ClassNotFoundException {
+		int returnedValue;
+
+		Object[] parms = new Object[1];
+		parms[0] = "BSB";
+		
+		invokation = new WsInvokationThread(client, resultSetter,
+				"getTemperatureForecast", parms);
+		invokation.run();
+
+		returnedValue = (Integer) resultSetter.getResultValue();
+		assertEquals(25, returnedValue);
 	}
 
 	@Test(timeout = 500)
