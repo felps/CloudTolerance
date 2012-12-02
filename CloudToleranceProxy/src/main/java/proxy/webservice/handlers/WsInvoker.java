@@ -25,4 +25,11 @@ public class WsInvoker {
 		invokation.perform();
 		return invokation;
 	}
+	
+	public WsInvokation invokeWebMethod(String methodName, long timeout, Object... args) {
+		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient, timeout, methodName, args);
+		pendingRequests.add(invokation);
+		invokation.perform();
+		return invokation;
+	}
 }

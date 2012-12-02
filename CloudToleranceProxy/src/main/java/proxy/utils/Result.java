@@ -1,20 +1,37 @@
 package proxy.utils;
 
+import java.util.concurrent.TimeoutException;
+
+
 public class Result {
 
 	private Object resultValue;
 	private boolean wasSet;
-	
-	public Object getResultValue() {
-		if(!wasSet)
+	private long timeout = -1;
+
+	public Result() {
+	}
+
+	public Result(long timeout) {
+		this.timeout = timeout;
+	}
+
+	public Object getResultValue() throws TimeoutException {
+		if (!wasSet)
 			waitUntilIsSet();
-		
-		return resultValue;
+
+		if(wasSet)
+			return resultValue;
+		else
+			throw new TimeoutException();
 	}
 
 	private synchronized void waitUntilIsSet() {
 		try {
-			wait();
+			if (timeout == -1)
+				wait();
+			else
+				wait(timeout);
 		} catch (InterruptedException e) {
 		}
 	}
@@ -22,15 +39,13 @@ public class Result {
 	public boolean wasSet() {
 		return wasSet;
 	}
-	
-	public synchronized void setResultValue(Object newValue){
-		if(!wasSet)
-		{
+
+	public synchronized void setResultValue(Object newValue) {
+		if (!wasSet) {
 			resultValue = newValue;
 			wasSet = true;
 			notify();
 		}
 	}
-	
-	
+
 }

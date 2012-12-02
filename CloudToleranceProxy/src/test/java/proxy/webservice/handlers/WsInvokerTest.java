@@ -1,9 +1,10 @@
 package proxy.webservice.handlers;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
+import java.util.concurrent.TimeoutException;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ public class WsInvokerTest {
 	}
 
 	@Test(timeout = 5000)
-	public void testInvokeWebMethodWithoutParameters() {
+	public void testInvokeWebMethodWithoutParameters() throws TimeoutException {
 		creditCardInvoker = new WsInvoker(creditWsdlURL);
 
 		WsInvokation invokation = creditCardInvoker
@@ -41,7 +42,7 @@ public class WsInvokerTest {
 	}
 
 	@Test(timeout = 5000)
-	public void testInvokeWebMethodWithParametersPreviouslySet() {
+	public void testInvokeWebMethodWithParametersPreviouslySet() throws TimeoutException {
 		weatherInvoker = new WsInvoker(weatherWsdlURL);
 
 		Object[] parms = new String[1];
@@ -57,7 +58,7 @@ public class WsInvokerTest {
 	}
 
 	@Test(timeout = 5000)
-	public void testInvokeWebMethodWithParametersSetOnCall() {
+	public void testInvokeWebMethodWithParametersSetOnCall() throws TimeoutException {
 		weatherInvoker = new WsInvoker(weatherWsdlURL);
 
 		WsInvokation invokation = weatherInvoker.invokeWebMethod(

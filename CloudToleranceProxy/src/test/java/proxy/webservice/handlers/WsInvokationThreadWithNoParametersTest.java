@@ -1,7 +1,8 @@
 package proxy.webservice.handlers;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeoutException;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
@@ -17,7 +18,6 @@ public class WsInvokationThreadWithNoParametersTest {
 	Object serviceHandler;
 	Client client;
 	private String wsdlUrl = "http://127.0.0.1:2302/creditcard?wsdl";
-	private String wsdlClazzName;
 	private WsInvokationThread invokation;
 	private Result resultSetter;
 	
@@ -65,7 +65,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	}
 
 	@Test(timeout=5000)
-	public void testRun() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	public void testRun() throws InstantiationException, IllegalAccessException, ClassNotFoundException, TimeoutException {
 		invokation = new WsInvokationThread(client, resultSetter, "issuePayment");
 		new Thread(invokation).start();
 		assertTrue((Boolean) resultSetter.getResultValue());

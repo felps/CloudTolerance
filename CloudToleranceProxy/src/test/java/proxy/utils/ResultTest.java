@@ -3,6 +3,8 @@ package proxy.utils;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.concurrent.TimeoutException;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -37,7 +39,7 @@ public class ResultTest {
 	}
 
 	@Test
-	public void shouldSetResultValueAndGetResultValue() {
+	public void shouldSetResultValueAndGetResultValue() throws TimeoutException {
 		resultSetter.setResultValue(10);
 		int returnedValue = (Integer) resultSetter.getResultValue();
 		
@@ -56,7 +58,7 @@ public class ResultTest {
 	}
 
 	@Test(timeout=5500)
-	public void shouldWaitUntilValueIsSetAndGetResponse() {
+	public void shouldWaitUntilValueIsSetAndGetResponse() throws TimeoutException {
 		Producer producer =  new Producer();
 		producer.resultSetter = resultSetter;
 		new Thread(producer).start();

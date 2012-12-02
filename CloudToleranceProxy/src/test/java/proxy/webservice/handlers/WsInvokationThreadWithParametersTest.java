@@ -1,9 +1,8 @@
 package proxy.webservice.handlers;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Method;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
@@ -99,7 +98,7 @@ public class WsInvokationThreadWithParametersTest {
 
 	@Test(timeout = 1000)
 	public void testUnthreadedRunMethod() throws InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+			IllegalAccessException, ClassNotFoundException, TimeoutException {
 		int returnedValue;
 
 		invokation = new WsInvokationThread(client, resultSetter,
@@ -122,7 +121,7 @@ public class WsInvokationThreadWithParametersTest {
 	
 	@Test(timeout = 1000)
 	public void testUnthreadedRunMethodWithPreviuoslySetParameterArray() throws InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+			IllegalAccessException, ClassNotFoundException, TimeoutException {
 		int returnedValue;
 
 		Object[] parms = new Object[1];
@@ -138,7 +137,7 @@ public class WsInvokationThreadWithParametersTest {
 
 	@Test(timeout = 500)
 	public void testThreadedInvokation() throws InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+			IllegalAccessException, ClassNotFoundException, TimeoutException {
 		int returnedValue;
 
 		invokation = new WsInvokationThread(client, resultSetter,

@@ -12,17 +12,33 @@ public class WsInvokation {
 	private Client client;
 	private WsInvokationThread executionThread;
 	private Result resultSetter;
+	private long timeout = -1;
 
 	public Result getResultSetter() {
 		return resultSetter;
 	}
+	
+	public long getTimeout(){
+		return timeout;
+	}
 
-	public WsInvokation(String wsdlURL, Client webServiceDynamicClient, String methodName, Object... args) {
+	public WsInvokation(String wsdlURL, Client webServiceDynamicClient,
+			String methodName, Object... args) {
 		this.wsEndpoint = wsdlURL;
 		this.methodName = methodName;
 		this.methodParameters = args;
 		this.client = webServiceDynamicClient;
 		resultSetter = new Result();
+	}
+
+	public WsInvokation(String wsdlURL, Client webServiceDynamicClient,
+			long timeout, String methodName, Object... args) {
+		this.wsEndpoint = wsdlURL;
+		this.methodName = methodName;
+		this.methodParameters = args;
+		this.client = webServiceDynamicClient;
+		this.timeout = timeout;
+		resultSetter = new Result(timeout);
 	}
 
 	public String getMethodName() {
@@ -40,10 +56,11 @@ public class WsInvokation {
 	public WsInvokationThread getExecutingThread() {
 		return executionThread;
 	}
-	
-	public void perform(){
-		WsInvokationThread invokation = new WsInvokationThread(client, resultSetter, methodName, methodParameters);
+
+	public void perform() {
+		WsInvokationThread invokation = new WsInvokationThread(client,
+				resultSetter, methodName, methodParameters);
 		invokation.executionThread = new Thread(invokation);
-		invokation.executionThread.start(); 
+		invokation.executionThread.start();
 	}
 }
