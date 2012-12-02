@@ -1,5 +1,6 @@
 package proxy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import proxy.techniques.FaultToleranceTechnique;
@@ -10,10 +11,17 @@ public class Proxy {
 	private FaultToleranceTechnique technique;
 	private List<WsInvoker> invokerList;
 	
-	public void addWebService(String wsdlEndpoint, String wsClazzName) {
+	public Proxy() {
+		invokerList = new ArrayList<WsInvoker>();
 	}
 	
-	public Object invokeMethod(String wsMethodName, Object wsParameterValue, String wsParameterType){
-		return null;
+	public void addWebService(String wsdlEndpoint) {
+		WsInvoker newService = new WsInvoker(wsdlEndpoint);
+		invokerList.add(newService);
+		technique.addAvailableInvoker(newService);
+	}
+	
+	public Object invokeMethod(String wsMethodName, Object... wsParameterValues){
+		return technique.invokeMethod(wsMethodName, wsParameterValues);
 	}
 }
