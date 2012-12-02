@@ -10,6 +10,8 @@ public interface FaultToleranceTechnique {
 	
 	public void addAvailableInvokers(List<WsInvoker> availableInvokers);
 	
-	public void invokeMethod(String serviceMethod, Object parameterValue, String parameterType);
+	public void removeInvoker(WsInvoker unavailableInvoker);
+	
+	public Object invokeMethod(String wsMethodName, Object[] wsParameterValues);
 	
 }

@@ -1,7 +1,7 @@
 package proxy.techniques;
 
 import java.util.List;
-import proxy.*;
+
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
@@ -14,6 +14,10 @@ public class Active implements FaultToleranceTechnique {
 	public Active(List<WsInvoker> proxyInvokerList) {
 		webServicePool.addAll(proxyInvokerList);
 	}
+	
+	public boolean setServicePoolSize() {
+		return false;
+	}
 
 	public void addAvailableInvoker(WsInvoker availableInvoker) {
 	}
@@ -21,14 +25,10 @@ public class Active implements FaultToleranceTechnique {
 	public void addAvailableInvokers(List<WsInvoker> availableInvokers) {
 	}
 
-	public void invokeMethod(String serviceMethod, Object parameterValue,
-			String parameterType) {
+	public void removeInvoker(WsInvoker unavailableInvoker) {
 	}
-	
-	public boolean setServicePoolSize() {
-		// TODO Auto-generated method stub
-		return false;
+
+	public Object invokeMethod(String wsMethodName, Object[] wsParameterValues) {
+		return null;
 	}
-	
-	
 }
