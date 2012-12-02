@@ -1,8 +1,7 @@
 package realwebservices;
 
-import javax.xml.ws.Endpoint;
-
-import utils.exitmanager.*;
+import utils.exitmanager.ExitManager;
+import utils.exitmanager.ExitManagerImpl;
 import exceptions.SystemCrash;
 
 public class FaultyWebService {

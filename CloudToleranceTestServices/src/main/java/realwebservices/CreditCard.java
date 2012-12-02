@@ -1,7 +1,6 @@
 package realwebservices;
 
 import javax.jws.WebMethod;
-import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
