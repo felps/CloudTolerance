@@ -61,6 +61,7 @@ public class WsInvokation {
 		WsInvokationThread invokation = new WsInvokationThread(client,
 				resultSetter, methodName, methodParameters);
 		invokation.executionThread = new Thread(invokation);
+		invokation.executionThread.setContextClassLoader(this.getClass().getClassLoader());
 		invokation.executionThread.start();
 	}
 }

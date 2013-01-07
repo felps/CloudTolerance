@@ -28,7 +28,7 @@ public class Active implements FaultToleranceTechnique {
 	public void removeInvoker(WsInvoker unavailableInvoker) {
 	}
 
-	public Object invokeMethod(String wsMethodName, Object[] wsParameterValues) {
+	public Object invokeMethod(String wsMethodName, Object... wsParameterValues) {
 		return null;
 	}
 }

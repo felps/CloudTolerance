@@ -12,6 +12,6 @@ public interface FaultToleranceTechnique {
 	
 	public void removeInvoker(WsInvoker unavailableInvoker);
 	
-	public Object invokeMethod(String wsMethodName, Object[] wsParameterValues);
+	public Object invokeMethod(String wsMethodName, Object... wsParameterValues);
 	
 }

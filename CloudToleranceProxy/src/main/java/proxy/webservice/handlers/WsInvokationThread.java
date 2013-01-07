@@ -6,21 +6,22 @@ import org.apache.cxf.endpoint.Client;
 
 import proxy.utils.Result;
 
-public class WsInvokationThread implements Runnable{
+public class WsInvokationThread implements Runnable {
 
 	public String methodName;
 	public Object[] methodParameters;
 	public Thread executionThread;
 	private Client client;
 	private Result resultSetter;
-	
-	public WsInvokationThread(Client invokerClient, Result resultSetter, String methodName, Object... methodParameter) {
+
+	public WsInvokationThread(Client invokerClient, Result resultSetter,
+			String methodName, Object... methodParameter) {
 		this.client = invokerClient;
 		this.methodName = methodName;
 		this.methodParameters = methodParameter;
 		this.resultSetter = resultSetter;
 	}
-	
+
 	public Object[] invoke() {
 		Object[] response = null;
 
@@ -42,7 +43,7 @@ public class WsInvokationThread implements Runnable{
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 		return response;
 	}
 
@@ -50,7 +51,10 @@ public class WsInvokationThread implements Runnable{
 		Object[] response;
 		response = invoke();
 		synchronized (resultSetter) {
-			resultSetter.setResultValue(response[0]);
+			if (response != null)
+				resultSetter.setResultValue(response[0]);
+			else
+				resultSetter.setResultValue(null);
 		}
 	}
 }

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeoutException;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -12,8 +13,8 @@ import proxy.utils.StartTestWebServices;
 
 public class WsInvokerTest {
 
-	private String creditWsdlURL = "http://127.0.0.1:2302/creditcard?wsdl";
-	private String weatherWsdlURL = "http://127.0.0.1:2402/weather?wsdl";
+	private String creditWsdlURL = StartTestWebServices.CREDITCARD_WSDL;
+	private String weatherWsdlURL = StartTestWebServices.WEATHER_WSDL;
 	private WsInvoker weatherInvoker;
 	private WsInvoker creditCardInvoker;
 
@@ -25,12 +26,17 @@ public class WsInvokerTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
-		StartTestWebServices.raiseCreditAndWeatherServices();
+		StartTestWebServices.raiseCreditAndWeatherServices(0.0, 0.0);
 		Thread.sleep(5000);
 
 		System.out.println("Done creating Web Service proxies");
 	}
 
+	@AfterClass
+	public static void tearDown(){
+//		StartTestWebServices.killAllServices();
+	}
+	
 	@Test(timeout = 5000)
 	public void testInvokeWebMethodWithoutParameters() throws TimeoutException {
 		creditCardInvoker = new WsInvoker(creditWsdlURL);
@@ -59,7 +65,7 @@ public class WsInvokerTest {
 
 	@Test(timeout = 5000)
 	public void testInvokeWebMethodWithParametersSetOnCall() throws TimeoutException {
-		weatherInvoker = new WsInvoker(weatherWsdlURL);
+		WsInvoker weatherInvoker = new WsInvoker(StartTestWebServices.WEATHER_WSDL);
 
 		WsInvokation invokation = weatherInvoker.invokeWebMethod(
 				"getTemperatureForecast", "BSB");

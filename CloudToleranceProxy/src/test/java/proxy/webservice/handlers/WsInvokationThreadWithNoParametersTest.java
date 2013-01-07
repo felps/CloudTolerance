@@ -6,6 +6,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class WsInvokationThreadWithNoParametersTest {
 
 	Object serviceHandler;
 	Client client;
-	private String wsdlUrl = "http://127.0.0.1:2302/creditcard?wsdl";
+	private String wsdlUrl = StartTestWebServices.CREDITCARD_WSDL;
 	private WsInvokationThread invokation;
 	private Result resultSetter;
 	
@@ -29,9 +30,14 @@ public class WsInvokationThreadWithNoParametersTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 		
-		StartTestWebServices.raiseCreditService();
+		StartTestWebServices.raiseCreditService(0,0);
 		Thread.sleep(5000);
 		
+	}
+	
+	@AfterClass
+	public static void tearDown(){
+		StartTestWebServices.killAllServices();
 	}
 	
 	@Before

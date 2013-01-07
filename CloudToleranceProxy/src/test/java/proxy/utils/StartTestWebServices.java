@@ -2,19 +2,29 @@ package proxy.utils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 import com.sun.xml.internal.ws.api.EndpointAddress;
 
 public class StartTestWebServices {
+	public static final String WEATHER_WSDL = "http://127.0.0.1:2402/weather?wsdl";
+	public static final String CREDITCARD_WSDL = "http://127.0.0.1:2302/creditcard?wsdl";
 
+	private static ArrayList<Thread> webServices = new ArrayList<Thread>();
+	
 	class RunCreditService implements Runnable {
 
-		public void run() {
-			String[] args;
-			args = new String[2];
-			args[0] = "0.0"; // fail-stop probability
-			args[1] = "0.0"; // faulty response probability
+		String[] args;
 
+		public RunCreditService(double failStopProbability,
+				double faultyResponseProbability) {
+			args = new String[2];
+			args[0] = "" + failStopProbability; // fail-stop probability
+			args[1] = "" + faultyResponseProbability; // faulty response
+														// probability
+		}
+
+		public void run() {
 			realwebservices.CreditCard.main(args);
 		}
 
@@ -22,41 +32,57 @@ public class StartTestWebServices {
 
 	class RunWeatherService implements Runnable {
 
-		public void run() {
-			String[] args;
+		String[] args;
+
+		public RunWeatherService(double failStopProbability,
+				double faultyResponseProbability) {
 			args = new String[2];
-			args[0] = "0.0"; // fail-stop probability
-			args[1] = "0.0"; // faulty response probability
+			args[0] = "" + failStopProbability; // fail-stop probability
+			args[1] = "" + faultyResponseProbability; // faulty response
+														// probability
+		}
+
+		public void run() {
 
 			realwebservices.WeatherForecast.main(args);
 		}
 
 	}
 
-	public static void raiseCreditAndWeatherServices()
+	public static void raiseCreditAndWeatherServices(
+			double failStopProbability, double faultyResponseProbability)
 			throws InterruptedException {
-		raiseCreditService();
-		raiseWeatherService();
+		raiseCreditService(failStopProbability, faultyResponseProbability);
+		raiseWeatherService(failStopProbability, faultyResponseProbability);
 	}
 
-	public static void raiseCreditService() throws InterruptedException {
-		if (checkForExistingService("http://127.0.0.1:2302/creditcard?wsdl"))
+	public static void raiseCreditService(double failStopProbability,
+			double faultyResponseProbability) throws InterruptedException {
+		if (checkForExistingService(CREDITCARD_WSDL))
 			return;
 
 		StartTestWebServices helper = new StartTestWebServices();
 
-		RunCreditService creditServiceInitiliazer = helper.new RunCreditService();
-		new Thread(creditServiceInitiliazer).start();
-	}
-
-	public static void raiseWeatherService() throws InterruptedException {
-		if (checkForExistingService("http://127.0.0.1:2402/weather?wsdl"))
-			return;
+		RunCreditService creditServiceInitiliazer = helper.new RunCreditService(
+				failStopProbability, faultyResponseProbability);
+		Thread thread = new Thread(creditServiceInitiliazer);
+		webServices.add(thread);
+		thread.start();
 		
+	}
+
+	public static void raiseWeatherService(double failStopProbability,
+			double faultyResponseProbability) throws InterruptedException {
+		if (checkForExistingService(WEATHER_WSDL))
+			return;
+
 		StartTestWebServices helper = new StartTestWebServices();
 
-		RunWeatherService weatherServiceInitiliazer = helper.new RunWeatherService();
-		new Thread(weatherServiceInitiliazer).start();
+		RunWeatherService weatherServiceInitiliazer = helper.new RunWeatherService(
+				failStopProbability, faultyResponseProbability);
+		Thread thread = new Thread(weatherServiceInitiliazer);
+		webServices.add(thread);
+		thread.start();
 
 	}
 
@@ -72,5 +98,13 @@ public class StartTestWebServices {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public static void killAllServices(){
+//		for (Thread thread : webServices) {
+//			thread.stop();
+//			thread.destroy();
+//			webServices.remove(thread);
+//		}
 	}
 }

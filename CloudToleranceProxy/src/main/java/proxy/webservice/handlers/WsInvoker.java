@@ -10,25 +10,28 @@ public class WsInvoker {
 
 	private String wsdlURL;
 	private Client webServiceClient;
-	private List<WsInvokation> pendingRequests;
+//	private List<WsInvokation> pendingRequests;
+	private long timeout;
+
+	public long getTimeout() {
+		return timeout;
+	}
+
+	public void setTimeout(long newTimeout) {
+		this.timeout = newTimeout;
+	}
 
 	public WsInvoker(String wsdlURL) {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		webServiceClient = dcf.createClient(wsdlURL);
 		this.wsdlURL = wsdlURL;
-		pendingRequests = new ArrayList<WsInvokation>();
+//		pendingRequests = new ArrayList<WsInvokation>();
 	}
 
 	public WsInvokation invokeWebMethod(String methodName, Object... args) {
-		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient, methodName, args);
-		pendingRequests.add(invokation);
-		invokation.perform();
-		return invokation;
-	}
-	
-	public WsInvokation invokeWebMethod(String methodName, long timeout, Object... args) {
-		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient, timeout, methodName, args);
-		pendingRequests.add(invokation);
+		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient,
+				timeout, methodName, args);
+//		pendingRequests.add(invokation);
 		invokation.perform();
 		return invokation;
 	}

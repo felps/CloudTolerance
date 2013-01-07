@@ -6,6 +6,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,22 +18,9 @@ public class WsInvokationThreadWithParametersTest {
 
 	Object serviceHandler;
 	Client client;
-	private String wsdlUrl = "http://127.0.0.1:2402/weather?wsdl";
+	private String wsdlUrl = StartTestWebServices.WEATHER_WSDL;
 	private WsInvokationThread invokation;
 	private Result resultSetter;
-
-	class RunWeatherService implements Runnable {
-
-		public void run() {
-			String[] args;
-			args = new String[2];
-			args[0] = "0.0"; // fail-stop probability
-			args[1] = "0.0"; // faulty response probability
-
-			realwebservices.WeatherForecast.main(args);
-		}
-
-	}
 
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
@@ -42,12 +30,17 @@ public class WsInvokationThreadWithParametersTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
-		StartTestWebServices.raiseWeatherService();
+		StartTestWebServices.raiseWeatherService(0,0);
 		Thread.sleep(4000);
 		
 		System.out.println("Done raising Web Service");
 	}
 
+	@AfterClass
+	public static void tearDown(){
+		StartTestWebServices.killAllServices();
+	}
+	
 	@Before
 	public void setUp() throws InstantiationException, IllegalAccessException,
 			ClassNotFoundException {

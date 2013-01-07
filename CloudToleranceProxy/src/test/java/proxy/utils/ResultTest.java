@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeoutException;
 
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -31,6 +32,11 @@ public class ResultTest {
 		System.out.println("Beginng ResultSetter Test");
 		System.out.println("----------------------");
 		System.out.println("----------------------");
+	}
+	
+	@AfterClass
+	public static void tearDown(){
+		StartTestWebServices.killAllServices();
 	}
 	
 	@Before
