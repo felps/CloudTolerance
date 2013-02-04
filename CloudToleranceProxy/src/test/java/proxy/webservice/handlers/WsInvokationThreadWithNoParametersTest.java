@@ -21,7 +21,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	private String wsdlUrl = StartTestWebServices.CREDITCARD_WSDL;
 	private WsInvokationThread invokation;
 	private Result resultSetter;
-	
+
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
 		System.out.println("----------------------");
@@ -29,31 +29,32 @@ public class WsInvokationThreadWithNoParametersTest {
 		System.out.println("Beginng WsInvokationThreadNoParametersTest");
 		System.out.println("----------------------");
 		System.out.println("----------------------");
-		
-		StartTestWebServices.raiseCreditService(0,0);
+
+		StartTestWebServices.raiseCreditService(0, 0);
 		Thread.sleep(5000);
-		
+
 	}
-	
+
 	@AfterClass
-	public static void tearDown(){
+	public static void tearDown() {
 		StartTestWebServices.killAllServices();
 	}
-	
+
 	@Before
-	public void setUp() throws InstantiationException, IllegalAccessException, ClassNotFoundException, InterruptedException {
-		
+	public void setUp() throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException, InterruptedException {
+
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
 
 		resultSetter = new Result();
 	}
-	
+
 	@Test
 	public void shouldInvokeManuallyIssuePaymentMethod() throws Exception {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
-		Client client = dcf.createClient(wsdlUrl, this
-				.getClass().getClassLoader());
+		Client client = dcf.createClient(wsdlUrl, this.getClass()
+				.getClassLoader());
 
 		for (int i = 0; i < 10; i++) {
 			Object[] returnedValue = client.invoke("issuePayment");
@@ -63,16 +64,37 @@ public class WsInvokationThreadWithNoParametersTest {
 				System.out.println("Teste");
 		}
 	}
-	
+
 	@Test
-	public void testInvoke() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		invokation = new WsInvokationThread(client, resultSetter, "issuePayment");
+	public void shouldRepeatedlyManuallyInvokeIssuePaymentMethod()
+			throws Exception {
+		for (int i = 0; i < 10; i++) {
+
+			JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory
+					.newInstance();
+			Client client = dcf.createClient(wsdlUrl, this.getClass()
+					.getClassLoader());
+
+			Object[] returnedValue = client.invoke("issuePayment");
+
+			System.out.println(returnedValue[0]);
+			assertTrue((Boolean) returnedValue[0]);
+		}
+	}
+
+	@Test
+	public void testInvoke() throws InstantiationException,
+			IllegalAccessException, ClassNotFoundException {
+		invokation = new WsInvokationThread(client, resultSetter,
+				"issuePayment");
 		assertTrue((Boolean) invokation.invoke()[0]);
 	}
 
-	@Test(timeout=5000)
-	public void testRun() throws InstantiationException, IllegalAccessException, ClassNotFoundException, TimeoutException {
-		invokation = new WsInvokationThread(client, resultSetter, "issuePayment");
+	@Test(timeout = 5000)
+	public void testRun() throws InstantiationException,
+			IllegalAccessException, ClassNotFoundException, TimeoutException {
+		invokation = new WsInvokationThread(client, resultSetter,
+				"issuePayment");
 		new Thread(invokation).start();
 		assertTrue((Boolean) resultSetter.getResultValue());
 	}

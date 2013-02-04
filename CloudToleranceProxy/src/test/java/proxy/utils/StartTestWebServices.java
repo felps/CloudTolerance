@@ -11,17 +11,31 @@ public class StartTestWebServices {
 	public static final String CREDITCARD_WSDL = "http://127.0.0.1:2302/creditcard?wsdl";
 
 	private static ArrayList<Thread> webServices = new ArrayList<Thread>();
-	
+
 	class RunCreditService implements Runnable {
 
 		String[] args;
 
 		public RunCreditService(double failStopProbability,
-				double faultyResponseProbability) {
-			args = new String[2];
+				double faultyResponseProbability,
+				double unresponsiveServiceProbability) {
+			setArgs(failStopProbability, faultyResponseProbability,
+					unresponsiveServiceProbability);
+		}
+
+		private void setArgs(double failStopProbability,
+				double faultyResponseProbability,
+				double unresponsiveServiceProbability) {
+			args = new String[3];
 			args[0] = "" + failStopProbability; // fail-stop probability
 			args[1] = "" + faultyResponseProbability; // faulty response
 														// probability
+			args[2] = "" + unresponsiveServiceProbability;
+		}
+
+		public RunCreditService(double failStopProbability,
+				double faultyResponseProbability) {
+			setArgs(failStopProbability, faultyResponseProbability, 0.0);
 		}
 
 		public void run() {
@@ -56,8 +70,19 @@ public class StartTestWebServices {
 		raiseWeatherService(failStopProbability, faultyResponseProbability);
 	}
 
-	public static void raiseCreditService(double failStopProbability,
-			double faultyResponseProbability) throws InterruptedException {
+	public static void raiseCreditAndWeatherServices(
+			double failStopProbability, double faultyResponseProbability,
+			double unresponsiveServiceProbability) throws InterruptedException {
+		raiseCreditService(failStopProbability, faultyResponseProbability,
+				unresponsiveServiceProbability);
+		raiseWeatherService(failStopProbability, faultyResponseProbability,
+				unresponsiveServiceProbability);
+	}
+
+	private static void raiseCreditService(double failStopProbability,
+			double faultyResponseProbability,
+			double unresponsiveServiceProbability) {
+
 		if (checkForExistingService(CREDITCARD_WSDL))
 			return;
 
@@ -68,7 +93,31 @@ public class StartTestWebServices {
 		Thread thread = new Thread(creditServiceInitiliazer);
 		webServices.add(thread);
 		thread.start();
-		
+
+	}
+
+	private static void raiseWeatherService(double failStopProbability,
+			double faultyResponseProbability,
+			double unresponsiveServiceProbability) {
+		// TODO Auto-generated method stub
+
+		if (checkForExistingService(CREDITCARD_WSDL))
+			return;
+
+		StartTestWebServices helper = new StartTestWebServices();
+
+		RunCreditService creditServiceInitiliazer = helper.new RunCreditService(
+				failStopProbability, faultyResponseProbability,
+				unresponsiveServiceProbability);
+		Thread thread = new Thread(creditServiceInitiliazer);
+		webServices.add(thread);
+		thread.start();
+
+	}
+
+	public static void raiseCreditService(double failStopProbability,
+			double faultyResponseProbability) throws InterruptedException {
+		raiseCreditService(failStopProbability, faultyResponseProbability, 0);
 	}
 
 	public static void raiseWeatherService(double failStopProbability,
@@ -99,12 +148,12 @@ public class StartTestWebServices {
 		}
 		return false;
 	}
-	
-	public static void killAllServices(){
-//		for (Thread thread : webServices) {
-//			thread.stop();
-//			thread.destroy();
-//			webServices.remove(thread);
-//		}
+
+	public static void killAllServices() {
+		// for (Thread thread : webServices) {
+		// thread.stop();
+		// thread.destroy();
+		// webServices.remove(thread);
+		// }
 	}
 }

@@ -26,6 +26,12 @@ public class WsInvoker {
 		webServiceClient = dcf.createClient(wsdlURL);
 		this.wsdlURL = wsdlURL;
 //		pendingRequests = new ArrayList<WsInvokation>();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public WsInvokation invokeWebMethod(String methodName, Object... args) {

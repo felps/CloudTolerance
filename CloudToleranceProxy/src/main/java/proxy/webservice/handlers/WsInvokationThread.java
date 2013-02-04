@@ -40,6 +40,7 @@ public class WsInvokationThread implements Runnable {
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			System.out.println("ERROR: Class not found. Are you sure it is there?");
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();

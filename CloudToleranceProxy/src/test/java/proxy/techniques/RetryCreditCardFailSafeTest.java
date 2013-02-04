@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import static org.mockito.Mockito.*;
+
 import java.util.concurrent.TimeoutException;
 
 import org.junit.AfterClass;
@@ -14,7 +16,7 @@ import proxy.utils.StartTestWebServices;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
-public class RetryFailSafeTest {
+public class RetryCreditCardFailSafeTest {
 
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
@@ -46,8 +48,7 @@ public class RetryFailSafeTest {
 	public void shouldBeAbleToAddServices() {
 		Retry retry = new Retry();
 		assertEquals(0, retry.getInvokerList().size());
-		retry.addAvailableInvoker(new WsInvoker(
-				StartTestWebServices.CREDITCARD_WSDL));
+		retry.addAvailableInvoker(mock(WsInvoker.class));
 		assertEquals(1, retry.getInvokerList().size());
 	}
 
@@ -56,11 +57,11 @@ public class RetryFailSafeTest {
 		Retry retry = new Retry();
 		assertTrue(retry.getInvokerList().isEmpty());
 
-		WsInvoker availableInvoker = new WsInvoker(
-				StartTestWebServices.CREDITCARD_WSDL);
+		WsInvoker availableInvoker = mock(WsInvoker.class);
 		retry.addAvailableInvoker(availableInvoker);
 
 		assertEquals(availableInvoker, retry.getCurrentWS());
+		
 	}
 
 	@Test(timeout = 10000)
@@ -79,42 +80,6 @@ public class RetryFailSafeTest {
 			fail("Got null as an answer");
 		assertTrue((Boolean) result);
 
-	}
-
-//	@Test
-	public void shouldInvokeMethodWithParameters() throws TimeoutException,
-			InterruptedException {
-
-		
-		WsInvoker weatherInvoker = new WsInvoker(StartTestWebServices.WEATHER_WSDL);
-
-		WsInvokation invokation = weatherInvoker.invokeWebMethod(
-				"getTemperatureForecast", "BSB");
-
-		int integerValue = (Integer) invokation.getResultSetter()
-				.getResultValue();
-
-		assertEquals(25, integerValue);
-		
-//		Retry retry = new Retry();
-//		retry.addAvailableInvoker(weatherInvoker);
-//		retry.setRetryAmount(1);
-//
-//
-//		Object result = retry.invokeMethod("getTemperatureForecast", "BSB");
-//
-//		if (result == null)
-//			fail("Got null as an answer for BSB");
-//
-//		int numericalValue = (Integer) result;
-//		assertEquals(25, numericalValue);
-//
-//		result = retry.invokeMethod("getTemperatureForecast", "POA");
-//		if (result == null)
-//			fail("Got null as an answer for POA");
-//
-//		numericalValue = (Integer) result;
-//		assertEquals(30, numericalValue);
 	}
 
 }

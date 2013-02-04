@@ -8,9 +8,16 @@ public class FaultyWebService {
 
 	private double failstopProbability;
 	private double faultyResponseProbability;
+	private double unresponsiveServiceProb;
 	private ExitManager exitManager;
 
 	public FaultyWebService(double failStopProb, double faultyResponseProb) {
+		this.failstopProbability = failStopProb;
+		this.faultyResponseProbability = faultyResponseProb;
+		setExitManager(new ExitManagerImpl());
+	}
+
+	public FaultyWebService(double failStopProb, double faultyResponseProb, double unresponsiveProb) {
 		this.failstopProbability = failStopProb;
 		this.faultyResponseProbability = faultyResponseProb;
 		setExitManager(new ExitManagerImpl());
@@ -29,6 +36,23 @@ public class FaultyWebService {
 		}
 
 		return false;
+	}
+
+	protected void emulateUnresponsiveServiceFailures() {
+
+		if (evaluateIfWillNotRespond())
+			try {
+				Thread.sleep(100000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+	}
+
+	private boolean evaluateIfWillNotRespond() {
+		if (Math.random() < unresponsiveServiceProb) 
+			return true;
+		else
+			return false;
 	}
 
 	public double getFailstopProbability() {
