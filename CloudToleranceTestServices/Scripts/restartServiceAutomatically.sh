@@ -22,8 +22,6 @@ number_of_args=$#
 
 wsdl=$endpoint?wsdl
 
-#wsdl=http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
 while [ true ]
 do
 	if wget $wsdl -O serviceWSDL.wsdl
