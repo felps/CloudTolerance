@@ -26,7 +26,6 @@ public class Worker implements Runnable{
 			}
 		}
 
-		@Override
 		public void run() {
 			invokeService(myBoss, result);
 		}

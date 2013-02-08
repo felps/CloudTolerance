@@ -1,9 +1,11 @@
 package callback;
 
+import org.junit.Test;
+
 public class Callback {
 
-	// Main driver.
-    public static void main(String[] args) throws InterruptedException
+	@Test
+    public void shouldRunCorrectly() throws InterruptedException
     {
         Boss b;
         
