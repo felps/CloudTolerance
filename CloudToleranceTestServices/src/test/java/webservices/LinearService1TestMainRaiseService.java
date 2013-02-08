@@ -1,4 +1,4 @@
-package realwebservices;
+package webservices;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
