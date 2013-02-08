@@ -9,7 +9,7 @@
 # $5: Jar file with the service executable
 
 if [$# -ne 5] ; then
-	echo "USAGE: restartServiceAutomatically.sh <endpoint> <fail stop> <faulty response> <donwtime> <service executable jar>
+	echo "USAGE: restartServiceAutomatically.sh <endpoint> <fail stop> <faulty response> <donwtime> <service executable jar>"
 	exit 1
 fi
 
