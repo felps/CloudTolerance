@@ -1,4 +1,4 @@
-package realwebservices;
+package webservices;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
