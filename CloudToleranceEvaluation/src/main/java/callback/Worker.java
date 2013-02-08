@@ -1,17 +1,26 @@
 package callback;
 
+import proxy.webservice.handlers.WsInvoker;
+
 public class Worker implements Runnable{
 
 		public Callable myBoss;
-	    // Worker gets a handle to the boss object via the Callable interface.
+		public String wsdlURL;
+		public Result result;
+		private String methodName;
+		private Object[] args;
+
+		// Worker gets a handle to the boss object via the Callable interface.
 	    // There's no way this worker class can call any other method other than
 	    // the one in Callable.
-		public Result result;
 	    
 		public void invokeService(Callable myBoss, Result result)
 	    {
 	    	System.out.println("Excuse me sir...");
-	    	sleep();
+	    	WsInvoker invoker;
+	    	invoker = new WsInvoker(wsdlURL);
+	    	Object returnValue = invoker.invokeWebMethod(methodName, args);
+	    	result.setResultValue(returnValue);
 	    	myBoss.callBackMethod(result);
 	        // ERROR!
 	        //myBoss.directMethod();
