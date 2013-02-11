@@ -1,10 +1,12 @@
-package realwebservices;
+package webservices;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import webservices.LinearService1;
 
 import com.sun.xml.internal.ws.api.EndpointAddress;
 

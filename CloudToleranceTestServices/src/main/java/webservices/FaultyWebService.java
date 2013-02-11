@@ -1,4 +1,4 @@
-package realwebservices;
+package webservices;
 
 import utils.exitmanager.ExitManager;
 import utils.exitmanager.ExitManagerImpl;

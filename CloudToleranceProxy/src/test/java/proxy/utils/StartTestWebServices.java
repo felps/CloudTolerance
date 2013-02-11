@@ -39,7 +39,7 @@ public class StartTestWebServices {
 		}
 
 		public void run() {
-			realwebservices.CreditCard.main(args);
+			webservices.CreditCard.main(args);
 		}
 
 	}
@@ -58,7 +58,7 @@ public class StartTestWebServices {
 
 		public void run() {
 
-			realwebservices.WeatherForecast.main(args);
+			webservices.WeatherForecast.main(args);
 		}
 
 	}
