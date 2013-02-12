@@ -1,5 +1,6 @@
 package proxy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
@@ -22,6 +23,10 @@ public class ChoreographyEndpoint {
 	public String nextProxyUrl;
 	public WsInvoker nextProxy;
 
+	public ChoreographyEndpoint() {
+		choreographyResults = new ArrayList<Result>();
+	}
+
 	public static void main(String[] args) {
 		if (args.length < 4) {
 			System.out
@@ -31,15 +36,22 @@ public class ChoreographyEndpoint {
 
 		ChoreographyEndpoint chor = new ChoreographyEndpoint();
 
+		System.out.println("Next proxy: " + args[1]);
 		chor.nextProxyUrl = args[1];
+
+		System.out.println("Service Method: " + args[2]);
 		chor.wsMethodName = args[2];
 
 		chor.myProxy = new Proxy();
-		for (int i = 3; i < args.length; i++)
+		for (int i = 3; i < args.length; i++) {
+			System.out.println("Adding WS at: " + args[i]);
 			chor.myProxy.addWebService(args[i]);
-
+		}
+		
+		System.out.println("Publishing Proxy at " + args[0]);
 		Endpoint.publish(args[0], chor);
-
+		
+		System.out.println("Done! Ready to warm up!");
 	}
 
 	@WebMethod
@@ -52,7 +64,9 @@ public class ChoreographyEndpoint {
 
 		synchronized (nextAvailableKey) {
 			currentKey = nextAvailableKey++;
+			choreographyResults.add(new Result());
 		}
+		
 		System.out.println("Informing next link...");
 		informNextLink(parameter, currentKey);
 

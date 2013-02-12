@@ -39,6 +39,7 @@ public class ProxyEndpoint {
 		System.out.println("Publishing Proxy at " + args[0]);
 		Endpoint.publish(args[0], proxy);
 
+		System.out.println("Done! Ready to warm up!");
 	}
 	
 	@WebMethod
