@@ -14,8 +14,8 @@ import proxy.webservice.handlers.WsInvoker;
 @WebService
 public class ChoreographyEndpoint {
 
-	private List<Result> choreographyResults;
-	private static Integer nextAvailableKey = 0;
+	protected List<Result> choreographyResults;
+	protected static Integer nextAvailableKey = 0;
 
 	public Proxy myProxy;
 	public String wsMethodName;
@@ -23,14 +23,16 @@ public class ChoreographyEndpoint {
 	public WsInvoker nextProxy;
 
 	public static void main(String[] args) {
-		if (args.length < 4)
+		if (args.length < 4) {
 			System.out
 					.println("Usage: java -jar ChoreographyEndpoint <choreography publishable endpoint> <next proxy endpoint> <service method name> <services wsdl url>");
+			System.exit(0);
+		}
 
 		ChoreographyEndpoint chor = new ChoreographyEndpoint();
 
-		chor.nextProxyUrl = args[0];
-		chor.wsMethodName = args[1];
+		chor.nextProxyUrl = args[1];
+		chor.wsMethodName = args[2];
 
 		chor.myProxy = new Proxy();
 		for (int i = 3; i < args.length; i++)
@@ -41,8 +43,8 @@ public class ChoreographyEndpoint {
 	}
 
 	@WebMethod
-	@Oneway
 	public int startChoreograph(int parameter) {
+		System.out.println("Choreography Started...");
 		if (nextProxy == null)
 			nextProxy = new WsInvoker(nextProxyUrl);
 
@@ -51,6 +53,7 @@ public class ChoreographyEndpoint {
 		synchronized (nextAvailableKey) {
 			currentKey = nextAvailableKey++;
 		}
+		System.out.println("Informing next link...");
 		informNextLink(parameter, currentKey);
 
 		return getResponse(currentKey);
@@ -60,6 +63,7 @@ public class ChoreographyEndpoint {
 	@Oneway
 	public void playRole(int parameter, int key) {
 
+		System.out.println("Performing my role...");
 		Object returnValue = null;
 
 		Object wsParameterValues = parameter;

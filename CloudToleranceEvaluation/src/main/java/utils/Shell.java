@@ -8,7 +8,7 @@ import java.lang.Process;
 
 public class Shell {
 
-	public void runCommandNow(String command) {
+	public static void runCommandNow(String command) {
 		int pid = -1;
 
 		try {
@@ -19,7 +19,7 @@ public class Shell {
 		}
 	}
 
-	public String runCommandAndGetOutput(String command) {
+	public static String runCommandAndGetOutput(String command) {
 
 		String output = "";
 		try {

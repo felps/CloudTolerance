@@ -1,5 +1,6 @@
 package proxy.techniques;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import proxy.webservice.handlers.WsInvokation;
@@ -11,8 +12,8 @@ public class Active implements FaultToleranceTechnique {
 	private List<WsInvokation> pendingInvokations;
 	
 	
-	public Active(List<WsInvoker> proxyInvokerList) {
-		webServicePool.addAll(proxyInvokerList);
+	public Active() {
+		webServicePool = new ArrayList<WsInvoker>();
 	}
 	
 	public boolean setServicePoolSize() {
