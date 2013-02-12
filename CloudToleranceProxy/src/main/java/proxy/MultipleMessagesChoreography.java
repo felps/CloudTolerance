@@ -23,15 +23,23 @@ public class MultipleMessagesChoreography extends ChoreographyEndpoint {
 
 		MultipleMessagesChoreography chor = new MultipleMessagesChoreography(Integer.parseInt(args[2]));
 
-		
+		System.out.println("Next proxy: " + args[1]);
 		chor.nextProxyUrl = args[1];
+		System.out.println("Messages to be exchanged: " + args[2]);
+		System.out.println("Service Method: " + args[3]);
 		chor.wsMethodName = args[3];
 
 		chor.myProxy = new Proxy();
-		for (int i = 4; i < args.length; i++)
+		for (int i = 4; i < args.length; i++){
+			System.out.println("Adding WS at: " + args[i]);
 			chor.myProxy.addWebService(args[i]);
+		}
 
+		System.out.println("Publishing Proxy at " + args[0]);
 		Endpoint.publish(args[0], chor);
+		
+		System.out.println("Done! Ready to warm up!");
+		
 
 	}
 
