@@ -126,7 +126,7 @@ public class MultipleMessagesEvaluation {
 				+ (System.currentTimeMillis() - startTime));
 	}
 
-//	@Test
+	@Test
 	public void multipleMessagesEvaluation() throws TimeoutException {
 		log.info("-------------------------------------");
 		log.info("-------------------------------------");

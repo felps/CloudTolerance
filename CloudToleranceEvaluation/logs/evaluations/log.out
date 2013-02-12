@@ -1,2 +1,1643 @@
-Initiating Multiple Messages Evaluation
-Initiating Multiple Messages Evaluation
+2013-02-12 18:08:51 INFO  MultipleMessagesEvaluation:30 - Initiating Multiple Messages Evaluation
+2013-02-12 18:09:09 INFO  MultipleMessagesEvaluation:42 - 4 Messages Returned value: 4
+Time it took: 18510
+2013-02-12 18:09:32 INFO  MultipleMessagesEvaluation:52 - 8 Messages Returned value: 8
+Time it took: 23274
+2013-02-12 18:10:04 INFO  MultipleMessagesEvaluation:62 - 16 Messages Returned value: 16
+Time it took: 31078
+2013-02-12 18:10:36 INFO  MultipleMessagesEvaluation:72 - 32 Messages Returned value: 32
+Time it took: 32083
+2013-02-12 18:11:09 INFO  MultipleMessagesEvaluation:82 - 64 Messages Returned value: 64
+Time it took: 33481
+2013-02-12 18:12:10 INFO  MultipleMessagesEvaluation:92 - 128 Messages Returned value: null
+Time it took: 60402
+2013-02-12 18:13:04 INFO  MultipleMessagesEvaluation:102 - 256 Messages Returned value: 256
+Time it took: 54806
+2013-02-12 18:13:16 INFO  MultipleMessagesEvaluation:112 - 512 Messages Returned value: null
+Time it took: 11831
+2013-02-12 18:20:44 INFO  MultipleMessagesEvaluation:30 - Initiating Multiple Messages Evaluation
+2013-02-12 18:21:02 INFO  MultipleMessagesEvaluation:42 - 4 Messages Returned value: 4
+Time it took: 17800
+2013-02-12 18:21:32 INFO  MultipleMessagesEvaluation:52 - 8 Messages Returned value: 8
+Time it took: 30622
+2013-02-12 18:22:05 INFO  MultipleMessagesEvaluation:62 - 16 Messages Returned value: 16
+Time it took: 32080
+2013-02-12 18:22:38 INFO  MultipleMessagesEvaluation:72 - 32 Messages Returned value: 32
+Time it took: 33277
+2013-02-12 18:23:13 INFO  MultipleMessagesEvaluation:82 - 64 Messages Returned value: 64
+Time it took: 35338
+2013-02-12 18:24:14 INFO  MultipleMessagesEvaluation:92 - 128 Messages Returned value: null
+Time it took: 60414
+2013-02-12 18:25:05 INFO  MultipleMessagesEvaluation:102 - 256 Messages Returned value: 256
+Time it took: 51591
+2013-02-12 18:26:13 INFO  MultipleMessagesEvaluation:112 - 512 Messages Returned value: null
+Time it took: 67765
+2013-02-12 18:58:11 INFO  MultipleMessagesEvaluation:30 - Initiating Multiple Messages Evaluation
+2013-02-12 18:58:19 INFO  MultipleMessagesEvaluation:42 - 4 Messages Returned value: 4
+Time it took: 8130
+2013-02-12 18:58:26 INFO  MultipleMessagesEvaluation:52 - 8 Messages Returned value: 8
+Time it took: 6863
+2013-02-12 18:58:29 INFO  MultipleMessagesEvaluation:62 - 16 Messages Returned value: 16
+Time it took: 2829
+2013-02-12 18:58:32 INFO  MultipleMessagesEvaluation:72 - 32 Messages Returned value: 32
+Time it took: 3560
+2013-02-12 18:59:00 INFO  MultipleMessagesEvaluation:82 - 64 Messages Returned value: 64
+Time it took: 28118
+2013-02-12 19:00:01 INFO  MultipleMessagesEvaluation:92 - 128 Messages Returned value: null
+Time it took: 60421
+2013-02-12 19:00:55 INFO  MultipleMessagesEvaluation:102 - 256 Messages Returned value: 256
+Time it took: 54355
+2013-02-12 19:01:56 INFO  MultipleMessagesEvaluation:112 - 512 Messages Returned value: null
+Time it took: 60373
+2013-02-12 19:04:46 INFO  MultipleMessagesEvaluation:30 - Initiating Multiple Messages Evaluation
+2013-02-12 19:04:49 INFO  MultipleMessagesEvaluation:42 - 4 Messages Returned value: 4
+Time it took: 3165
+2013-02-12 19:04:51 INFO  MultipleMessagesEvaluation:52 - 8 Messages Returned value: 8
+Time it took: 1144
+2013-02-12 19:04:52 INFO  MultipleMessagesEvaluation:62 - 16 Messages Returned value: 16
+Time it took: 1356
+2013-02-12 19:04:54 INFO  MultipleMessagesEvaluation:72 - 32 Messages Returned value: 32
+Time it took: 2161
+2013-02-12 19:04:58 INFO  MultipleMessagesEvaluation:82 - 64 Messages Returned value: 64
+Time it took: 3669
+2013-02-12 19:05:58 INFO  MultipleMessagesEvaluation:92 - 128 Messages Returned value: null
+Time it took: 60362
+2013-02-12 19:06:11 INFO  MultipleMessagesEvaluation:102 - 256 Messages Returned value: 256
+Time it took: 12917
+2013-02-12 19:07:12 INFO  MultipleMessagesEvaluation:112 - 512 Messages Returned value: null
+Time it took: 60402
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:131 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:132 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:133 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:134 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:135 - Starting Multiple Messages Evaluation
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:136 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:137 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:138 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:139 - -------------------------------------
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:141 - Starting evaluation with 4 messages
+2013-02-12 19:07:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 461
+2013-02-12 19:07:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 206
+2013-02-12 19:07:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 183
+2013-02-12 19:07:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 3097
+2013-02-12 19:07:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 205
+2013-02-12 19:07:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 185
+2013-02-12 19:07:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 188
+2013-02-12 19:07:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 213
+2013-02-12 19:07:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 2172
+2013-02-12 19:07:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 189
+2013-02-12 19:07:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 225
+2013-02-12 19:07:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 180
+2013-02-12 19:08:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 178
+2013-02-12 19:08:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 179
+2013-02-12 19:08:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 213
+2013-02-12 19:08:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 202
+2013-02-12 19:08:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 257
+2013-02-12 19:08:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 374
+2013-02-12 19:08:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 239
+2013-02-12 19:08:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 393
+2013-02-12 19:08:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 20WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 209
+2013-02-12 19:08:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 21WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 189
+2013-02-12 19:08:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 22WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 188
+2013-02-12 19:08:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 23WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 230
+2013-02-12 19:08:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 24WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 192
+2013-02-12 19:08:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 25WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 187
+2013-02-12 19:08:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 26WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 179
+2013-02-12 19:08:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 27WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 195
+2013-02-12 19:08:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 28WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 243
+2013-02-12 19:08:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 29WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 199
+2013-02-12 19:08:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 30WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 193
+2013-02-12 19:08:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 31WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 188
+2013-02-12 19:08:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 32WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 870
+2013-02-12 19:08:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 33WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 274
+2013-02-12 19:08:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 34WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 190
+2013-02-12 19:08:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 35WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 192
+2013-02-12 19:08:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 36WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 196
+2013-02-12 19:08:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 37WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 331
+2013-02-12 19:08:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 38WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 274
+2013-02-12 19:08:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 39WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 355
+2013-02-12 19:08:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 40WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 198
+2013-02-12 19:08:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 41WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 342
+2013-02-12 19:08:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 42WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 393
+2013-02-12 19:08:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 43WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 194
+2013-02-12 19:08:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 44WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 177
+2013-02-12 19:08:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 45WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 196
+2013-02-12 19:08:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 46WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 358
+2013-02-12 19:08:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 47WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 201
+2013-02-12 19:08:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 48WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 188
+2013-02-12 19:08:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 49WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 200
+2013-02-12 19:08:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 50WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 231
+2013-02-12 19:08:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 51WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 375
+2013-02-12 19:08:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 52WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 195
+2013-02-12 19:08:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 53WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 200
+2013-02-12 19:08:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 54WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 216
+2013-02-12 19:08:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 55WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 198
+2013-02-12 19:09:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 56WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: null
+Time it took: 60045
+2013-02-12 19:09:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 57WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 5785
+2013-02-12 19:09:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 58WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 59WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 187
+2013-02-12 19:09:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 60WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 182
+2013-02-12 19:09:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 61WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 197
+2013-02-12 19:09:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 62WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 185
+2013-02-12 19:09:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 63WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 192
+2013-02-12 19:09:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 64WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 203
+2013-02-12 19:09:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 65WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 192
+2013-02-12 19:09:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 66WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 195
+2013-02-12 19:09:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 67WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 191
+2013-02-12 19:09:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 68WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 189
+2013-02-12 19:09:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 69WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 209
+2013-02-12 19:09:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 70WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 189
+2013-02-12 19:09:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 71WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 72WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 185
+2013-02-12 19:09:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 73WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 192
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 74WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 185
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 75WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 199
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 76WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 196
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 77WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 78WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 183
+2013-02-12 19:09:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 79WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 80WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 81WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 185
+2013-02-12 19:09:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 82WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 184
+2013-02-12 19:09:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 83WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 190
+2013-02-12 19:09:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 84WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 199
+2013-02-12 19:09:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 85WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 197
+2013-02-12 19:09:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 86WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 201
+2013-02-12 19:09:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 87WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 199
+2013-02-12 19:09:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 88WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 191
+2013-02-12 19:09:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 89WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 180
+2013-02-12 19:09:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 90WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 194
+2013-02-12 19:09:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 91WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 196
+2013-02-12 19:09:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 92WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 203
+2013-02-12 19:09:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 93WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 203
+2013-02-12 19:09:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 94WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 187
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 95WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 182
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 96WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 183
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 97WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 202
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 98WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 199
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 99WSDL: http://127.0.0.1:2102/choreography?wsdl
+Returned value: 4
+Time it took: 196
+2013-02-12 19:09:24 INFO  MultipleMessagesEvaluation:144 - Starting evaluation with 8 messages
+2013-02-12 19:09:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 515
+2013-02-12 19:09:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 391
+2013-02-12 19:09:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 368
+2013-02-12 19:09:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 361
+2013-02-12 19:09:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 380
+2013-02-12 19:09:27 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 395
+2013-02-12 19:09:27 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 397
+2013-02-12 19:09:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 369
+2013-02-12 19:09:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 379
+2013-02-12 19:09:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 392
+2013-02-12 19:09:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 388
+2013-02-12 19:09:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 447
+2013-02-12 19:09:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 399
+2013-02-12 19:09:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 377
+2013-02-12 19:09:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 360
+2013-02-12 19:09:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 390
+2013-02-12 19:09:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 383
+2013-02-12 19:09:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 391
+2013-02-12 19:09:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 389
+2013-02-12 19:09:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 365
+2013-02-12 19:09:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 20WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 388
+2013-02-12 19:09:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 21WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 382
+2013-02-12 19:09:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 22WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 360
+2013-02-12 19:09:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 23WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 348
+2013-02-12 19:09:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 24WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 377
+2013-02-12 19:09:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 25WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 351
+2013-02-12 19:09:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 26WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 395
+2013-02-12 19:09:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 27WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 365
+2013-02-12 19:09:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 28WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 367
+2013-02-12 19:09:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 29WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 398
+2013-02-12 19:09:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 30WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 2273
+2013-02-12 19:09:39 INFO  MultipleMessagesEvaluation:171 - Evaluation number 31WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 942
+2013-02-12 19:09:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 32WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 383
+2013-02-12 19:09:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 33WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 378
+2013-02-12 19:09:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 34WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 403
+2013-02-12 19:09:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 35WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 4628
+2013-02-12 19:09:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 36WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 384
+2013-02-12 19:09:46 INFO  MultipleMessagesEvaluation:171 - Evaluation number 37WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 377
+2013-02-12 19:09:46 INFO  MultipleMessagesEvaluation:171 - Evaluation number 38WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 385
+2013-02-12 19:09:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 39WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 381
+2013-02-12 19:09:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 40WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 377
+2013-02-12 19:09:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 41WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 429
+2013-02-12 19:09:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 42WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 406
+2013-02-12 19:09:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 43WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 378
+2013-02-12 19:09:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 44WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 460
+2013-02-12 19:09:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 45WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 463
+2013-02-12 19:09:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 46WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 378
+2013-02-12 19:09:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 47WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 380
+2013-02-12 19:09:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 48WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 378
+2013-02-12 19:09:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 49WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 377
+2013-02-12 19:09:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 50WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 370
+2013-02-12 19:09:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 51WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 381
+2013-02-12 19:09:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 52WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 382
+2013-02-12 19:09:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 53WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 786
+2013-02-12 19:09:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 54WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 374
+2013-02-12 19:09:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 55WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 637
+2013-02-12 19:09:54 INFO  MultipleMessagesEvaluation:171 - Evaluation number 56WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 962
+2013-02-12 19:09:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 57WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 382
+2013-02-12 19:09:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 58WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 409
+2013-02-12 19:09:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 59WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 366
+2013-02-12 19:09:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 60WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 367
+2013-02-12 19:09:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 61WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 376
+2013-02-12 19:09:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 62WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 416
+2013-02-12 19:09:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 63WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 390
+2013-02-12 19:09:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 64WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 373
+2013-02-12 19:09:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 65WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 379
+2013-02-12 19:09:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 66WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 378
+2013-02-12 19:09:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 67WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 383
+2013-02-12 19:09:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 68WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 428
+2013-02-12 19:09:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 69WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 373
+2013-02-12 19:10:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 70WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 400
+2013-02-12 19:10:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 71WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 376
+2013-02-12 19:10:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 72WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 395
+2013-02-12 19:10:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 73WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 374
+2013-02-12 19:10:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 74WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 387
+2013-02-12 19:10:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 75WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 373
+2013-02-12 19:10:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 76WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 2204
+2013-02-12 19:10:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 77WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 354
+2013-02-12 19:10:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 78WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 372
+2013-02-12 19:10:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 79WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 385
+2013-02-12 19:10:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 80WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 485
+2013-02-12 19:10:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 81WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 470
+2013-02-12 19:10:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 82WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 392
+2013-02-12 19:10:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 83WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 371
+2013-02-12 19:10:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 84WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 368
+2013-02-12 19:10:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 85WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 369
+2013-02-12 19:10:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 86WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 369
+2013-02-12 19:10:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 87WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 2872
+2013-02-12 19:10:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 88WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 383
+2013-02-12 19:10:12 INFO  MultipleMessagesEvaluation:171 - Evaluation number 89WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 886
+2013-02-12 19:10:12 INFO  MultipleMessagesEvaluation:171 - Evaluation number 90WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 355
+2013-02-12 19:10:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 91WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 370
+2013-02-12 19:10:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 92WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 354
+2013-02-12 19:10:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 93WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 369
+2013-02-12 19:10:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 94WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 363
+2013-02-12 19:10:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 95WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 370
+2013-02-12 19:10:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 96WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 360
+2013-02-12 19:10:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 97WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 373
+2013-02-12 19:10:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 98WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 372
+2013-02-12 19:10:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 99WSDL: http://127.0.0.1:2103/choreography?wsdl
+Returned value: 8
+Time it took: 367
+2013-02-12 19:10:16 INFO  MultipleMessagesEvaluation:146 - Starting evaluation with 16 messages
+2013-02-12 19:10:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 908
+2013-02-12 19:10:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 874
+2013-02-12 19:10:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 833
+2013-02-12 19:10:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 855
+2013-02-12 19:10:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 797
+2013-02-12 19:10:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 791
+2013-02-12 19:10:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 775
+2013-02-12 19:10:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 792
+2013-02-12 19:10:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 791
+2013-02-12 19:10:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 798
+2013-02-12 19:10:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 805
+2013-02-12 19:10:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 840
+2013-02-12 19:10:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 4723
+2013-02-12 19:10:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 789
+2013-02-12 19:10:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1363
+2013-02-12 19:10:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 819
+2013-02-12 19:10:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 855
+2013-02-12 19:10:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 750
+2013-02-12 19:10:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 827
+2013-02-12 19:10:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 757
+2013-02-12 19:10:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 20WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 768
+2013-02-12 19:10:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 21WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 785
+2013-02-12 19:10:39 INFO  MultipleMessagesEvaluation:171 - Evaluation number 22WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 779
+2013-02-12 19:10:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 23WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1287
+2013-02-12 19:10:43 INFO  MultipleMessagesEvaluation:171 - Evaluation number 24WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 3050
+2013-02-12 19:10:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 25WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1270
+2013-02-12 19:10:46 INFO  MultipleMessagesEvaluation:171 - Evaluation number 26WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1495
+2013-02-12 19:10:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 27WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1351
+2013-02-12 19:10:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 28WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1162
+2013-02-12 19:10:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 29WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 3312
+2013-02-12 19:10:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 30WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1555
+2013-02-12 19:10:54 INFO  MultipleMessagesEvaluation:171 - Evaluation number 31WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 832
+2013-02-12 19:10:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 32WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 768
+2013-02-12 19:10:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 33WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 768
+2013-02-12 19:10:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 34WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 800
+2013-02-12 19:10:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 35WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 771
+2013-02-12 19:10:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 36WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 764
+2013-02-12 19:10:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 37WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 816
+2013-02-12 19:11:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 38WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 837
+2013-02-12 19:11:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 39WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 757
+2013-02-12 19:11:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 40WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 760
+2013-02-12 19:11:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 41WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1525
+2013-02-12 19:11:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 42WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 747
+2013-02-12 19:11:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 43WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 722
+2013-02-12 19:11:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 44WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 788
+2013-02-12 19:11:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 45WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 792
+2013-02-12 19:11:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 46WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 736
+2013-02-12 19:11:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 47WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 744
+2013-02-12 19:11:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 48WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 715
+2013-02-12 19:11:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 49WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 750
+2013-02-12 19:11:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 50WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 717
+2013-02-12 19:11:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 51WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1093
+2013-02-12 19:11:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 52WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 837
+2013-02-12 19:11:12 INFO  MultipleMessagesEvaluation:171 - Evaluation number 53WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 829
+2013-02-12 19:11:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 54WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 988
+2013-02-12 19:11:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 55WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1023
+2013-02-12 19:11:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 56WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 995
+2013-02-12 19:11:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 57WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1014
+2013-02-12 19:11:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 58WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 805
+2013-02-12 19:11:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 59WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 813
+2013-02-12 19:11:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 60WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 761
+2013-02-12 19:11:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 61WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 761
+2013-02-12 19:11:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 62WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 745
+2013-02-12 19:11:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 63WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 768
+2013-02-12 19:11:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 64WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 780
+2013-02-12 19:11:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 65WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 783
+2013-02-12 19:11:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 66WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 856
+2013-02-12 19:11:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 67WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 754
+2013-02-12 19:11:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 68WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 753
+2013-02-12 19:11:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 69WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 801
+2013-02-12 19:11:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 70WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 766
+2013-02-12 19:11:27 INFO  MultipleMessagesEvaluation:171 - Evaluation number 71WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 856
+2013-02-12 19:11:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 72WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 1074
+2013-02-12 19:11:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 73WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 854
+2013-02-12 19:11:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 74WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 753
+2013-02-12 19:11:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 75WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 795
+2013-02-12 19:11:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 76WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 748
+2013-02-12 19:11:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 77WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 767
+2013-02-12 19:11:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 78WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 752
+2013-02-12 19:11:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 79WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 755
+2013-02-12 19:11:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 80WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 749
+2013-02-12 19:11:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 81WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 752
+2013-02-12 19:11:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 82WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 769
+2013-02-12 19:11:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 83WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 761
+2013-02-12 19:11:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 84WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 771
+2013-02-12 19:11:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 85WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 774
+2013-02-12 19:11:39 INFO  MultipleMessagesEvaluation:171 - Evaluation number 86WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 742
+2013-02-12 19:11:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 87WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 769
+2013-02-12 19:11:41 INFO  MultipleMessagesEvaluation:171 - Evaluation number 88WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 748
+2013-02-12 19:11:41 INFO  MultipleMessagesEvaluation:171 - Evaluation number 89WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 751
+2013-02-12 19:11:42 INFO  MultipleMessagesEvaluation:171 - Evaluation number 90WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 770
+2013-02-12 19:11:43 INFO  MultipleMessagesEvaluation:171 - Evaluation number 91WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 741
+2013-02-12 19:11:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 92WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 753
+2013-02-12 19:11:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 93WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 741
+2013-02-12 19:11:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 94WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 787
+2013-02-12 19:11:46 INFO  MultipleMessagesEvaluation:171 - Evaluation number 95WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 743
+2013-02-12 19:11:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 96WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 750
+2013-02-12 19:11:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 97WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 777
+2013-02-12 19:11:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 98WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 756
+2013-02-12 19:11:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 99WSDL: http://127.0.0.1:2104/choreography?wsdl
+Returned value: 16
+Time it took: 750
+2013-02-12 19:11:49 INFO  MultipleMessagesEvaluation:148 - Starting evaluation with 32 messages
+2013-02-12 19:11:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1706
+2013-02-12 19:11:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1564
+2013-02-12 19:11:54 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1580
+2013-02-12 19:11:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1719
+2013-02-12 19:11:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1791
+2013-02-12 19:11:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1565
+2013-02-12 19:12:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1528
+2013-02-12 19:12:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1565
+2013-02-12 19:12:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1606
+2013-02-12 19:12:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1519
+2013-02-12 19:12:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1508
+2013-02-12 19:12:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1532
+2013-02-12 19:12:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1497
+2013-02-12 19:12:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1510
+2013-02-12 19:12:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1521
+2013-02-12 19:12:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1533
+2013-02-12 19:12:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1487
+2013-02-12 19:12:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1517
+2013-02-12 19:12:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1741
+2013-02-12 19:12:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1529
+2013-02-12 19:12:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 20WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1475
+2013-02-12 19:12:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 21WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1481
+2013-02-12 19:12:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 22WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1482
+2013-02-12 19:12:27 INFO  MultipleMessagesEvaluation:171 - Evaluation number 23WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1516
+2013-02-12 19:12:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 24WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1498
+2013-02-12 19:12:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 25WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1511
+2013-02-12 19:12:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 26WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1453
+2013-02-12 19:12:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 27WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1538
+2013-02-12 19:12:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 28WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1464
+2013-02-12 19:12:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 29WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1513
+2013-02-12 19:12:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 30WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1477
+2013-02-12 19:12:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 31WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1467
+2013-02-12 19:12:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 32WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1509
+2013-02-12 19:12:41 INFO  MultipleMessagesEvaluation:171 - Evaluation number 33WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1472
+2013-02-12 19:12:43 INFO  MultipleMessagesEvaluation:171 - Evaluation number 34WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1490
+2013-02-12 19:12:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 35WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1474
+2013-02-12 19:12:46 INFO  MultipleMessagesEvaluation:171 - Evaluation number 36WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1457
+2013-02-12 19:12:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 37WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1454
+2013-02-12 19:12:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 38WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1472
+2013-02-12 19:12:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 39WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1495
+2013-02-12 19:12:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 40WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1508
+2013-02-12 19:12:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 41WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1436
+2013-02-12 19:12:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 42WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1446
+2013-02-12 19:12:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 43WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1461
+2013-02-12 19:12:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 44WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1490
+2013-02-12 19:12:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 45WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1586
+2013-02-12 19:13:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 46WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1449
+2013-02-12 19:13:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 47WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1436
+2013-02-12 19:13:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 48WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1450
+2013-02-12 19:13:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 49WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1438
+2013-02-12 19:13:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 50WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1498
+2013-02-12 19:13:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 51WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1495
+2013-02-12 19:13:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 52WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1447
+2013-02-12 19:13:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 53WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1815
+2013-02-12 19:13:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 54WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1723
+2013-02-12 19:13:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 55WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1870
+2013-02-12 19:13:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 56WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1447
+2013-02-12 19:13:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 57WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1439
+2013-02-12 19:13:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 58WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1421
+2013-02-12 19:13:21 INFO  MultipleMessagesEvaluation:171 - Evaluation number 59WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1431
+2013-02-12 19:13:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 60WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1471
+2013-02-12 19:13:24 INFO  MultipleMessagesEvaluation:171 - Evaluation number 61WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1478
+2013-02-12 19:13:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 62WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1443
+2013-02-12 19:13:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 63WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1406
+2013-02-12 19:13:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 64WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1426
+2013-02-12 19:13:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 65WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1475
+2013-02-12 19:13:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 66WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1462
+2013-02-12 19:13:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 67WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1455
+2013-02-12 19:13:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 68WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1408
+2013-02-12 19:13:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 69WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1414
+2013-02-12 19:13:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 70WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1450
+2013-02-12 19:13:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 71WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1451
+2013-02-12 19:13:39 INFO  MultipleMessagesEvaluation:171 - Evaluation number 72WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1445
+2013-02-12 19:13:41 INFO  MultipleMessagesEvaluation:171 - Evaluation number 73WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1420
+2013-02-12 19:13:42 INFO  MultipleMessagesEvaluation:171 - Evaluation number 74WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1446
+2013-02-12 19:13:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 75WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1410
+2013-02-12 19:13:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 76WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1419
+2013-02-12 19:13:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 77WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1452
+2013-02-12 19:13:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 78WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1453
+2013-02-12 19:13:49 INFO  MultipleMessagesEvaluation:171 - Evaluation number 79WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1421
+2013-02-12 19:13:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 80WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1510
+2013-02-12 19:13:52 INFO  MultipleMessagesEvaluation:171 - Evaluation number 81WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1417
+2013-02-12 19:13:54 INFO  MultipleMessagesEvaluation:171 - Evaluation number 82WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1462
+2013-02-12 19:13:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 83WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1578
+2013-02-12 19:13:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 84WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1449
+2013-02-12 19:13:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 85WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1416
+2013-02-12 19:14:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 86WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1475
+2013-02-12 19:14:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 87WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1417
+2013-02-12 19:14:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 88WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1433
+2013-02-12 19:14:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 89WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1442
+2013-02-12 19:14:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 90WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1430
+2013-02-12 19:14:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 91WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1425
+2013-02-12 19:14:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 92WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1414
+2013-02-12 19:14:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 93WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1405
+2013-02-12 19:14:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 94WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1422
+2013-02-12 19:14:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 95WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1452
+2013-02-12 19:14:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 96WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1403
+2013-02-12 19:14:15 INFO  MultipleMessagesEvaluation:171 - Evaluation number 97WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1421
+2013-02-12 19:14:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 98WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1414
+2013-02-12 19:14:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 99WSDL: http://127.0.0.1:2105/choreography?wsdl
+Returned value: 32
+Time it took: 1482
+2013-02-12 19:14:18 INFO  MultipleMessagesEvaluation:150 - Starting evaluation with 64 messages
+2013-02-12 19:14:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3586
+2013-02-12 19:14:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3293
+2013-02-12 19:14:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3328
+2013-02-12 19:14:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3325
+2013-02-12 19:14:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3443
+2013-02-12 19:14:39 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3279
+2013-02-12 19:14:42 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3334
+2013-02-12 19:14:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4561
+2013-02-12 19:14:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3274
+2013-02-12 19:14:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3346
+2013-02-12 19:14:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3241
+2013-02-12 19:15:00 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3392
+2013-02-12 19:15:03 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3228
+2013-02-12 19:15:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3232
+2013-02-12 19:15:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3252
+2013-02-12 19:15:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4206
+2013-02-12 19:15:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3315
+2013-02-12 19:15:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 7731
+2013-02-12 19:15:31 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 6319
+2013-02-12 19:15:34 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3122
+2013-02-12 19:15:37 INFO  MultipleMessagesEvaluation:171 - Evaluation number 20WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3108
+2013-02-12 19:15:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 21WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3130
+2013-02-12 19:15:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 22WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3110
+2013-02-12 19:15:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 23WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3090
+2013-02-12 19:15:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 24WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4845
+2013-02-12 19:15:55 INFO  MultipleMessagesEvaluation:171 - Evaluation number 25WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3800
+2013-02-12 19:15:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 26WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3121
+2013-02-12 19:16:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 27WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3161
+2013-02-12 19:16:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 28WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3108
+2013-02-12 19:16:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 29WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3087
+2013-02-12 19:16:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 30WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3188
+2013-02-12 19:16:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 31WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3131
+2013-02-12 19:16:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 32WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3168
+2013-02-12 19:16:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 33WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3102
+2013-02-12 19:16:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 34WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3085
+2013-02-12 19:16:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 35WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 20761
+2013-02-12 19:16:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 36WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3089
+2013-02-12 19:16:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 37WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3955
+2013-02-12 19:17:02 INFO  MultipleMessagesEvaluation:171 - Evaluation number 38WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 10706
+2013-02-12 19:17:05 INFO  MultipleMessagesEvaluation:171 - Evaluation number 39WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2899
+2013-02-12 19:17:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 40WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2853
+2013-02-12 19:17:13 INFO  MultipleMessagesEvaluation:171 - Evaluation number 41WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 5110
+2013-02-12 19:17:17 INFO  MultipleMessagesEvaluation:171 - Evaluation number 42WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4479
+2013-02-12 19:17:20 INFO  MultipleMessagesEvaluation:171 - Evaluation number 43WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2846
+2013-02-12 19:17:23 INFO  MultipleMessagesEvaluation:171 - Evaluation number 44WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2886
+2013-02-12 19:17:26 INFO  MultipleMessagesEvaluation:171 - Evaluation number 45WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2796
+2013-02-12 19:17:29 INFO  MultipleMessagesEvaluation:171 - Evaluation number 46WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3616
+2013-02-12 19:17:32 INFO  MultipleMessagesEvaluation:171 - Evaluation number 47WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2804
+2013-02-12 19:17:35 INFO  MultipleMessagesEvaluation:171 - Evaluation number 48WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3013
+2013-02-12 19:17:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 49WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2867
+2013-02-12 19:17:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 50WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 6782
+2013-02-12 19:17:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 51WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3517
+2013-02-12 19:17:51 INFO  MultipleMessagesEvaluation:171 - Evaluation number 52WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2807
+2013-02-12 19:17:54 INFO  MultipleMessagesEvaluation:171 - Evaluation number 53WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3009
+2013-02-12 19:17:57 INFO  MultipleMessagesEvaluation:171 - Evaluation number 54WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3126
+2013-02-12 19:18:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 55WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3142
+2013-02-12 19:18:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 56WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3017
+2013-02-12 19:18:08 INFO  MultipleMessagesEvaluation:171 - Evaluation number 57WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4529
+2013-02-12 19:18:11 INFO  MultipleMessagesEvaluation:171 - Evaluation number 58WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2743
+2013-02-12 19:18:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 59WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4794
+2013-02-12 19:18:18 INFO  MultipleMessagesEvaluation:171 - Evaluation number 60WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2816
+2013-02-12 19:18:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 61WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3634
+2013-02-12 19:18:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 62WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2678
+2013-02-12 19:18:28 INFO  MultipleMessagesEvaluation:171 - Evaluation number 63WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2853
+2013-02-12 19:18:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 64WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2751
+2013-02-12 19:18:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 65WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2645
+2013-02-12 19:18:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 66WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2669
+2013-02-12 19:18:38 INFO  MultipleMessagesEvaluation:171 - Evaluation number 67WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2687
+2013-02-12 19:18:41 INFO  MultipleMessagesEvaluation:171 - Evaluation number 68WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2660
+2013-02-12 19:18:44 INFO  MultipleMessagesEvaluation:171 - Evaluation number 69WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2820
+2013-02-12 19:18:47 INFO  MultipleMessagesEvaluation:171 - Evaluation number 70WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2954
+2013-02-12 19:18:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 71WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3244
+2013-02-12 19:18:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 72WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2941
+2013-02-12 19:18:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 73WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2762
+2013-02-12 19:18:59 INFO  MultipleMessagesEvaluation:171 - Evaluation number 74WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2816
+2013-02-12 19:19:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 75WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2725
+2013-02-12 19:19:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 76WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2762
+2013-02-12 19:19:07 INFO  MultipleMessagesEvaluation:171 - Evaluation number 77WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3263
+2013-02-12 19:19:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 78WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2629
+2013-02-12 19:19:14 INFO  MultipleMessagesEvaluation:171 - Evaluation number 79WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3688
+2013-02-12 19:19:16 INFO  MultipleMessagesEvaluation:171 - Evaluation number 80WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2826
+2013-02-12 19:19:19 INFO  MultipleMessagesEvaluation:171 - Evaluation number 81WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2714
+2013-02-12 19:19:22 INFO  MultipleMessagesEvaluation:171 - Evaluation number 82WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2745
+2013-02-12 19:19:25 INFO  MultipleMessagesEvaluation:171 - Evaluation number 83WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2690
+2013-02-12 19:19:27 INFO  MultipleMessagesEvaluation:171 - Evaluation number 84WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2589
+2013-02-12 19:19:30 INFO  MultipleMessagesEvaluation:171 - Evaluation number 85WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2737
+2013-02-12 19:19:33 INFO  MultipleMessagesEvaluation:171 - Evaluation number 86WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2716
+2013-02-12 19:19:36 INFO  MultipleMessagesEvaluation:171 - Evaluation number 87WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 3062
+2013-02-12 19:19:40 INFO  MultipleMessagesEvaluation:171 - Evaluation number 88WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 4075
+2013-02-12 19:19:42 INFO  MultipleMessagesEvaluation:171 - Evaluation number 89WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2599
+2013-02-12 19:19:45 INFO  MultipleMessagesEvaluation:171 - Evaluation number 90WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2591
+2013-02-12 19:19:48 INFO  MultipleMessagesEvaluation:171 - Evaluation number 91WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2732
+2013-02-12 19:19:50 INFO  MultipleMessagesEvaluation:171 - Evaluation number 92WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2691
+2013-02-12 19:19:53 INFO  MultipleMessagesEvaluation:171 - Evaluation number 93WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2625
+2013-02-12 19:19:56 INFO  MultipleMessagesEvaluation:171 - Evaluation number 94WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2641
+2013-02-12 19:19:58 INFO  MultipleMessagesEvaluation:171 - Evaluation number 95WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2674
+2013-02-12 19:20:01 INFO  MultipleMessagesEvaluation:171 - Evaluation number 96WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2699
+2013-02-12 19:20:04 INFO  MultipleMessagesEvaluation:171 - Evaluation number 97WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2721
+2013-02-12 19:20:06 INFO  MultipleMessagesEvaluation:171 - Evaluation number 98WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2746
+2013-02-12 19:20:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 99WSDL: http://127.0.0.1:2106/choreography?wsdl
+Returned value: 64
+Time it took: 2720
+2013-02-12 19:20:09 INFO  MultipleMessagesEvaluation:152 - Starting evaluation with 128 messages
+2013-02-12 19:21:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 0WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60013
+2013-02-12 19:22:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 1WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60065
+2013-02-12 19:23:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 2WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60013
+2013-02-12 19:24:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 3WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60006
+2013-02-12 19:25:09 INFO  MultipleMessagesEvaluation:171 - Evaluation number 4WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60058
+2013-02-12 19:26:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 5WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60067
+2013-02-12 19:27:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 6WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60057
+2013-02-12 19:28:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 7WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60052
+2013-02-12 19:29:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 8WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60026
+2013-02-12 19:30:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 9WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60028
+2013-02-12 19:31:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 10WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60010
+2013-02-12 19:32:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 11WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60009
+2013-02-12 19:33:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 12WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60065
+2013-02-12 19:34:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 13WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60020
+2013-02-12 19:35:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 14WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60066
+2013-02-12 19:36:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 15WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60053
+2013-02-12 19:37:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 16WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60031
+2013-02-12 19:38:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 17WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60019
+2013-02-12 19:39:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 18WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60007
+2013-02-12 19:40:10 INFO  MultipleMessagesEvaluation:171 - Evaluation number 19WSDL: http://127.0.0.1:2107/choreography?wsdl
+Returned value: null
+Time it took: 60057
