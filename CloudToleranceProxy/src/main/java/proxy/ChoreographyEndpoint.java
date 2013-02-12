@@ -99,7 +99,7 @@ public class ChoreographyEndpoint {
 
 	}
 
-	private void informNextLink(int parameter, int key) {
+	protected void informNextLink(int parameter, int key) {
 		nextProxy.invokeWebMethod("playRole", parameter, key);
 	}
 
