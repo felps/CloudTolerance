@@ -2,10 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>CloudTolerance</groupId>
   <artifactId>CloudToleranceEvaluation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-
-	<parent>
+  <parent>
 		<groupId>CloudTolerance</groupId>
 		<artifactId>CloudTolerance</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
@@ -19,4 +16,5 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	
 </project>
