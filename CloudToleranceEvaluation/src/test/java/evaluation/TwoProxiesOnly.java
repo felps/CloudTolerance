@@ -34,9 +34,10 @@ public class TwoProxiesOnly {
 		invoker.setTimeout(40000);
 		
 		for(int i=0; i<100; i++){
-			
+			long startTime = System.currentTimeMillis();
 			WsInvokation returnedValue = invoker.invokeWebMethod("startChoreograph", 0);
 			assertEquals(2, returnedValue.getResultSetter().getResultValue());
+			System.out.println("Time it took: " + (System.currentTimeMillis() - startTime));
 		}
 	}
 
