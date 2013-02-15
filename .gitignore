@@ -5,6 +5,9 @@
 *.war
 *.ear
 
+*~
+*.odt
+
 .metadata/*
 .classpath
 .project
