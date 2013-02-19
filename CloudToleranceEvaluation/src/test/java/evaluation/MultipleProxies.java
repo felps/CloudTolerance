@@ -1,7 +1,9 @@
 package evaluation;
 
-import static org.junit.Assert.*;
-
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.apache.log4j.Logger;
@@ -24,14 +26,55 @@ public class MultipleProxies {
 	private static final String CHOR_10_PROXIES = "http://127.0.0.1:2400/choreography?wsdl";
 
 	private static Logger log;
+	private static ThreadPoolExecutor poolManager;
+	private static BlockingQueue<Runnable> workQueue;
+
+	private class SingleInvokation implements Runnable {
+
+		public Logger log;
+		private WsInvoker invoker;
+		public int id;
+
+		private int singleLoggedInvokation(WsInvoker invoker)
+				throws TimeoutException {
+			long startTime = System.currentTimeMillis();
+			int result = singleInvokation(invoker);
+			log.info("Invokation ID " + id + '\n' +
+					"Returned Value: " + result + '\n' + 
+					"Time it took: " + (System.currentTimeMillis() - startTime));
+			return result;
+		}
+
+		private int singleInvokation(WsInvoker invoker) throws TimeoutException {
+			WsInvokation returnedValue = invoker.invokeWebMethod(
+					"startChoreograph", 0);
+			int result = (Integer) returnedValue.getResultSetter()
+					.getResultValue();
+			return result;
+		}
+
+		public void run() {
+			try {
+				singleLoggedInvokation(invoker);
+			} catch (TimeoutException e) {
+				log.error("Invokation ID "+ id + " Timedout");
+			}
+
+		}
+
+	}
 
 	@BeforeClass
 	public static void setUp() {
 		log = Logger.getLogger(MultipleProxies.class);
 		log.info("Initiating Multiple Proxies Evaluation");
+		TimeUnit unit = TimeUnit.MINUTES;
+		workQueue = new ArrayBlockingQueue<Runnable>(100);
+		poolManager = new ThreadPoolExecutor(100, 1000, 10, unit, workQueue);
+
 	}
 
-	// @Test
+	@Test
 	public void evaluate2proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_2_PROXIES);
 
@@ -166,8 +209,8 @@ public class MultipleProxies {
 	private void multipleInvokations(WsInvoker invoker, int invokeAmount)
 			throws TimeoutException {
 		for (int i = 0; i < invokeAmount; i++) {
-			int result = singleLoggedInvokation(invoker);
-			log.info("Returned value: " + result);
+			SingleInvokation invoke = new SingleInvokation();
+			poolManager.execute(invoke);
 		}
 	}
 }
