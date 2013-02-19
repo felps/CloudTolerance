@@ -208,9 +208,13 @@ public class MultipleProxies {
 
 	private void multipleInvokations(WsInvoker invoker, int invokeAmount)
 			throws TimeoutException {
+		
 		for (int i = 0; i < invokeAmount; i++) {
-			SingleInvokation invoke = new SingleInvokation();
-			poolManager.execute(invoke);
+			SingleInvokation chorIinvokation = new SingleInvokation();
+			chorIinvokation.id=i;
+			chorIinvokation.log = log;
+			chorIinvokation.invoker = invoker;
+			poolManager.execute(chorIinvokation);
 		}
 	}
 }
