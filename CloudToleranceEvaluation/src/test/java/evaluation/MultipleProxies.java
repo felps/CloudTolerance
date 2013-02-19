@@ -85,7 +85,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate3proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_3_PROXIES);
 
@@ -96,7 +96,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate4proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
 
@@ -107,7 +107,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate5proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_5_PROXIES);
 
@@ -118,7 +118,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate6proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_6_PROXIES);
 
@@ -129,7 +129,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate7proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_7_PROXIES);
 
@@ -140,7 +140,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate8proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_8_PROXIES);
 
@@ -162,7 +162,7 @@ public class MultipleProxies {
 		multipleInvokations(invoker, invokeAmount);
 	}
 
-	// @Test
+	 @Test
 	public void evaluate10proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_10_PROXIES);
 

@@ -74,8 +74,40 @@ public class ParallelRequestsEvaluation {
 		// warm up invokation
 		warmUpInvokation(invoker);
 
-		int invokeAmount = 100;
+		log.info("Starting evaluation with 1 parallel requests");
+		int invokeAmount = 1;
 		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 10 parallel requests");
+		invokeAmount = 10;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 20 parallel requests");
+		invokeAmount = 20;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 30 parallel requests");
+		invokeAmount = 30;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 40 parallel requests");
+		invokeAmount = 40;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 50 parallel requests");
+		invokeAmount = 50;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 60 parallel requests");
+		invokeAmount = 60;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 70 parallel requests");
+		invokeAmount = 70;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 80 parallel requests");
+		invokeAmount = 80;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 90 parallel requests");
+		invokeAmount = 90;
+		multipleInvokations(invoker, invokeAmount);
+		log.info("Starting evaluation with 100 parallel requests");
+		invokeAmount = 100;
+		multipleInvokations(invoker, invokeAmount);
+		
 	}
 
 	private int singleLoggedInvokation(WsInvoker invoker)
@@ -101,11 +133,9 @@ public class ParallelRequestsEvaluation {
 			try {
 				log.warn("Don't panic! In this first warm up execution it is normal to have a timeout."
 						+ '\n'
-						+ "We'll wait another minute just to be sure. Grab a cookie.");
+						+ "We'll wait another couple of minutes just to be sure. Grab a cookie.");
 				Thread.sleep(120000);
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
 			}
 		}
 		return result;
