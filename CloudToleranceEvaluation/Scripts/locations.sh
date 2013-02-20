@@ -2,13 +2,13 @@
 
 echo "Setting server addresses..."
 
-server1=ubuntu@ec2-177-71-153-216.sa-east-1.compute.amazonaws.com
-server2=ubuntu@ec2-54-232-13-78.sa-east-1.compute.amazonaws.com
-server3=ubuntu@ec2-177-71-140-136.sa-east-1.compute.amazonaws.com
-server4=ubuntu@ec2-54-232-37-40.sa-east-1.compute.amazonaws.com
-server5=ubuntu@ec2-177-71-132-167.sa-east-1.compute.amazonaws.com
-server6=ubuntu@ec2-177-71-139-25.sa-east-1.compute.amazonaws.com
-server7=ubuntu@ec2-54-232-25-232.sa-east-1.compute.amazonaws.com
-server8=ubuntu@ec2-54-232-28-185.sa-east-1.compute.amazonaws.com
-server9=ubuntu@ec2-54-232-9-44.sa-east-1.compute.amazonaws.com
-server0=ubuntu@ec2-177-71-146-165.sa-east-1.compute.amazonaws.com
+server1=ubuntu@54.232.16.228
+server2=ubuntu@54.232.16.240
+server3=ubuntu@177.71.156.60
+server4=ubuntu@54.232.36.215
+server5=ubuntu@54.232.20.250
+server6=ubuntu@177.71.155.214
+server7=ubuntu@177.71.152.81
+server8=ubuntu@54.232.29.39
+server9=ubuntu@177.71.152.81
+server0=ubuntu@54.232.29.236
