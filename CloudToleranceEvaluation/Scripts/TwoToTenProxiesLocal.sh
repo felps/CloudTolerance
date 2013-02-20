@@ -2,7 +2,7 @@
 
 source locations.sh
 
-source copyFiles.sh
+#source copyFiles.sh
 
 source twoProxies.sh &
 
