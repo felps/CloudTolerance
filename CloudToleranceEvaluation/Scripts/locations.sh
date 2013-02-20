@@ -10,5 +10,5 @@ server5=ubuntu@54.232.20.250
 server6=ubuntu@177.71.155.214
 server7=ubuntu@177.71.152.81
 server8=ubuntu@54.232.29.39
-server9=ubuntu@177.71.152.81
+server9=ubuntu@177.71.152.79
 server0=ubuntu@54.232.29.236
