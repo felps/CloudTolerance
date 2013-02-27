@@ -12,6 +12,12 @@ public interface FaultToleranceTechnique {
 	
 	public void removeInvoker(WsInvoker unavailableInvoker);
 	
+	public long getTimeout();
+	
+	public void setTimeout(long timeout) ;
+	
 	public Object invokeMethod(String wsMethodName, Object... wsParameterValues);
+	
+
 	
 }

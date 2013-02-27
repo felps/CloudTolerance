@@ -30,6 +30,15 @@ public class WsInvokation {
 		this.client = webServiceDynamicClient;
 		resultSetter = new Result();
 	}
+	
+	public WsInvokation(Result resultSetter, String wsdlURL, Client webServiceDynamicClient,
+			String methodName, Object... args) {
+		this.wsEndpoint = wsdlURL;
+		this.methodName = methodName;
+		this.methodParameters = args;
+		this.client = webServiceDynamicClient;
+		this.resultSetter = resultSetter;
+	}
 
 	public WsInvokation(String wsdlURL, Client webServiceDynamicClient,
 			long timeout, String methodName, Object... args) {

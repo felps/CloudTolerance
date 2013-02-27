@@ -21,15 +21,29 @@ public class Proxy {
 		invokerList = new ArrayList<WsInvoker>();
 
 		availableTechniques.put("Retry", new Retry());
-//		availableTechniques.put("Active", new Active(invokerList));
+		availableTechniques.put("Active", new Active());
 		
-		currentTechnique = availableTechniques.get("Retry");
+		if(invokerList.size()<=1)
+			currentTechnique = availableTechniques.get("Retry");
+		else{
+			currentTechnique = availableTechniques.get("Active");
+			currentTechnique.addAvailableInvokers(invokerList);
+			
+		}
 	}
 	
 	public void addWebService(String wsdlEndpoint) {
 		WsInvoker newService = new WsInvoker(wsdlEndpoint);
 		invokerList.add(newService);
-		currentTechnique.addAvailableInvoker(newService);
+		if(invokerList.size()<=1) {
+			currentTechnique = availableTechniques.get("Retry");
+			currentTechnique.addAvailableInvoker(newService);
+		}
+		else{
+			currentTechnique = availableTechniques.get("Active");
+			currentTechnique.addAvailableInvokers(invokerList);
+		}
+
 	}
 	
 	

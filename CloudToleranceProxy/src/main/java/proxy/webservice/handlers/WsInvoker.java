@@ -5,6 +5,8 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
 
+import proxy.utils.Result;
+
 public class WsInvoker {
 
 	private String wsdlURL;
@@ -35,6 +37,14 @@ public class WsInvoker {
 	public WsInvokation invokeWebMethod(String methodName, Object... args) {
 		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient,
 				timeout, methodName, args);
+		invokation.perform();
+		return invokation;
+	}
+	
+
+	public WsInvokation invokeWebMethod(Result resultSetter, String methodName, Object... args) {
+		WsInvokation invokation = new WsInvokation(resultSetter, wsdlURL, webServiceClient,
+				methodName, args);
 		invokation.perform();
 		return invokation;
 	}
