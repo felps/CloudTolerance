@@ -13,6 +13,6 @@ do
 	providerPort=$((providerBasePort + reliability))
 
 echo "	java -jar ChoreographyEndpointService.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography addOne http://$serviceProvider:$providerPort/Linear?wsdl &"
-	java -jar ChoreographyEndpointService.jar http://0.0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl &
+	java -jar ChoreographyEndpointService.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl &
 
 done
