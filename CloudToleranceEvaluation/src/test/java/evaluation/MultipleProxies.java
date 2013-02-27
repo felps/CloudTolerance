@@ -15,15 +15,15 @@ import proxy.webservice.handlers.WsInvoker;
 
 public class MultipleProxies {
 
-	private static final String CHOR_2_PROXIES = "http://127.0.0.1:2420/choreography?wsdl";
-	private static final String CHOR_3_PROXIES = "http://127.0.0.1:2430/choreography?wsdl";
-	private static final String CHOR_4_PROXIES = "http://127.0.0.1:2440/choreography?wsdl";
-	private static final String CHOR_5_PROXIES = "http://127.0.0.1:2450/choreography?wsdl";
-	private static final String CHOR_6_PROXIES = "http://127.0.0.1:2460/choreography?wsdl";
-	private static final String CHOR_7_PROXIES = "http://127.0.0.1:2470/choreography?wsdl";
-	private static final String CHOR_8_PROXIES = "http://127.0.0.1:2480/choreography?wsdl";
-	private static final String CHOR_9_PROXIES = "http://127.0.0.1:2490/choreography?wsdl";
-	private static final String CHOR_10_PROXIES = "http://127.0.0.1:2400/choreography?wsdl";
+	private static final String CHOR_2_PROXIES = "http://177.71.231.104:2420/choreography?wsdl";
+	private static final String CHOR_3_PROXIES = "http://177.71.231.104:2430/choreography?wsdl";
+	private static final String CHOR_4_PROXIES = "http://177.71.231.104:2440/choreography?wsdl";
+	private static final String CHOR_5_PROXIES = "http://177.71.231.104:2450/choreography?wsdl";
+	private static final String CHOR_6_PROXIES = "http://177.71.231.104:2460/choreography?wsdl";
+	private static final String CHOR_7_PROXIES = "http://177.71.231.104:2470/choreography?wsdl";
+	private static final String CHOR_8_PROXIES = "http://177.71.231.104:2480/choreography?wsdl";
+	private static final String CHOR_9_PROXIES = "http://177.71.231.104:2490/choreography?wsdl";
+	private static final String CHOR_10_PROXIES = "http://177.71.231.104:2400/choreography?wsdl";
 
 	private static Logger log;
 	private static ThreadPoolExecutor poolManager;
@@ -39,9 +39,9 @@ public class MultipleProxies {
 				throws TimeoutException {
 			long startTime = System.currentTimeMillis();
 			int result = singleInvokation(invoker);
-			log.info("Invokation ID " + id + '\n' +
-					"Returned Value: " + result + '\n' + 
-					"Time it took: " + (System.currentTimeMillis() - startTime));
+			log.info("Invokation ID " + id + '\n' + "Returned Value: " + result
+					+ '\n' + "Time it took: "
+					+ (System.currentTimeMillis() - startTime));
 			return result;
 		}
 
@@ -57,9 +57,8 @@ public class MultipleProxies {
 			try {
 				singleLoggedInvokation(invoker);
 			} catch (TimeoutException e) {
-				log.error("Invokation ID "+ id + " Timedout");
+				log.error("Invokation ID " + id + " Timedout");
 			}
-
 		}
 
 	}
@@ -71,10 +70,9 @@ public class MultipleProxies {
 		TimeUnit unit = TimeUnit.MINUTES;
 		workQueue = new ArrayBlockingQueue<Runnable>(100);
 		poolManager = new ThreadPoolExecutor(100, 1000, 10, unit, workQueue);
-
 	}
 
-	@Test
+//	@Test
 	public void evaluate2proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_2_PROXIES);
 
@@ -82,10 +80,11 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_2_PROXIES, invokeAmount);
+
 	}
 
-	 @Test
+//	 @Test
 	public void evaluate3proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_3_PROXIES);
 
@@ -93,10 +92,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_3_PROXIES, invokeAmount);
 	}
 
-	 @Test
+//	 @Test
 	public void evaluate4proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
 
@@ -104,10 +103,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 	}
 
-	 @Test
+//	 @Test
 	public void evaluate5proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_5_PROXIES);
 
@@ -115,7 +114,7 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_5_PROXIES, invokeAmount);
 	}
 
 	 @Test
@@ -126,10 +125,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_6_PROXIES, invokeAmount);
 	}
 
-	 @Test
+//	 @Test
 	public void evaluate7proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_7_PROXIES);
 
@@ -137,10 +136,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_7_PROXIES, invokeAmount);
 	}
 
-	 @Test
+	// @Test
 	public void evaluate8proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_8_PROXIES);
 
@@ -148,10 +147,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_8_PROXIES, invokeAmount);
 	}
 
-	@Test
+	// @Test
 	public void evaluate9proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_9_PROXIES);
 
@@ -159,10 +158,10 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_9_PROXIES, invokeAmount);
 	}
 
-	 @Test
+	// @Test
 	public void evaluate10proxies() throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_10_PROXIES);
 
@@ -170,7 +169,7 @@ public class MultipleProxies {
 		warmUpInvokation(invoker);
 
 		int invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_10_PROXIES, invokeAmount);
 	}
 
 	private int singleLoggedInvokation(WsInvoker invoker)
@@ -192,6 +191,7 @@ public class MultipleProxies {
 		int result = 0;
 		try {
 			result = singleInvokation(invoker);
+			System.out.println(result);
 		} catch (TimeoutException e) {
 			try {
 				log.warn("Don't panic! In this first warm up execution it is normal to have a timeout."
@@ -206,15 +206,28 @@ public class MultipleProxies {
 		return result;
 	}
 
-	private void multipleInvokations(WsInvoker invoker, int invokeAmount)
+	private void multipleInvokations(String wsdl, int invokeAmount)
 			throws TimeoutException {
+
+		WsInvoker invoker = new WsInvoker(wsdl);;
+
 		
 		for (int i = 0; i < invokeAmount; i++) {
 			SingleInvokation chorIinvokation = new SingleInvokation();
-			chorIinvokation.id=i;
+			chorIinvokation.id = i;
 			chorIinvokation.log = log;
 			chorIinvokation.invoker = invoker;
 			poolManager.execute(chorIinvokation);
 		}
+
+		while (poolManager.getActiveCount() != 0)
+			try {
+				System.out
+						.println("Pool size: " + poolManager.getActiveCount());
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }
