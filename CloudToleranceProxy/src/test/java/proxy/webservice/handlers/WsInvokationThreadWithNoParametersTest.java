@@ -83,8 +83,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	}
 
 	@Test
-	public void testInvoke() throws InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+	public void testInvoke() throws Exception {
 		invokation = new WsInvokationThread(client, resultSetter,
 				"issuePayment");
 		assertTrue((Boolean) invokation.invoke()[0]);

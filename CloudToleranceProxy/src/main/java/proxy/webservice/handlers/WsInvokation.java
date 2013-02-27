@@ -66,11 +66,17 @@ public class WsInvokation {
 		return executionThread;
 	}
 
-	public void perform() {
+	public void perform() throws RuntimeException {
 		WsInvokationThread invokation = new WsInvokationThread(client,
 				resultSetter, methodName, methodParameters);
 		invokation.executionThread = new Thread(invokation);
 		invokation.executionThread.setContextClassLoader(this.getClass().getClassLoader());
+		try{
+			System.out.println("Running thread " +  invokation.executionThread.getId() +" to execute query on invoker "  +client);
 		invokation.executionThread.start();
+		}
+		catch (RuntimeException e){
+			throw e;
+		}
 	}
 }

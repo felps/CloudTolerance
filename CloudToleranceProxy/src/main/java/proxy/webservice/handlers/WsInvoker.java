@@ -11,7 +11,7 @@ public class WsInvoker {
 
 	private String wsdlURL;
 	private Client webServiceClient;
-//	private List<WsInvokation> pendingRequests;
+	// private List<WsInvokation> pendingRequests;
 	private long timeout;
 
 	public long getTimeout() {
@@ -19,13 +19,14 @@ public class WsInvoker {
 	}
 
 	public void setTimeout(long newTimeout) {
-		
-		timeout=newTimeout;
+
+		timeout = newTimeout;
 		HTTPConduit http = (HTTPConduit) webServiceClient.getConduit();
-        HTTPClientPolicy httpClientPolicy = new HTTPClientPolicy();
-//        ClassLoader clAfterClientPolicy = httpClientPolicy.getClass().getClassLoader();
-        httpClientPolicy.setConnectionTimeout(newTimeout);
-        http.setClient(httpClientPolicy);
+		HTTPClientPolicy httpClientPolicy = new HTTPClientPolicy();
+		// ClassLoader clAfterClientPolicy =
+		// httpClientPolicy.getClass().getClassLoader();
+		httpClientPolicy.setConnectionTimeout(newTimeout);
+		http.setClient(httpClientPolicy);
 	}
 
 	public WsInvoker(String wsdlURL) {
@@ -34,18 +35,28 @@ public class WsInvoker {
 		this.wsdlURL = wsdlURL;
 	}
 
-	public WsInvokation invokeWebMethod(String methodName, Object... args) {
+	public WsInvokation invokeWebMethod(String methodName, Object... args) throws RuntimeException {
 		WsInvokation invokation = new WsInvokation(wsdlURL, webServiceClient,
 				timeout, methodName, args);
-		invokation.perform();
+		try {
+			invokation.perform();
+		} catch (RuntimeException e) {
+			throw e;
+		}
+
 		return invokation;
 	}
-	
 
-	public WsInvokation invokeWebMethod(Result resultSetter, String methodName, Object... args) {
-		WsInvokation invokation = new WsInvokation(resultSetter, wsdlURL, webServiceClient,
-				methodName, args);
-		invokation.perform();
+	public WsInvokation invokeWebMethod(Result resultSetter, String methodName,
+			Object... args) throws RuntimeException {
+		WsInvokation invokation = new WsInvokation(resultSetter, wsdlURL,
+				webServiceClient, methodName, args);
+		try {
+			invokation.perform();
+		} catch (RuntimeException e) {
+			throw e;
+		}
+
 		return invokation;
 	}
 }

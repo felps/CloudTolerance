@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import proxy.techniques.Active;
 import proxy.techniques.FaultToleranceTechnique;
 import proxy.techniques.Retry;
@@ -14,6 +16,7 @@ public class Proxy {
 	private HashMap<String, FaultToleranceTechnique> availableTechniques;
 	private FaultToleranceTechnique currentTechnique;
 	private List<WsInvoker> invokerList;
+	private Logger log = Logger.getLogger(Proxy.class); 
 	
 	public Proxy() {
 		availableTechniques = new HashMap<String, FaultToleranceTechnique>();
@@ -23,25 +26,31 @@ public class Proxy {
 		availableTechniques.put("Retry", new Retry());
 		availableTechniques.put("Active", new Active());
 		
-		if(invokerList.size()<=1)
+		if(invokerList.size() <= 1){
+			log.info("Retry Technique");
 			currentTechnique = availableTechniques.get("Retry");
-		else{
-			currentTechnique = availableTechniques.get("Active");
-			currentTechnique.addAvailableInvokers(invokerList);
-			
 		}
+		else{
+			log.info("Active Technique");
+			currentTechnique = availableTechniques.get("Active");
+		}
+		currentTechnique.addAvailableInvokers(invokerList);
 	}
 	
 	public void addWebService(String wsdlEndpoint) {
 		WsInvoker newService = new WsInvoker(wsdlEndpoint);
 		invokerList.add(newService);
-		if(invokerList.size()<=1) {
+		if(invokerList.size()<1) {
 			currentTechnique = availableTechniques.get("Retry");
 			currentTechnique.addAvailableInvoker(newService);
+			System.out.println("Service Pool: " + invokerList.size());
+			System.out.println("Current Technique: Retry");
 		}
 		else{
 			currentTechnique = availableTechniques.get("Active");
 			currentTechnique.addAvailableInvokers(invokerList);
+			System.out.println("Service Pool: " + invokerList.size());
+			System.out.println("Current Technique: Active");
 		}
 
 	}

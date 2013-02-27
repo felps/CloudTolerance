@@ -22,35 +22,24 @@ public class WsInvokationThread implements Runnable {
 		this.resultSetter = resultSetter;
 	}
 
-	public Object[] invoke() {
+	public Object[] invoke() throws Exception {
 		Object[] response = null;
 
-		try {
-			System.out.println("Invoking...");
+//			System.out.println("Invoking...");
 			response = client.invoke(methodName, methodParameters);
-			System.out.println("Done!");
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			System.out.println("ERROR: Class not found. Are you sure it is there?");
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//			System.out.println("Done!");
+		
 		return response;
 	}
 
 	public void run() {
-		Object[] response;
-		response = invoke();
+		Object[] response = null;
+		try {
+			response = invoke();
+		} catch (Exception e) {
+			resultSetter.setResultValue(null);
+			throw new RuntimeException("Error invoking method "+ methodName);
+		}
 		synchronized (resultSetter) {
 			if (response != null)
 				resultSetter.setResultValue(response[0]);

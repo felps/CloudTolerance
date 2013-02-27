@@ -73,8 +73,7 @@ public class WsInvokationThreadWithParametersTest {
 	}
 
 	@Test
-	public void testSimpleInvokation() throws InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+	public void testSimpleInvokation() throws Exception {
 		int returnedValue;
 
 		invokation = new WsInvokationThread(client, resultSetter,

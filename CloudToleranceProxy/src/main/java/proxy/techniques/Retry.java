@@ -11,7 +11,7 @@ public class Retry implements FaultToleranceTechnique {
 
 	private List<WsInvoker> invokerList;
 	private WsInvoker currentWS;
-	private int retryAmount = 1;
+	private int retryAmount = 4;
 
 	public List<WsInvoker> getInvokerList() {
 		return invokerList;
@@ -89,7 +89,7 @@ public class Retry implements FaultToleranceTechnique {
 		WsInvokation invokation;
 		try {
 			if (wsParameterValues != null && wsParameterValues.length > 0)
-				System.out.println("currentWS.invokeWebMethod(" + wsMethodName
+				System.out.println("RETRY: currentWS.invokeWebMethod(" + wsMethodName
 						+ ", ("+wsParameterValues[0].getClass().getName()+")"+ wsParameterValues[0].toString() + ");");
 			invokation = currentWS.invokeWebMethod(wsMethodName,
 					wsParameterValues);
