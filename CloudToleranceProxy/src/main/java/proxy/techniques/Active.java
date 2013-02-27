@@ -61,7 +61,7 @@ public class Active implements FaultToleranceTechnique {
 		try {
 			return resultSetter.getResultValue();
 		} catch (TimeoutException e) {
-			log.warn("ERROR: Invokation of "+wsMethodName  + " timed out.");
+			System.out.println("ERROR: Invokation of "+wsMethodName  + " timed out.");
 			e.printStackTrace();
 		}
 
