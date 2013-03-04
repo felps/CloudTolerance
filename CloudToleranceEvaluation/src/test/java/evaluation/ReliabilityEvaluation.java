@@ -2,17 +2,12 @@ package evaluation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.TimeoutException;
-
-import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.ChoreographyEndpoint;
-import proxy.Proxy;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
@@ -94,11 +89,16 @@ public class ReliabilityEvaluation {
 		log.info("Initiating RELIABILITY Evaluation");
 	}
 
-//	@Test
+	@Test
 	public void evaluateMultipleFaultPossibilitiesWithoutFT()
 			throws TimeoutException {
 
 		HashMap<Integer, WsInvoker> invokers = new HashMap<Integer, WsInvoker>();
+//		ArrayList<String> services = new ArrayList<String>();
+
+		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
+		// String wsdl = "http://127.0.0.1:21090/choreography?wsdl";
+		// setUp(wsdl, wsdl, services);// */
 
 		invokers.put(100, new WsInvoker(WS_100_RELIABILITY_NOFT));
 		invokers.put(99, new WsInvoker(WS_99_RELIABILITY_NOFT));
@@ -130,25 +130,43 @@ public class ReliabilityEvaluation {
 		}
 	}
 
-	static void setUp(String wsdl, String endpoint, List<String> webServices){
-		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+//	static void setUp(String wsdl, String endpoint, List<String> webServices) {
+//		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+//
+//		chor.nextProxyUrl = wsdl;
+//		chor.wsMethodName = "addOne";
+//
+//		chor.myProxy = new Proxy();
+//
+//		for (String currentEndpoint : webServices) {
+//			System.out.println("adding " + currentEndpoint);
+//			chor.myProxy.addWebService(currentEndpoint);
+//
+//		}
+//
+//		System.out.println("Publishing Proxy at " + endpoint);
+//		Endpoint.publish(endpoint, chor);
+//
+//		System.out.println("Done! Ready to warm up!");
+//	}
 
-		chor.nextProxyUrl = wsdl;
-		chor.wsMethodName = "addOne";
-
-		chor.myProxy = new Proxy();
-		
-		for (String currentEndpoint : webServices) {
-			System.out.println("adding "+ currentEndpoint);
-			chor.myProxy.addWebService(currentEndpoint); 
-			
-		}
-		
-		System.out.println("Publishing Proxy at " + endpoint);
-		Endpoint.publish(endpoint, chor);
-		
-		System.out.println("Done! Ready to warm up!");
-	}
+//	static void setUp(String wsdl, int retryAmount, String endpoint,
+//			String webService) {
+//		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+//
+//		chor.nextProxyUrl = wsdl;
+//		chor.wsMethodName = "addOne";
+//
+//		chor.myProxy = new Proxy();
+//
+//		System.out.println("adding " + webService);
+//		chor.myProxy.addWebService(webService);
+//
+//		System.out.println("Publishing Proxy at " + endpoint);
+//		Endpoint.publish(endpoint, chor);
+//
+//		System.out.println("Done! Ready to warm up!");
+//	}
 
 	@Test
 	public void evaluateMultipleFaultPossibilitiesWithFT()
@@ -156,25 +174,25 @@ public class ReliabilityEvaluation {
 
 		HashMap<Integer, WsInvoker> invokers = new HashMap<Integer, WsInvoker>();
 		ArrayList<String> services = new ArrayList<String>();
-		
-		services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
-		services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
-		services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
-		String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
-		setUp(wsdl, wsdl, services);//*/
-		
-//		invokers.put(100, new WsInvoker(WS_100_RELIABILITY_FT));
-//		invokers.put(99, new WsInvoker(WS_99_RELIABILITY_FT));
-//		invokers.put(98, new WsInvoker(WS_98_RELIABILITY_FT));
-//		invokers.put(97, new WsInvoker(WS_97_RELIABILITY_FT));
-//		invokers.put(96, new WsInvoker(WS_96_RELIABILITY_FT));
-//		invokers.put(95, new WsInvoker(WS_95_RELIABILITY_FT));
-//		invokers.put(94, new WsInvoker(WS_94_RELIABILITY_FT));
-//		invokers.put(93, new WsInvoker(WS_93_RELIABILITY_FT));
-//		invokers.put(92, new WsInvoker(WS_92_RELIABILITY_FT));
-//		invokers.put(91, new WsInvoker(WS_91_RELIABILITY_FT));
-//		invokers.put(90, new WsInvoker(WS_90_RELIABILITY_FT));
-		invokers.put(90, new WsInvoker(wsdl));
+
+		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
+		// services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
+		// services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
+		// String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
+		// setUp(wsdl, wsdl, services);// */
+		// invokers.put(90, new WsInvoker(wsdl));
+
+		 invokers.put(100, new WsInvoker(WS_100_RELIABILITY_FT));
+		 invokers.put(99, new WsInvoker(WS_99_RELIABILITY_FT));
+		 invokers.put(98, new WsInvoker(WS_98_RELIABILITY_FT));
+		 invokers.put(97, new WsInvoker(WS_97_RELIABILITY_FT));
+		 invokers.put(96, new WsInvoker(WS_96_RELIABILITY_FT));
+		 invokers.put(95, new WsInvoker(WS_95_RELIABILITY_FT));
+		 invokers.put(94, new WsInvoker(WS_94_RELIABILITY_FT));
+		 invokers.put(93, new WsInvoker(WS_93_RELIABILITY_FT));
+		 invokers.put(92, new WsInvoker(WS_92_RELIABILITY_FT));
+		 invokers.put(91, new WsInvoker(WS_91_RELIABILITY_FT));
+		 invokers.put(90, new WsInvoker(WS_90_RELIABILITY_FT));
 
 		// warm up invokation
 		for (int key : invokers.keySet()) {
@@ -218,6 +236,16 @@ public class ReliabilityEvaluation {
 			invoke.log = log;
 			invoke.id = i;
 			invoke.run();
+			sleepQuietly();
+		}
+	}
+
+	private void sleepQuietly() {
+		try {
+			Thread.sleep(50);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
