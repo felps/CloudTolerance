@@ -40,7 +40,7 @@ public class Proxy {
 	public void addWebService(String wsdlEndpoint) {
 		WsInvoker newService = new WsInvoker(wsdlEndpoint);
 		invokerList.add(newService);
-		if(invokerList.size()<1) {
+		if(invokerList.size()<=1) {
 			currentTechnique = availableTechniques.get("Retry");
 			currentTechnique.addAvailableInvoker(newService);
 			System.out.println("Service Pool: " + invokerList.size());
@@ -55,8 +55,11 @@ public class Proxy {
 
 	}
 	
-	
 	public Object invokeMethod(String wsMethodName, Object... wsParameterValues){
 		return currentTechnique.invokeMethod(wsMethodName, wsParameterValues);
+	}
+	
+	public FaultToleranceTechnique getCurrentTechnique(){
+		return currentTechnique;
 	}
 }

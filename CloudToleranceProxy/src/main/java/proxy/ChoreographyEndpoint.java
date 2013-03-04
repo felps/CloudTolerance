@@ -1,6 +1,7 @@
 package proxy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
@@ -8,6 +9,8 @@ import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
+
+import org.apache.cxf.endpoint.EndpointImpl;
 
 import proxy.utils.Result;
 import proxy.webservice.handlers.WsInvoker;
@@ -34,24 +37,36 @@ public class ChoreographyEndpoint {
 			System.exit(0);
 		}
 
-		ChoreographyEndpoint chor = new ChoreographyEndpoint();
-
 		System.out.println("Next proxy: " + args[1]);
-		chor.nextProxyUrl = args[1];
+		String nextProxyUrl = args[1];
 
 		System.out.println("Service Method: " + args[2]);
-		chor.wsMethodName = args[2];
+		String wsMethodName = args[2];
 
-		chor.myProxy = new Proxy();
-		for (int i = 3; i < args.length; i++) {
-			System.out.println("Adding WS at: " + args[i]);
-			chor.myProxy.addWebService(args[i]);
-		}
-		
 		System.out.println("Publishing Proxy at " + args[0]);
-		Endpoint.publish(args[0], chor);
-		
+		String publish = args[0];
+
+		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+		chor.setUpWebService(nextProxyUrl, wsMethodName,
+				Arrays.copyOfRange(args, 3, args.length));
+
+		Endpoint.publish(publish, chor);
 		System.out.println("Done! Ready to warm up!");
+		
+	}
+
+	private void setUpWebService(String nextProxyWSDL, String wsMethodName, String... webServices) {
+
+		this.nextProxyUrl = nextProxyWSDL;
+
+		this.wsMethodName = wsMethodName;
+
+		myProxy = new Proxy();
+		for (String webServiceEndpoint : webServices) {
+			System.out.println("Adding WS at: " + webServiceEndpoint);
+			myProxy.addWebService(webServiceEndpoint);
+		}
+
 	}
 
 	@WebMethod
@@ -66,7 +81,7 @@ public class ChoreographyEndpoint {
 			currentKey = nextAvailableKey++;
 			choreographyResults.add(new Result());
 		}
-		
+
 		System.out.println("Informing next link...");
 		informNextLink(parameter, currentKey);
 
