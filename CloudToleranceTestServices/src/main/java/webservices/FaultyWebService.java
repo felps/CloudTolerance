@@ -82,7 +82,7 @@ public class FaultyWebService {
 	}
 
 	protected boolean willReturnWrongAnswer() {
-		if (Math.random()*100 < faultyResponseProbability)
+		if (Math.random() < faultyResponseProbability)
 			return true;
 		else
 			return false;
