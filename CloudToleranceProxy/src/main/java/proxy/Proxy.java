@@ -18,6 +18,7 @@ public class Proxy {
 	private FaultToleranceTechnique currentTechnique;
 	private List<WsInvoker> invokerList;
 	private Logger log = Logger.getLogger(Proxy.class);
+	private boolean reliableServices = true;
 	
 	public Proxy() {
 		availableTechniques = new HashMap<String, FaultToleranceTechnique>();
@@ -42,6 +43,8 @@ public class Proxy {
 	public void setUnreliableServices(){
 		if (availableTechniques.containsKey("Voting")){
 			currentTechnique = availableTechniques.get("Voting");
+			currentTechnique.addAvailableInvokers(invokerList);
+			System.out.println("Current Technique: Voting");
 					
 		}
 	}
@@ -54,11 +57,16 @@ public class Proxy {
 			System.out.println("Service Pool: " + invokerList.size());
 			System.out.println("Current Technique: Retry");
 		}
-		else{
+		else if(reliableServices){
 			currentTechnique = availableTechniques.get("Active");
 			currentTechnique.addAvailableInvokers(invokerList);
 			System.out.println("Service Pool: " + invokerList.size());
 			System.out.println("Current Technique: Active");
+		} else{
+			currentTechnique = availableTechniques.get("Voting");
+			currentTechnique.addAvailableInvokers(invokerList);
+			System.out.println("Service Pool: " + invokerList.size());
+			System.out.println("Current Technique: Voting");
 		}
 
 	}
