@@ -2,12 +2,17 @@ package evaluation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeoutException;
+
+import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import proxy.ChoreographyEndpoint;
+import proxy.Proxy;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
@@ -161,14 +166,14 @@ public class ReliabilityEvaluation {
 			throws TimeoutException {
 
 		HashMap<Integer, WsInvoker> invokers = new HashMap<Integer, WsInvoker>();
-		// ArrayList<String> services = new ArrayList<String>();
-		//		
-		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
-		// services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
-		// services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
-		// String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
-		// setUp(wsdl, wsdl, services);// */
-		// invokers.put(90, new WsInvoker(wsdl));
+//		 ArrayList<String> services = new ArrayList<String>();
+//				
+//		 services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
+//		 services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
+//		 services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
+//		 String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
+//		 setUp(wsdl, wsdl, services);// */
+//		 invokers.put(90, new WsInvoker(wsdl));
 
 		 invokers.put(100, new WsInvoker(WS_100_FAILSTOP_WITH_FT));
 		 invokers.put(99, new WsInvoker(WS_99_FAILSTOP_WITH_FT));
@@ -200,7 +205,7 @@ public class ReliabilityEvaluation {
 		}
 	}
 
-	@Test
+//	@Test
 	public void evaluateMultipleFaultyResponseInvokationsWithoutFT()
 			throws TimeoutException {
 
@@ -236,19 +241,19 @@ public class ReliabilityEvaluation {
 		}
 	}
 
-//	@Test
+	@Test
 	public void evaluateMultipleFaultyResponseWithFT()
 			throws TimeoutException {
 
 		HashMap<Integer, WsInvoker> invokers = new HashMap<Integer, WsInvoker>();
-		// ArrayList<String> services = new ArrayList<String>();
-		//		
-		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
-		// services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
-		// services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
-		// String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
-		// setUp(wsdl, wsdl, services);// */
-		// invokers.put(90, new WsInvoker(wsdl));
+//		 ArrayList<String> services = new ArrayList<String>();
+//				
+//		 services.add("http://godzilla.ime.usp.br:25090/Linear?wsdl");
+//		 services.add("http://godzilla.ime.usp.br:26090/Linear?wsdl");
+//		 services.add("http://godzilla.ime.usp.br:27090/Linear?wsdl");
+//		 String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
+//		 setUp(wsdl, wsdl, services,false);// */
+//		 invokers.put(90, new WsInvoker(wsdl));
 
 		 invokers.put(100, new WsInvoker(WS_100_FAULTY_RESPONSE_WITH_FT));
 		 invokers.put(99, new WsInvoker(WS_99_FAULTY_RESPONSE_WITH_FT));
@@ -275,7 +280,7 @@ public class ReliabilityEvaluation {
 		for (int key : invokers.keySet()) {
 			log.info("Reliability set at " + key + '\n'
 					+ "Starting evaluation with 1000 parallel requests");
-			int invokeAmount = 2;
+			int invokeAmount = 1000;
 			multipleInvokations(invokers.get(key), invokeAmount);
 		}
 	}
@@ -328,5 +333,50 @@ public class ReliabilityEvaluation {
 			log.info("Exception gotten!");
 		}
 		return 0;
+	}
+	
+
+	static void setUp(String wsdl, String endpoint, List<String> webServices) {
+		setUp(wsdl, endpoint, webServices, true);
+	}
+
+	static void setUp(String wsdl, String endpoint, List<String> webServices, boolean reliable) {
+		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+
+		chor.nextProxyUrl = wsdl;
+		chor.wsMethodName = "addOne";
+
+		chor.myProxy = new Proxy();
+
+		for (String currentEndpoint : webServices) {
+			System.out.println("adding " + currentEndpoint);
+			chor.myProxy.addWebService(currentEndpoint);
+
+		}
+
+		chor.myProxy.setUnreliableServices();
+		
+		System.out.println("Publishing Proxy at " + endpoint);
+		Endpoint.publish(endpoint, chor);
+
+		System.out.println("Done! Ready to warm up!");
+	}
+
+	static void setUp(String wsdl, int retryAmount, String endpoint,
+			String webService) {
+		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+
+		chor.nextProxyUrl = wsdl;
+		chor.wsMethodName = "addOne";
+
+		chor.myProxy = new Proxy();
+
+		System.out.println("adding " + webService);
+		chor.myProxy.addWebService(webService);
+
+		System.out.println("Publishing Proxy at " + endpoint);
+		Endpoint.publish(endpoint, chor);
+
+		System.out.println("Done! Ready to warm up!");
 	}
 }

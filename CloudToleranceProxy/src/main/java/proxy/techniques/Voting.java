@@ -54,7 +54,6 @@ public class Voting implements FaultToleranceTechnique {
 	}
 
 	public Object invokeMethod(String wsMethodName, Object... wsParameterValues) {
-		Object result;
 		List<Result> resultSetters = createResultSetters(webServicePool.size());
 
 		int i = 0;
@@ -101,7 +100,7 @@ public class Voting implements FaultToleranceTechnique {
 				mostVotesPerResponse = votesPerResult.get(result);
 			}
 		}
-		
+		System.out.println("Most Voted response: "+ mostVotedResponse + " with " + mostVotesPerResponse);
 		return mostVotedResponse;
 	}
 
@@ -122,7 +121,7 @@ public class Voting implements FaultToleranceTechnique {
 	private void singleTry(WsInvoker webService, String wsMethodName,
 			Object[] wsParameterValues, Result resultSetter) {
 		if (wsParameterValues != null && wsParameterValues.length > 0)
-			System.out.println("ACTIVE: currentWS.invokeWebMethod("
+			System.out.println("VOTING: currentWS.invokeWebMethod("
 					+ wsMethodName + ", ("
 					+ wsParameterValues[0].getClass().getName() + ")"
 					+ wsParameterValues[0].toString() + ");");
