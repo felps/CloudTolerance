@@ -2,11 +2,11 @@
 
 echo "Setting server addresses..."
 
-server1=177.71.231.104
-server2=54.232.39.147
-server3=177.71.156.49
-server4=177.71.154.157
-server5=177.71.130.1
+server1=192.168.1.114
+server2=192.168.1.115
+server3=192.168.1.116
+server4=192.168.1.117
+server5=192.168.1.118
 server6=54.232.15.99
 server7=177.71.152.204
 server8=54.232.17.3
