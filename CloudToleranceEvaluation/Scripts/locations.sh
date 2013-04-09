@@ -2,13 +2,14 @@
 
 echo "Setting server addresses..."
 
-server1=192.168.1.114
-server2=192.168.1.115
-server3=192.168.1.116
-server4=192.168.1.117
-server5=192.168.1.118
-server6=54.232.15.99
-server7=177.71.152.204
-server8=54.232.17.3
-server9=177.71.230.246
-server0=177.71.236.5
+user=felps
+server1=192.168.1.1
+server2=192.168.1.2
+server3=192.168.1.3
+server4=192.168.1.4
+server5=192.168.1.5
+server6=192.168.1.6
+server7=192.168.1.7
+server8=192.168.1.8
+server9=
+server0=
