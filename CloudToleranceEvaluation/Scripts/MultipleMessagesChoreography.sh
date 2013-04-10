@@ -4,8 +4,8 @@ source locations.sh
 
 messageAmount=4;
 
-chorPort=2100	
-while (($messageAmount < 1024)); do
+chorPort=2101	
+while (($messageAmount < 1025)); do
 	proxyPort=$(($chorPort+100))
 	
 	echo "Starting proxies for $messageAmount at http://$server1:$chorPort/choreography"
