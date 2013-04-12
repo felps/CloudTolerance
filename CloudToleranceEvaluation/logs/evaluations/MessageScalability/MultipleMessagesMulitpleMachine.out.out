@@ -1,0 +1,1253 @@
+2013-02-20 09:09:37 INFO  MultipleProxies:70 - Initiating Multiple Proxies Evaluation
+2013-02-20 15:29:37 INFO  MultipleProxies:70 - Initiating Multiple Proxies Evaluation
+2013-02-20 15:32:14 INFO  MultipleProxies:70 - Initiating Multiple Proxies Evaluation
+2013-02-20 15:34:29 INFO  MultipleProxies:70 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:04:30 INFO  MultipleProxies:70 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:04:33 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 2
+Time it took: 234
+2013-02-20 17:05:44 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:06:10 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:07:37 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:09:50 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:09:52 INFO  MultipleProxies:42 - Invokation ID 1
+Returned Value: 2
+Time it took: 190
+2013-02-20 17:15:53 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 8
+Returned Value: 2
+Time it took: 468
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 4
+Returned Value: 2
+Time it took: 488
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 1
+Returned Value: 2
+Time it took: 507
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 5
+Returned Value: 2
+Time it took: 515
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 6
+Returned Value: 2
+Time it took: 552
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 7
+Returned Value: 2
+Time it took: 618
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 2
+Time it took: 626
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 3
+Returned Value: 2
+Time it took: 637
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 2
+Returned Value: 2
+Time it took: 638
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 9
+Returned Value: 2
+Time it took: 781
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 23
+Returned Value: 2
+Time it took: 630
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 26
+Returned Value: 2
+Time it took: 717
+2013-02-20 17:16:02 INFO  MultipleProxies:42 - Invokation ID 34
+Returned Value: 2
+Time it took: 719
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 24
+Returned Value: 2
+Time it took: 832
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 43
+Returned Value: 2
+Time it took: 854
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 38
+Returned Value: 2
+Time it took: 864
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 37
+Returned Value: 2
+Time it took: 890
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 49
+Returned Value: 2
+Time it took: 881
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 59
+Returned Value: 2
+Time it took: 881
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 36
+Returned Value: 2
+Time it took: 935
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 39
+Returned Value: 2
+Time it took: 949
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 78
+Returned Value: 2
+Time it took: 934
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 47
+Returned Value: 2
+Time it took: 958
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 40
+Returned Value: 2
+Time it took: 1003
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 85
+Returned Value: 2
+Time it took: 997
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 64
+Returned Value: 2
+Time it took: 1013
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 88
+Returned Value: 2
+Time it took: 1026
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 73
+Returned Value: 2
+Time it took: 1048
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 44
+Returned Value: 2
+Time it took: 1070
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 60
+Returned Value: 2
+Time it took: 1088
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 41
+Returned Value: 2
+Time it took: 1100
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 14
+Returned Value: 2
+Time it took: 1141
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 52
+Returned Value: 2
+Time it took: 1108
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 17
+Returned Value: 2
+Time it took: 1150
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 45
+Returned Value: 2
+Time it took: 1131
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 87
+Returned Value: 2
+Time it took: 1167
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 96
+Returned Value: 2
+Time it took: 1172
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 97
+Returned Value: 2
+Time it took: 1187
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 42
+Returned Value: 2
+Time it took: 1238
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 10
+Returned Value: 2
+Time it took: 1486
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 75
+Returned Value: 2
+Time it took: 1254
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 62
+Returned Value: 2
+Time it took: 1265
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 27
+Returned Value: 2
+Time it took: 1288
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 12
+Returned Value: 2
+Time it took: 1504
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 50
+Returned Value: 2
+Time it took: 1475
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 68
+Returned Value: 2
+Time it took: 1473
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 70
+Returned Value: 2
+Time it took: 1488
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 71
+Returned Value: 2
+Time it took: 1504
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 77
+Returned Value: 2
+Time it took: 1521
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 74
+Returned Value: 2
+Time it took: 1526
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 72
+Returned Value: 2
+Time it took: 1531
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 83
+Returned Value: 2
+Time it took: 1538
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 76
+Returned Value: 2
+Time it took: 1586
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 79
+Returned Value: 2
+Time it took: 1593
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 86
+Returned Value: 2
+Time it took: 1657
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 80
+Returned Value: 2
+Time it took: 1663
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 82
+Returned Value: 2
+Time it took: 1679
+2013-02-20 17:16:03 INFO  MultipleProxies:42 - Invokation ID 89
+Returned Value: 2
+Time it took: 1686
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 13
+Returned Value: 2
+Time it took: 1944
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 21
+Returned Value: 2
+Time it took: 1745
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 15
+Returned Value: 2
+Time it took: 1775
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 92
+Returned Value: 2
+Time it took: 1718
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 81
+Returned Value: 2
+Time it took: 1726
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 84
+Returned Value: 2
+Time it took: 1743
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 90
+Returned Value: 2
+Time it took: 1744
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 19
+Returned Value: 2
+Time it took: 1830
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 91
+Returned Value: 2
+Time it took: 1781
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 22
+Returned Value: 2
+Time it took: 1834
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 67
+Returned Value: 2
+Time it took: 1810
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 18
+Returned Value: 2
+Time it took: 1905
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 69
+Returned Value: 2
+Time it took: 1869
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 20
+Returned Value: 2
+Time it took: 1913
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 28
+Returned Value: 2
+Time it took: 1901
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 33
+Returned Value: 2
+Time it took: 1900
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 25
+Returned Value: 2
+Time it took: 1905
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 32
+Returned Value: 2
+Time it took: 1925
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 29
+Returned Value: 2
+Time it took: 1946
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 31
+Returned Value: 2
+Time it took: 1962
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 30
+Returned Value: 2
+Time it took: 1977
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 53
+Returned Value: 2
+Time it took: 1974
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 46
+Returned Value: 2
+Time it took: 2076
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 48
+Returned Value: 2
+Time it took: 2204
+2013-02-20 17:16:04 INFO  MultipleProxies:42 - Invokation ID 35
+Returned Value: 2
+Time it took: 2224
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 56
+Returned Value: 2
+Time it took: 2736
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 55
+Returned Value: 2
+Time it took: 2753
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 54
+Returned Value: 2
+Time it took: 2781
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 58
+Returned Value: 2
+Time it took: 2811
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 63
+Returned Value: 2
+Time it took: 2834
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 65
+Returned Value: 2
+Time it took: 2858
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 57
+Returned Value: 2
+Time it took: 2882
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 51
+Returned Value: 2
+Time it took: 2892
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 11
+Returned Value: 2
+Time it took: 3125
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 61
+Returned Value: 2
+Time it took: 2904
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 66
+Returned Value: 2
+Time it took: 2910
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 94
+Returned Value: 2
+Time it took: 3357
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 93
+Returned Value: 2
+Time it took: 3373
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 95
+Returned Value: 2
+Time it took: 3374
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 99
+Returned Value: 2
+Time it took: 3375
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 98
+Returned Value: 2
+Time it took: 3389
+2013-02-20 17:16:05 INFO  MultipleProxies:42 - Invokation ID 16
+Returned Value: 2
+Time it took: 3455
+2013-02-20 17:42:38 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:45:04 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:46:40 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 17:46:50 INFO  MultipleProxies:42 - Invokation ID 25
+Returned Value: 3
+Time it took: 824
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 43
+Returned Value: 3
+Time it took: 926
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 75
+Returned Value: 3
+Time it took: 968
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 95
+Returned Value: 3
+Time it took: 1038
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 51
+Returned Value: 3
+Time it took: 1077
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 97
+Returned Value: 3
+Time it took: 1071
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 93
+Returned Value: 3
+Time it took: 1075
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 99
+Returned Value: 3
+Time it took: 952
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 66
+Returned Value: 3
+Time it took: 1123
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 94
+Returned Value: 3
+Time it took: 1115
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 92
+Returned Value: 3
+Time it took: 1114
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 44
+Returned Value: 3
+Time it took: 1239
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 31
+Returned Value: 3
+Time it took: 1361
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 5
+Returned Value: 3
+Time it took: 1407
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 96
+Returned Value: 3
+Time it took: 1331
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 1
+Returned Value: 3
+Time it took: 1487
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 61
+Returned Value: 3
+Time it took: 1407
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 3
+Time it took: 1515
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 2
+Returned Value: 3
+Time it took: 1537
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 55
+Returned Value: 3
+Time it took: 1439
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 10
+Returned Value: 3
+Time it took: 1557
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 48
+Returned Value: 3
+Time it took: 1518
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 9
+Returned Value: 3
+Time it took: 1570
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 78
+Returned Value: 3
+Time it took: 1536
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 3
+Returned Value: 3
+Time it took: 1654
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 71
+Returned Value: 3
+Time it took: 1567
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 6
+Returned Value: 3
+Time it took: 1669
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 7
+Returned Value: 3
+Time it took: 1731
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 12
+Returned Value: 3
+Time it took: 1753
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 15
+Returned Value: 3
+Time it took: 1809
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 14
+Returned Value: 3
+Time it took: 1811
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 22
+Returned Value: 3
+Time it took: 1798
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 19
+Returned Value: 3
+Time it took: 1818
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 30
+Returned Value: 3
+Time it took: 1808
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 21
+Returned Value: 3
+Time it took: 1837
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 69
+Returned Value: 3
+Time it took: 1794
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 90
+Returned Value: 3
+Time it took: 1790
+2013-02-20 17:46:51 INFO  MultipleProxies:42 - Invokation ID 87
+Returned Value: 3
+Time it took: 1797
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 23
+Returned Value: 3
+Time it took: 1865
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 89
+Returned Value: 3
+Time it took: 1846
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 16
+Returned Value: 3
+Time it took: 1919
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 88
+Returned Value: 3
+Time it took: 1915
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 8
+Returned Value: 3
+Time it took: 1990
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 85
+Returned Value: 3
+Time it took: 1918
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 84
+Returned Value: 3
+Time it took: 1916
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 29
+Returned Value: 3
+Time it took: 1963
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 91
+Returned Value: 3
+Time it took: 1918
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 33
+Returned Value: 3
+Time it took: 2104
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 98
+Returned Value: 3
+Time it took: 2070
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 86
+Returned Value: 3
+Time it took: 2086
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 26
+Returned Value: 3
+Time it took: 2178
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 24
+Returned Value: 3
+Time it took: 2206
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 32
+Returned Value: 3
+Time it took: 2224
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 28
+Returned Value: 3
+Time it took: 2267
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 34
+Returned Value: 3
+Time it took: 2262
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 40
+Returned Value: 3
+Time it took: 2260
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 54
+Returned Value: 3
+Time it took: 2248
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 37
+Returned Value: 3
+Time it took: 2276
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 57
+Returned Value: 3
+Time it took: 2276
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 58
+Returned Value: 3
+Time it took: 2279
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 36
+Returned Value: 3
+Time it took: 2308
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 53
+Returned Value: 3
+Time it took: 2297
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 35
+Returned Value: 3
+Time it took: 2317
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 46
+Returned Value: 3
+Time it took: 2322
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 52
+Returned Value: 3
+Time it took: 2318
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 38
+Returned Value: 3
+Time it took: 2363
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 45
+Returned Value: 3
+Time it took: 2366
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 56
+Returned Value: 3
+Time it took: 2351
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 42
+Returned Value: 3
+Time it took: 2424
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 39
+Returned Value: 3
+Time it took: 2431
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 49
+Returned Value: 3
+Time it took: 2424
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 65
+Returned Value: 3
+Time it took: 2416
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 63
+Returned Value: 3
+Time it took: 2451
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 50
+Returned Value: 3
+Time it took: 2523
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 62
+Returned Value: 3
+Time it took: 2524
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 59
+Returned Value: 3
+Time it took: 2527
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 67
+Returned Value: 3
+Time it took: 2529
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 79
+Returned Value: 3
+Time it took: 2628
+2013-02-20 17:46:52 INFO  MultipleProxies:42 - Invokation ID 4
+Returned Value: 3
+Time it took: 2919
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 83
+Returned Value: 3
+Time it took: 2844
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 13
+Returned Value: 3
+Time it took: 2972
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 11
+Returned Value: 3
+Time it took: 3072
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 17
+Returned Value: 3
+Time it took: 3192
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 70
+Returned Value: 3
+Time it took: 3395
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 68
+Returned Value: 3
+Time it took: 3421
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 64
+Returned Value: 3
+Time it took: 3429
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 73
+Returned Value: 3
+Time it took: 3470
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 20
+Returned Value: 3
+Time it took: 3576
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 77
+Returned Value: 3
+Time it took: 3527
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 27
+Returned Value: 3
+Time it took: 3578
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 74
+Returned Value: 3
+Time it took: 3536
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 60
+Returned Value: 3
+Time it took: 3552
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 72
+Returned Value: 3
+Time it took: 3547
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 82
+Returned Value: 3
+Time it took: 3546
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 80
+Returned Value: 3
+Time it took: 3550
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 76
+Returned Value: 3
+Time it took: 3572
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 81
+Returned Value: 3
+Time it took: 3567
+2013-02-20 17:46:53 INFO  MultipleProxies:42 - Invokation ID 18
+Returned Value: 3
+Time it took: 3713
+2013-02-20 17:46:54 INFO  MultipleProxies:42 - Invokation ID 41
+Returned Value: 3
+Time it took: 4834
+2013-02-20 17:46:54 INFO  MultipleProxies:42 - Invokation ID 47
+Returned Value: 3
+Time it took: 4830
+2013-02-20 18:09:11 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:13:26 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:14:20 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:14:56 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:15:36 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:16:26 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:16:26 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 3
+Returned Value: 4
+Time it took: 793
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 15
+Returned Value: 4
+Time it took: 862
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 44
+Returned Value: 4
+Time it took: 965
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 47
+Returned Value: 4
+Time it took: 964
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 49
+Returned Value: 4
+Time it took: 979
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 48
+Returned Value: 4
+Time it took: 1009
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 50
+Returned Value: 4
+Time it took: 1104
+2013-02-20 18:18:52 INFO  MultipleProxies:42 - Invokation ID 51
+Returned Value: 4
+Time it took: 1112
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 46
+Returned Value: 4
+Time it took: 1128
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 38
+Returned Value: 4
+Time it took: 1173
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 69
+Returned Value: 4
+Time it took: 1305
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 82
+Returned Value: 4
+Time it took: 1533
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 57
+Returned Value: 4
+Time it took: 1565
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 37
+Returned Value: 4
+Time it took: 1638
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 42
+Returned Value: 4
+Time it took: 1647
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 35
+Returned Value: 4
+Time it took: 1663
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 41
+Returned Value: 4
+Time it took: 1663
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 60
+Returned Value: 4
+Time it took: 1618
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 91
+Returned Value: 4
+Time it took: 1577
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 85
+Returned Value: 4
+Time it took: 1588
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 61
+Returned Value: 4
+Time it took: 1621
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 89
+Returned Value: 4
+Time it took: 1620
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 13
+Returned Value: 4
+Time it took: 1243
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 39
+Returned Value: 4
+Time it took: 1729
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 94
+Returned Value: 4
+Time it took: 1634
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 12
+Returned Value: 4
+Time it took: 1257
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 52
+Returned Value: 4
+Time it took: 1705
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 80
+Returned Value: 4
+Time it took: 1657
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 6
+Returned Value: 4
+Time it took: 1272
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 88
+Returned Value: 4
+Time it took: 1662
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 84
+Returned Value: 4
+Time it took: 1668
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 90
+Returned Value: 4
+Time it took: 1656
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 54
+Returned Value: 4
+Time it took: 1718
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 76
+Returned Value: 4
+Time it took: 1675
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 92
+Returned Value: 4
+Time it took: 1682
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 8
+Returned Value: 4
+Time it took: 1310
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 10
+Returned Value: 4
+Time it took: 1318
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 86
+Returned Value: 4
+Time it took: 1713
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 40
+Returned Value: 4
+Time it took: 1815
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 4
+Time it took: 1397
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 16
+Returned Value: 4
+Time it took: 1360
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 64
+Returned Value: 4
+Time it took: 1793
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 7
+Returned Value: 4
+Time it took: 1388
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 18
+Returned Value: 4
+Time it took: 1420
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 4
+Time it took: 2006
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 14
+Returned Value: 4
+Time it took: 1490
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 1
+Returned Value: 4
+Time it took: 1549
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 4
+Returned Value: 4
+Time it took: 2075
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 17
+Returned Value: 4
+Time it took: 1592
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 29
+Returned Value: 4
+Time it took: 1596
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 9
+Returned Value: 4
+Time it took: 1621
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 1
+Returned Value: 4
+Time it took: 2188
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 61
+Returned Value: 4
+Time it took: 1598
+2013-02-20 18:18:53 INFO  MultipleProxies:42 - Invokation ID 2
+Returned Value: 4
+Time it took: 1703
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 22
+Returned Value: 4
+Time it took: 2194
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 6
+Returned Value: 4
+Time it took: 2229
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 66
+Returned Value: 4
+Time it took: 1698
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 15
+Returned Value: 4
+Time it took: 1784
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 33
+Returned Value: 4
+Time it took: 1775
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 26
+Returned Value: 4
+Time it took: 1786
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 87
+Returned Value: 4
+Time it took: 2200
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 27
+Returned Value: 4
+Time it took: 2294
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 11
+Returned Value: 4
+Time it took: 1814
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 78
+Returned Value: 4
+Time it took: 1804
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 54
+Returned Value: 4
+Time it took: 1865
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 25
+Returned Value: 4
+Time it took: 2484
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 13
+Returned Value: 4
+Time it took: 2545
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 8
+Returned Value: 4
+Time it took: 2567
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 81
+Returned Value: 4
+Time it took: 1964
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 36
+Returned Value: 4
+Time it took: 2540
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 33
+Returned Value: 4
+Time it took: 2540
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 59
+Returned Value: 4
+Time it took: 2017
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 24
+Returned Value: 4
+Time it took: 2595
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 75
+Returned Value: 4
+Time it took: 2040
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 70
+Returned Value: 4
+Time it took: 2056
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 14
+Returned Value: 4
+Time it took: 2650
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 5
+Returned Value: 4
+Time it took: 2662
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 69
+Returned Value: 4
+Time it took: 2062
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 72
+Returned Value: 4
+Time it took: 2063
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 71
+Returned Value: 4
+Time it took: 2069
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 31
+Returned Value: 4
+Time it took: 2626
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 34
+Returned Value: 4
+Time it took: 2627
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 30
+Returned Value: 4
+Time it took: 2634
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 85
+Returned Value: 4
+Time it took: 2080
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 12
+Returned Value: 4
+Time it took: 2683
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 2
+Returned Value: 4
+Time it took: 2737
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 32
+Returned Value: 4
+Time it took: 2685
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 63
+Returned Value: 4
+Time it took: 2154
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 28
+Returned Value: 4
+Time it took: 2702
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 68
+Returned Value: 4
+Time it took: 2182
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 50
+Returned Value: 4
+Time it took: 2203
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 10
+Returned Value: 4
+Time it took: 2779
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 26
+Returned Value: 4
+Time it took: 2773
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 7
+Returned Value: 4
+Time it took: 2833
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 82
+Returned Value: 4
+Time it took: 2246
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 11
+Returned Value: 4
+Time it took: 2851
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 92
+Returned Value: 4
+Time it took: 2275
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 63
+Returned Value: 4
+Time it took: 2771
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 68
+Returned Value: 4
+Time it took: 2774
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 65
+Returned Value: 4
+Time it took: 2803
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 56
+Returned Value: 4
+Time it took: 2856
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 97
+Returned Value: 4
+Time it took: 2366
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 34
+Returned Value: 4
+Time it took: 2434
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 83
+Returned Value: 4
+Time it took: 2400
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 30
+Returned Value: 4
+Time it took: 2450
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 45
+Returned Value: 4
+Time it took: 2940
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 23
+Returned Value: 4
+Time it took: 2482
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 84
+Returned Value: 4
+Time it took: 2442
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 4
+Returned Value: 4
+Time it took: 2525
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 59
+Returned Value: 4
+Time it took: 2956
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 20
+Returned Value: 4
+Time it took: 2557
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 36
+Returned Value: 4
+Time it took: 2582
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 58
+Returned Value: 4
+Time it took: 3038
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 53
+Returned Value: 4
+Time it took: 3057
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 44
+Returned Value: 4
+Time it took: 2627
+2013-02-20 18:18:54 INFO  MultipleProxies:42 - Invokation ID 32
+Returned Value: 4
+Time it took: 2641
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 39
+Returned Value: 4
+Time it took: 2638
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 91
+Returned Value: 4
+Time it took: 2613
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 96
+Returned Value: 4
+Time it took: 2624
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 93
+Returned Value: 4
+Time it took: 2641
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 62
+Returned Value: 4
+Time it took: 2832
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 60
+Returned Value: 4
+Time it took: 2834
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 64
+Returned Value: 4
+Time it took: 2844
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 65
+Returned Value: 4
+Time it took: 2990
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 58
+Returned Value: 4
+Time it took: 3010
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 90
+Returned Value: 4
+Time it took: 3204
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 70
+Returned Value: 4
+Time it took: 3715
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 9
+Returned Value: 4
+Time it took: 3865
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 77
+Returned Value: 4
+Time it took: 3809
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 74
+Returned Value: 4
+Time it took: 3816
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 73
+Returned Value: 4
+Time it took: 3832
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 79
+Returned Value: 4
+Time it took: 3839
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 83
+Returned Value: 4
+Time it took: 3873
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 86
+Returned Value: 4
+Time it took: 3460
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 98
+Returned Value: 4
+Time it took: 3933
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 96
+Returned Value: 4
+Time it took: 3943
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 95
+Returned Value: 4
+Time it took: 3970
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 97
+Returned Value: 4
+Time it took: 3969
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 99
+Returned Value: 4
+Time it took: 3976
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 24
+Returned Value: 4
+Time it took: 3636
+2013-02-20 18:18:55 INFO  MultipleProxies:42 - Invokation ID 43
+Returned Value: 4
+Time it took: 4117
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 25
+Returned Value: 4
+Time it took: 3651
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 31
+Returned Value: 4
+Time it took: 3649
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 18
+Returned Value: 4
+Time it took: 4203
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 42
+Returned Value: 4
+Time it took: 3658
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 28
+Returned Value: 4
+Time it took: 3673
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 45
+Returned Value: 4
+Time it took: 3691
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 21
+Returned Value: 4
+Time it took: 4301
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 55
+Returned Value: 4
+Time it took: 3759
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 57
+Returned Value: 4
+Time it took: 3760
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 19
+Returned Value: 4
+Time it took: 4330
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 48
+Returned Value: 4
+Time it took: 3777
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 17
+Returned Value: 4
+Time it took: 4381
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 16
+Returned Value: 4
+Time it took: 4411
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 23
+Returned Value: 4
+Time it took: 4457
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 67
+Returned Value: 4
+Time it took: 4135
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 79
+Returned Value: 4
+Time it took: 4279
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 94
+Returned Value: 4
+Time it took: 4273
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 76
+Returned Value: 4
+Time it took: 4280
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 80
+Returned Value: 4
+Time it took: 4356
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 73
+Returned Value: 4
+Time it took: 4449
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 74
+Returned Value: 4
+Time it took: 4454
+2013-02-20 18:18:56 INFO  MultipleProxies:42 - Invokation ID 77
+Returned Value: 4
+Time it took: 4508
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 35
+Returned Value: 4
+Time it took: 4775
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 38
+Returned Value: 4
+Time it took: 4778
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 3
+Returned Value: 4
+Time it took: 4863
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 5
+Returned Value: 4
+Time it took: 4824
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 27
+Returned Value: 4
+Time it took: 4867
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 37
+Returned Value: 4
+Time it took: 4925
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 40
+Returned Value: 4
+Time it took: 4927
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 22
+Returned Value: 4
+Time it took: 5052
+2013-02-20 18:18:57 INFO  MultipleProxies:42 - Invokation ID 19
+Returned Value: 4
+Time it took: 5131
+2013-02-20 18:18:58 INFO  MultipleProxies:42 - Invokation ID 41
+Returned Value: 4
+Time it took: 6442
+2013-02-20 18:18:58 INFO  MultipleProxies:42 - Invokation ID 56
+Returned Value: 4
+Time it took: 6446
+2013-02-20 18:18:58 INFO  MultipleProxies:42 - Invokation ID 53
+Returned Value: 4
+Time it took: 6609
+2013-02-20 18:18:58 INFO  MultipleProxies:42 - Invokation ID 47
+Returned Value: 4
+Time it took: 6618
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 29
+Returned Value: 4
+Time it took: 7523
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 62
+Returned Value: 4
+Time it took: 7776
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 55
+Returned Value: 4
+Time it took: 7828
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 66
+Returned Value: 4
+Time it took: 7819
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 67
+Returned Value: 4
+Time it took: 7832
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 43
+Returned Value: 4
+Time it took: 7422
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 20
+Returned Value: 4
+Time it took: 7979
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 71
+Returned Value: 4
+Time it took: 7874
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 75
+Returned Value: 4
+Time it took: 7870
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 72
+Returned Value: 4
+Time it took: 7877
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 21
+Returned Value: 4
+Time it took: 7508
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 78
+Returned Value: 4
+Time it took: 7918
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 46
+Returned Value: 4
+Time it took: 7483
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 81
+Returned Value: 4
+Time it took: 7922
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 49
+Returned Value: 4
+Time it took: 7489
+2013-02-20 18:18:59 INFO  MultipleProxies:42 - Invokation ID 51
+Returned Value: 4
+Time it took: 7491
+2013-02-20 18:19:00 INFO  MultipleProxies:42 - Invokation ID 52
+Returned Value: 4
+Time it took: 7958
+2013-02-20 18:19:00 INFO  MultipleProxies:42 - Invokation ID 95
+Returned Value: 4
+Time it took: 8436
+2013-02-20 18:19:00 INFO  MultipleProxies:42 - Invokation ID 87
+Returned Value: 4
+Time it took: 8439
+2013-02-20 18:19:01 INFO  MultipleProxies:42 - Invokation ID 93
+Returned Value: 4
+Time it took: 9908
+2013-02-20 18:19:02 INFO  MultipleProxies:42 - Invokation ID 99
+Returned Value: 4
+Time it took: 9833
+2013-02-20 18:19:02 INFO  MultipleProxies:42 - Invokation ID 98
+Returned Value: 4
+Time it took: 9916
+2013-02-20 18:19:02 INFO  MultipleProxies:42 - Invokation ID 89
+Returned Value: 4
+Time it took: 10110
+2013-02-20 18:19:13 INFO  MultipleProxies:42 - Invokation ID 88
+Returned Value: 4
+Time it took: 20882
+2013-02-20 18:45:19 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:49:27 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:51:19 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:51:48 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:52:30 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 18:59:51 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:00:47 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:01:09 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:01:32 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:24:54 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:27:37 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:32:27 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:34:53 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 19:35:29 INFO  MultipleProxies:42 - Invokation ID 4
+Returned Value: 5
+Time it took: 854
+2013-02-20 20:00:44 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:26:04 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:28:06 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:38:37 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:38:43 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:47:25 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:50:07 INFO  MultipleProxies:69 - Initiating Multiple Proxies Evaluation
+2013-02-20 20:50:16 INFO  MultipleProxies:42 - Invokation ID 0
+Returned Value: 6
+Time it took: 2698
+
