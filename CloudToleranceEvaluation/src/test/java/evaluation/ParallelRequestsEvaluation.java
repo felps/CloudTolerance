@@ -1,5 +1,8 @@
 package evaluation;
 
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -7,15 +10,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.apache.log4j.Logger;
+import org.apache.xml.resolver.apps.resolver;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import proxy.utils.Result;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
 public class ParallelRequestsEvaluation {
 
-	private static final String CHOR_4_PROXIES = "http://127.0.0.1:2440/choreography?wsdl";
+	private static final String CHOR_4_PROXIES = "http://192.168.1.1:2440/choreography?wsdl";
 
 	private static Logger log;
 	private static ThreadPoolExecutor poolManager;
@@ -26,34 +31,41 @@ public class ParallelRequestsEvaluation {
 		public Logger log;
 		private WsInvoker invoker;
 		public int id;
+		private Result result;
 
-		private int singleLoggedInvokation(WsInvoker invoker)
+		public SingleInvokation(WsInvoker invoker, Result result, int id,
+				Logger log) {
+			this.id = id;
+			this.invoker = invoker;
+			this.result = result;
+			this.log = log;
+		}
+
+		private void singleLoggedInvokation(WsInvoker invoker)
 				throws TimeoutException {
 			long startTime = System.currentTimeMillis();
 			int result = singleInvokation(invoker);
-			log.info("Invokation ID " + id + '\n' +
-					"Returned Value: " + result + '\n' + 
-					"Time it took: " + (System.currentTimeMillis() - startTime));
-			return result;
+			log.info(result + '\t' + (System.currentTimeMillis() - startTime));
 		}
 
 		private int singleInvokation(WsInvoker invoker) throws TimeoutException {
 			WsInvokation returnedValue = invoker.invokeWebMethod(
 					"startChoreograph", 0);
-			int result = (Integer) returnedValue.getResultSetter()
-					.getResultValue();
-			return result;
+			Object result = returnedValue.getResultSetter().getResultValue();
+			if (result == null) {
+				System.out.println("NULL");
+				return -1;
+			} else
+				return (Integer) result;
 		}
 
 		public void run() {
 			try {
 				singleLoggedInvokation(invoker);
 			} catch (TimeoutException e) {
-				log.error("Invokation ID "+ id + " Timedout");
+				log.error("Invokation ID " + id + " Timedout");
 			}
-
 		}
-
 	}
 
 	@BeforeClass
@@ -62,52 +74,49 @@ public class ParallelRequestsEvaluation {
 		log.info("Initiating Multiple Proxies Evaluation");
 		TimeUnit unit = TimeUnit.MINUTES;
 		workQueue = new ArrayBlockingQueue<Runnable>(100);
-		poolManager = new ThreadPoolExecutor(100, 1000, 10, unit, workQueue);
-
+		poolManager = new ThreadPoolExecutor(500, 1000, 10, unit, workQueue);
+		System.out.println("Preparing to warm up...");
 	}
 
-
-	 @Test
+	@Test
 	public void evaluateMultipleClients() throws TimeoutException {
-		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
-
 		// warm up invokation
-		warmUpInvokation(invoker);
+		warmUpInvokation();
 
 		log.info("Starting evaluation with 1 parallel requests");
 		int invokeAmount = 1;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 10 parallel requests");
 		invokeAmount = 10;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 20 parallel requests");
 		invokeAmount = 20;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 30 parallel requests");
 		invokeAmount = 30;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 40 parallel requests");
 		invokeAmount = 40;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 50 parallel requests");
 		invokeAmount = 50;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 60 parallel requests");
 		invokeAmount = 60;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 70 parallel requests");
 		invokeAmount = 70;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 80 parallel requests");
 		invokeAmount = 80;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 90 parallel requests");
 		invokeAmount = 90;
-		multipleInvokations(invoker, invokeAmount);
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		log.info("Starting evaluation with 100 parallel requests");
 		invokeAmount = 100;
-		multipleInvokations(invoker, invokeAmount);
-		
+		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
+		/**/
 	}
 
 	private int singleLoggedInvokation(WsInvoker invoker)
@@ -125,9 +134,11 @@ public class ParallelRequestsEvaluation {
 		return result;
 	}
 
-	private int warmUpInvokation(WsInvoker invoker) {
+	private int warmUpInvokation() {
 		int result = 0;
+		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
 		try {
+			System.out.println("Warming up the engines...");
 			result = singleInvokation(invoker);
 		} catch (TimeoutException e) {
 			try {
@@ -141,11 +152,28 @@ public class ParallelRequestsEvaluation {
 		return result;
 	}
 
-	private void multipleInvokations(WsInvoker invoker, int invokeAmount)
+	private void multipleInvokations(String wsdl, int invokeAmount)
 			throws TimeoutException {
+		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
+		ArrayList<SingleInvokation> invokations = new ArrayList<>();
 		for (int i = 0; i < invokeAmount; i++) {
-			SingleInvokation invoke = new SingleInvokation();
-			poolManager.execute(invoke);
+			SingleInvokation invoke = new SingleInvokation(invoker,
+					new Result(), i, log);
+			invokations.add(invoke);
+		}
+		for (int i = 0; i < invokeAmount; i++) {
+			poolManager.execute(invokations.get(i));
+		}
+		while(poolManager.getActiveCount()>0){
+			System.out.println("Awaiting completion...");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+			}
+		}
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
 		}
 	}
 }
