@@ -1,0 +1,24 @@
+traceroute to mirror.anl.gov (146.137.96.7), 64 hops max
+ 1   192.168.2.1 (192.168.2.1) 1.369ms 1.077ms 1.038ms 
+ 2   192.168.1.1 (192.168.1.1) 2.014ms 1.916ms 1.913ms 
+ 3   10.1.1.1 (10.1.1.1) 3.353ms 3.330ms 3.615ms 
+ 4   192.168.2.1 (192.168.2.1) 50952.124ms 0.006ms 0.006ms 
+ 5   192.168.1.1 (ddwrt) 0.002ms 0.005ms 0.002ms 
+ 6   10.1.1.1 (10.1.1.1) 0.001ms 0.006ms 0.006ms 
+ 7   201.22.132.2 (201.22.132.2.static.gvt.net.br) 0.025ms 0.006ms 0.002ms 
+ 8   189.59.250.105 (gvt-te-9-2-rc01.bsa.gvt.net.br) 0.001ms  201.22.132.1 (201.22.132.1.static.gvt.net.br) 0.005ms 0.005ms 
+ 9   201.22.132.1 (201.22.132.1.static.gvt.net.br) 0.002ms  189.59.250.105 (gvt-te-9-2-rc01.bsa.gvt.net.br) 0.025ms 0.005ms 
+ 10   189.59.251.113 (189.59.251.113.static.host.gvt.net.br) 0.002ms  189.59.243.117 (189.59.243.117.static.host.gvt.net.br) 0.006ms 0.005ms 
+ 11   189.59.243.117 (189.59.243.117.static.host.gvt.net.br) 0.002ms  189.59.251.113 (189.59.251.113.static.host.gvt.net.br) 0.005ms 0.006ms 
+ 12   189.59.248.229 (gvt-host.gvt.net.br) 0.002ms  67.17.196.193 (67.17.196.193) 0.011ms 0.005ms 
+ 13   189.59.248.229 (gvt-host.gvt.net.br) 0.002ms  67.17.196.193 (67.17.196.193) 0.006ms  189.59.248.229 (gvt-host.gvt.net.br) 0.007ms 
+ 14   84.16.7.157 (Xe0-1-0-0-grtssatw1.red.telefonica-wholesale.net) 0.005ms 0.005ms 0.002ms 
+ 15   94.142.127.226 (Xe2-0-0-0-grtfortw1.red.telefonica-wholesale.net) 0.002ms 0.005ms 0.001ms 
+ 16   94.142.123.170 (Xe11-0-0-0-grtmiabr4.red.telefonica-wholesale.net) 0.002ms 0.010ms  203.50.13.49 (tengigabitethernet0-2-0-2.pad-gw2.sydney.telstra.net) 0.002ms 
+ 17   203.50.13.49 (tengigabitethernet0-2-0-2.pad-gw2.sydney.telstra.net) 0.005ms 0.003ms  94.142.124.117 (Xe-2-1-0-0-grtwaseq4.red.telefonica-wholesale.net) 0.017ms 
+ 18   94.142.124.117 (Xe-2-1-0-0-grtwaseq4.red.telefonica-wholesale.net) 0.006ms  94.142.123.170 (Xe11-0-0-0-grtmiabr4.red.telefonica-wholesale.net) 0.006ms  94.142.124.117 (Xe-2-1-0-0-grtwaseq4.red.telefonica-wholesale.net) 0.026ms 
+ 19   134.55.221.145 (washsdn2-te-eqxashrt1.es.net) 0.006ms 0.006ms 0.002ms 
+ 20   203.50.6.2 (bundle-ether1.lon70.melbourne.telstra.net) 0.002ms 0.013ms  192.5.170.77 (guava-esnet-pri.anchor.anl.gov) 0.002ms 
+ 21   130.202.212.141 (ciscore-v911-221c1hsrp.net.anl.gov) 0.005ms  192.5.170.77 (guava-esnet-pri.anchor.anl.gov) 0.005ms 0.006ms 
+ 22   203.50.6.2 (bundle-ether1.lon70.melbourne.telstra.net) 0.003ms  130.202.212.141 (ciscore-v911-221c1hsrp.net.anl.gov) 0.011ms 0.005ms 
+ 23   123.2.3.82 (123-2-3-82.core.dodo.com.au) 0.002ms 0.005ms  146.137.96.7 (mirror.anl.gov) 0.002ms 
