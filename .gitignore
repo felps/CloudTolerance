@@ -14,3 +14,5 @@
 .project
 */.settings/*
 /UMLDiagram.dia.autosave
+/Pilha/dist/
+/Pilha/build/

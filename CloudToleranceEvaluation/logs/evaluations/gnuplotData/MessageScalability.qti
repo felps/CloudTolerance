@@ -1,0 +1,138 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	2
+<table>
+Table1	10	3	4/30/13 3:50 PM
+geometry	-4	119	445	290	
+header	1[X]	2[Y]	3[yEr]
+ColWidth	100	100	188	
+<com>
+</com>
+ColType	1;0/13	0;0/13	0;0/13
+ReadOnlyColumn	0	0	0
+HiddenColumn	0	0	0
+Comments	Messages	"Avg. Response Time"	"Std. Deviation"	
+WindowLabel	/home/felps/workspace/CloudTolerance/CloudToleranceEvaluation/logs/evaluations/MessageScalability/MultipleMessagesTwoMachines-compiledData.data.csv	2
+<data>
+0	4	3561	19.5211617886
+1	8	6485	5.8872891181
+2	16	12484	29.5485512863
+3	32	24918	33.5921553407
+4	64	48767	41.6554876779
+5	128	95710	94.2715062101
+6	256	190518	138.8256560242
+7	512	377009	341.3647583867
+8	1,024	760145	511.6988955824
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	4/30/13 3:57 PM
+geometry	1099	353	593	468	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	575	405
+<PageGeometry>0.00854701	0.0119048	0.982906	0.964286</PageGeometry>
+PlotTitle	Average Response Time vs. Exchanged Messages Amount	#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	255
+Margin	0
+Border	0	#ffffff
+grid	0	0	1	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	0	1	0	
+AxesTitles	Amount of Exchanged Messages	Response Time (in ms)		%(?Y)	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	4	5124	4
+AxesTitleDistance	2	-1	2	-1
+TitleFont	Ubuntu	13	75	0	0	0
+ScaleFont0	Ubuntu	11	75	0	0	0
+ScaleFont1	Ubuntu	11	75	0	0	0
+ScaleFont2	Ubuntu	11	75	0	0	0
+ScaleFont3	Ubuntu	11	75	0	0	0
+AxisFont0	Ubuntu	11	50	0	0	0
+AxisFont1	Ubuntu	11	50	0	0	0
+AxisFont2	Ubuntu	11	50	0	0	0
+AxisFont3	Ubuntu	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#313739	#313739	#313739	#313739
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	3	1	#000000	0	2.5	7	0	#000000	#000000	1	#c0c0c0	0	20	0	2	0	0	9	1
+<CurveLabels>
+	<column>Table1_1</column>
+	<color>#000000</color>
+	<whiteOut>0</whiteOut>
+	<Font>Ubuntu,11,-1,5,50,0,0,0,0,0</Font>
+	<angle>0</angle>
+	<justify>4</justify>
+	<yoffset>50</yoffset>
+</CurveLabels>
+ErrorBars	1	Table1_1	Table1_2	Table1_3	5	20	#ff0000	1	1	1	0
+scale	0	0	800000	0	9	5	0	0
+scale	1	0	800000	0	9	5	0	0
+scale	2	0	10	0	11	0	0	0
+scale	3	0	10	0	11	0	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	1;Table1_1	0	
+MajorTicks	1	1	0	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.25062656641604</x>
+<y>773154.36241611</y>
+<right>5.23809523809524</right>
+<bottom>697986.577181208</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>
+<log>
+[4/30/13 3:55 PM	Plot: ''Graph2'']
+Linear Regression of dataset: Table1_2, using function: A*x
+Weighting Method: Instrumental, using error bars dataset: Table1_3
+From x = 1.000000000000000e+00 to x = 9.000000000000000e+00
+A (slope) = 5.117035305927156e+03 +/- 2.466492023926821e+00
+--------------------------------------------------------------------------------------
+Chi^2/doF = 6.728200057065848e+05
+R^2 = 0.993946944120018
+Adjusted R^2 = 0.993082221851449
+RMSE (Root Mean Squared Error) = 820.25606106056
+RSS (Residual Sum of Squares) = 5,382,560.04565268
+---------------------------------------------------------------------------------------
+</log>
