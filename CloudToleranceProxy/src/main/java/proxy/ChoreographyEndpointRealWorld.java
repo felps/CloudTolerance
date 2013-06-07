@@ -66,7 +66,9 @@ public class ChoreographyEndpointRealWorld {
 		this.wsMethodName = wsMethodName;
 
 		myProxy = new Proxy();
+		
 		myProxy.setRealWorldEffects(true);
+		
 		for (String webServiceEndpoint : webServices) {
 			System.out.println("Adding WS at: " + webServiceEndpoint);
 			myProxy.addWebService(webServiceEndpoint);

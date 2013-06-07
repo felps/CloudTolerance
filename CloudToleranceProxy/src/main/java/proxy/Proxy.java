@@ -23,14 +23,9 @@ public class Proxy {
 	private boolean realWorldEffects = false;
 	
 	public Proxy() {
-		configureProxy(new ArrayList<WsInvoker>());
-	}
-
-	public Proxy(ArrayList<WsInvoker> invokerList) {
-		configureProxy(invokerList);
-	}
-
-	private void configureProxy(ArrayList<WsInvoker> invokerList) {
+		
+		invokerList = new ArrayList<WsInvoker>();
+		
 		availableTechniques = new HashMap<String, FaultToleranceTechnique>();
 
 		availableTechniques.put("Retry", new Retry());
@@ -79,7 +74,7 @@ public class Proxy {
 			currentTechnique = availableTechniques.get("Alternate");
 			currentTechnique.addAvailableInvokers(invokerList);
 			System.out.println("Service Pool: " + invokerList.size());
-			System.out.println("Current Technique: Active");
+			System.out.println("Current Technique: Alternate");
 		}
 		else if(reliableServices){
 			currentTechnique = availableTechniques.get("Active");
