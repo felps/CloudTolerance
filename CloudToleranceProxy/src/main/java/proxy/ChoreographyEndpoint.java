@@ -47,15 +47,19 @@ public class ChoreographyEndpoint {
 		String publish = args[0];
 
 		ChoreographyEndpoint chor = new ChoreographyEndpoint();
-		chor.setUpWebService(nextProxyUrl, wsMethodName,
-				Arrays.copyOfRange(args, 3, args.length));
+		for (String string : Arrays.copyOfRange(args, 3, args.length)) {
+			System.out.println("WSDL: "+ string);
+		}
+		
+		chor.setUpWebService(nextProxyUrl, wsMethodName, Arrays.copyOfRange(args, 3, args.length));
 
 		Endpoint.publish(publish, chor);
 		System.out.println("Done! Ready to warm up!");
 		
 	}
 
-	private void setUpWebService(String nextProxyWSDL, String wsMethodName, String... webServices) {
+	private void setUpWebService(String nextProxyWSDL, String wsMethodName,
+			String... webServices) {
 
 		this.nextProxyUrl = nextProxyWSDL;
 

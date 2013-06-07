@@ -68,7 +68,6 @@ public class Proxy {
 			System.out.println("Service Pool: " + invokerList.size());
 			System.out.println("Current Technique: Voting");
 		}
-
 	}
 	
 	public Object invokeMethod(String wsMethodName, Object... wsParameterValues){

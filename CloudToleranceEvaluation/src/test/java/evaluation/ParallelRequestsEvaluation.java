@@ -155,7 +155,7 @@ public class ParallelRequestsEvaluation {
 	private void multipleInvokations(String wsdl, int invokeAmount)
 			throws TimeoutException {
 		WsInvoker invoker = new WsInvoker(CHOR_4_PROXIES);
-		ArrayList<SingleInvokation> invokations = new ArrayList<>();
+		ArrayList<SingleInvokation> invokations = new ArrayList<SingleInvokation>();
 		for (int i = 0; i < invokeAmount; i++) {
 			SingleInvokation invoke = new SingleInvokation(invoker,
 					new Result(), i, log);
