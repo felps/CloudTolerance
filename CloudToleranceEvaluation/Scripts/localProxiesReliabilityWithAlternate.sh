@@ -9,7 +9,7 @@ myBasePort=22000
 
 providerBasePort=22000 
 
-for ((reliability=100; reliability>=90;reliability=reliability-1))
+for ((reliability=100; reliability>=100;reliability=reliability-1))
 do
 
 	myPort=$((myBasePort + reliability))
