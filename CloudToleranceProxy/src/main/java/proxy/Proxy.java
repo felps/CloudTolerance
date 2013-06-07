@@ -35,7 +35,7 @@ public class Proxy {
 		}
 		else{
 			log.info("Active Technique");
-			currentTechnique = availableTechniques.get("Active");
+		//	currentTechnique = availableTechniques.get("Active");
 		}
 		currentTechnique.addAvailableInvokers(invokerList);
 	}

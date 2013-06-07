@@ -11,7 +11,7 @@ public class Retry implements FaultToleranceTechnique {
 
 	private List<WsInvoker> invokerList;
 	private WsInvoker currentWS;
-	private int retryAmount = 1;
+	private int retryAmount = 3;
 
 	public List<WsInvoker> getInvokerList() {
 		return invokerList;
