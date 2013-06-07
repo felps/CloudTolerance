@@ -15,8 +15,8 @@ do
 	myPort=$((myBasePort + reliability))
 	providerPort=$((providerBasePort + reliability))
 
-	echo "java -jar ChoreographyEndpointServiceRetryOnly.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl http://$serviceProvider:$((providerPort+1000))/Linear?wsdl http://$serviceProvider:$((providerPort+2000))/Linear?wsdl &"
-	      java -jar ChoreographyEndpointServiceRetryOnly.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl http://$serviceProvider:$((providerPort+1000))/Linear?wsdl http://$serviceProvider:$((providerPort+2000))/Linear?wsdl &
+	echo "java -jar ChoreographyEndpointServiceRetryOnly.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl &"
+	      java -jar ChoreographyEndpointServiceRetryOnly.jar http://0.0.0.0:$myPort/choreography http://127.0.0.1:$myPort/choreography?wsdl addOne http://$serviceProvider:$providerPort/Linear?wsdl &
 
 done
 

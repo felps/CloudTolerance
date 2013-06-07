@@ -120,7 +120,7 @@ public class ReliabilityEvaluation {
 	}
 
 	
-	@Test
+//	@Test
 	public void evaluateMultipleFailStopInvokationsWithoutFT()
 			throws TimeoutException {
 
@@ -161,7 +161,7 @@ public class ReliabilityEvaluation {
 		}
 	}
 
-//	@Test
+	@Test
 	public void evaluateMultipleFailStopWithFT()
 			throws TimeoutException {
 
