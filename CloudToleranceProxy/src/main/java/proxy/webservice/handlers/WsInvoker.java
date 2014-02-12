@@ -18,6 +18,12 @@ public class WsInvoker {
 		return timeout;
 	}
 
+	
+	public String getWsdlURL() {
+		return wsdlURL;
+	}
+
+
 	public void setTimeout(long newTimeout) {
 
 		timeout = newTimeout;

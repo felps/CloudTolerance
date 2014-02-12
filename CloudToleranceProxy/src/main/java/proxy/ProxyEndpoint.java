@@ -10,10 +10,10 @@ import proxy.webservice.handlers.WsInvoker;
 @WebService
 public class ProxyEndpoint {
 
-	private Proxy myProxy;
 	private WsInvoker nextProxy;
-	private String wsMethodName;
-	private String nextProxyUrl;
+	public Proxy myProxy;
+	public String wsMethodName;
+	public String nextProxyUrl;
 
 	public static void main(String[] args) {
 		if (args.length < 4){
