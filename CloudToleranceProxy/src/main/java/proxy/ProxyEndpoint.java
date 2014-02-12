@@ -50,8 +50,11 @@ public class ProxyEndpoint {
 
 		Object wsParameterValues = parameter;
 
-		returnValue = (Integer) myProxy.invokeMethod(wsMethodName, wsParameterValues);
-
+		Object returnedValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
+		if(returnedValue !=null)
+			returnValue = (Integer) returnedValue;
+		else return;
+		
 		informNextLink(returnValue, key);
 	}
 

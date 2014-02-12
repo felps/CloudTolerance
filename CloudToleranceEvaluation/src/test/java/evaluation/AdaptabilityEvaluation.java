@@ -21,6 +21,7 @@ public class AdaptabilityEvaluation {
 	private static Logger log;
 	private static Endpoint ep;
 	private static VoidProxy voidProxy;
+	private static int key = 0;
 
 
 	
@@ -42,7 +43,7 @@ public class AdaptabilityEvaluation {
 	@Test
 	public void evaluateAdaptation() throws TimeoutException, InterruptedException {
 
-		int amount = 10;
+		int amount = 50;
 		String currentWS, endpoint;
 
 		ProxyEndpoint proxy = new ProxyEndpoint();
@@ -61,9 +62,9 @@ public class AdaptabilityEvaluation {
 
 		System.out.println("Done! Ready to warm up!");
 		// warm up invokation
-		proxy.playRole(0, 0);
+		proxy.playRole(0, key++);
 
-		Thread.sleep(4500 + 500*amount);
+		Thread.sleep(4500 + 50*amount);
 		log.info("\n\n\n\nEnded Warm-up.\n\n\n\n");
 		voidProxy.invoked = 0;
 		
@@ -77,7 +78,7 @@ public class AdaptabilityEvaluation {
 		log.info("Starting evaluation with 1000 parallel requests and two WSs (95 + 98)");
 		
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 500*amount);
+		Thread.sleep(4500 + 50*amount);
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
 		
@@ -87,7 +88,7 @@ public class AdaptabilityEvaluation {
 		proxy.myProxy.addWebService(WS_90_FAILSTOP);
 		
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 500*amount);
+		Thread.sleep(4500 + 50*amount);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
@@ -97,7 +98,7 @@ public class AdaptabilityEvaluation {
 
 		log.info("Starting evaluation with 1000 parallel requests and two WSs (90 + 95)");
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 500*amount);
+		Thread.sleep(4500 + 50*amount);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
@@ -107,7 +108,7 @@ public class AdaptabilityEvaluation {
 
 		log.info("Starting evaluation with 1000 parallel requests and a single WSs (90)");
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 500*amount);
+		Thread.sleep(4500 + 50*amount);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
@@ -119,7 +120,7 @@ public class AdaptabilityEvaluation {
 
 	private void performRequests(ProxyEndpoint proxy, int amount) {
 		for (int i = 1; i <= amount; i++) {
-			proxy.playRole(0, i);
+			proxy.playRole(0, key++);
 		}
 	}
 
