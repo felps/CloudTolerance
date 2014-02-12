@@ -72,6 +72,12 @@ public class ChoreographyEndpoint {
 		}
 
 	}
+	
+	@WebMethod
+	public void setUpWebService(String webServiceWSDL){
+		setUpWebService(nextProxyUrl, wsMethodName, webServiceWSDL);
+	}
+			
 
 	@WebMethod
 	public int startChoreograph(int parameter) {
