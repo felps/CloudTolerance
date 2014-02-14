@@ -43,7 +43,7 @@ public class AdaptabilityEvaluation {
 	@Test
 	public void evaluateAdaptation() throws TimeoutException, InterruptedException {
 
-		int amount = 50;
+		int amount = 1000;
 		String currentWS, endpoint;
 
 		ProxyEndpoint proxy = new ProxyEndpoint();
@@ -64,7 +64,7 @@ public class AdaptabilityEvaluation {
 		// warm up invokation
 		proxy.playRole(0, key++);
 
-		Thread.sleep(4500 + 50*amount);
+		Thread.sleep(4500);
 		log.info("\n\n\n\nEnded Warm-up.\n\n\n\n");
 		voidProxy.invoked = 0;
 		
@@ -78,7 +78,7 @@ public class AdaptabilityEvaluation {
 		log.info("Starting evaluation with 1000 parallel requests and two WSs (95 + 98)");
 		
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 50*amount);
+		Thread.sleep(4500);
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
 		
@@ -88,7 +88,7 @@ public class AdaptabilityEvaluation {
 		proxy.myProxy.addWebService(WS_90_FAILSTOP);
 		
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 50*amount);
+		Thread.sleep(4500);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
@@ -98,7 +98,7 @@ public class AdaptabilityEvaluation {
 
 		log.info("Starting evaluation with 1000 parallel requests and two WSs (90 + 95)");
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 50*amount);
+		Thread.sleep(4500);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
@@ -108,10 +108,31 @@ public class AdaptabilityEvaluation {
 
 		log.info("Starting evaluation with 1000 parallel requests and a single WSs (90)");
 		performRequests(proxy, amount);
-		Thread.sleep(4500 + 50*amount);
+		Thread.sleep(4500);
 
 		log.info("\n\n\n\nVoid proxy Invoked " + voidProxy.invoked + " times.\n\n\n\n");
 		voidProxy.invoked = 0;
+		
+		
+		log.info("\n\n\n\n"
+				+ "\n==========================="
+				+ "\n==========================="
+				+ "\n==========================="
+				+ " Results: \n\n"
+				+ "\n==========================="
+				+ "\n==========================="
+				+ "\n==========================="
+				);
+		
+//		Integer[] keySet = (Integer[]) voidProxy.startingTime.keySet().toArray();
+		for (Integer key : voidProxy.startingTime.keySet()) {
+			if(voidProxy.endingTimes.containsKey(key)){
+			log.info(key + " " + (voidProxy.endingTimes.get(key) - voidProxy.startingTime.get(key)));
+			}
+			else log.info(key + " failed request"); 
+				
+				
+		}
 		
 		
 		
@@ -120,6 +141,7 @@ public class AdaptabilityEvaluation {
 
 	private void performRequests(ProxyEndpoint proxy, int amount) {
 		for (int i = 1; i <= amount; i++) {
+			voidProxy.startingTime.put(key, System.currentTimeMillis());
 			proxy.playRole(0, key++);
 		}
 	}
