@@ -13,8 +13,8 @@ import utils.Shell;
 
 public class TwoProxiesOnly {
 
-	public static final String WSDL_CHOR = "http://127.0.0.1:2100/choreography?wsdl";
-	public static final String WSDL_PROXY1 = "http://127.0.0.1:2201/proxy?wsdl";
+	public static final String WSDL_CHOR = "http://godzilla.ime.usp.br:2100/choreography?wsdl";
+	public static final String WSDL_PROXY1 = "http://godzilla.ime.usp.br:2201/proxy?wsdl";
 	
 	/*
 	 * Script to start local test: TwoProxiesOnly.sh

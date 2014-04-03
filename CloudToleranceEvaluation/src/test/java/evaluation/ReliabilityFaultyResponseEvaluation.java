@@ -13,29 +13,29 @@ import proxy.webservice.handlers.WsInvoker;
 
 public class ReliabilityFaultyResponseEvaluation {
 
-	private static final String WS_100_RELIABILITY_NOFT = "http://127.0.0.1:21100/choreography?wsdl";
-	private static final String WS_99_RELIABILITY_NOFT = "http://127.0.0.1:21099/choreography?wsdl";
-	private static final String WS_98_RELIABILITY_NOFT = "http://127.0.0.1:21098/choreography?wsdl";
-	private static final String WS_97_RELIABILITY_NOFT = "http://127.0.0.1:21097/choreography?wsdl";
-	private static final String WS_96_RELIABILITY_NOFT = "http://127.0.0.1:21096/choreography?wsdl";
-	private static final String WS_95_RELIABILITY_NOFT = "http://127.0.0.1:21095/choreography?wsdl";
-	private static final String WS_94_RELIABILITY_NOFT = "http://127.0.0.1:21094/choreography?wsdl";
-	private static final String WS_93_RELIABILITY_NOFT = "http://127.0.0.1:21093/choreography?wsdl";
-	private static final String WS_92_RELIABILITY_NOFT = "http://127.0.0.1:21092/choreography?wsdl";
-	private static final String WS_91_RELIABILITY_NOFT = "http://127.0.0.1:21091/choreography?wsdl";
-	private static final String WS_90_RELIABILITY_NOFT = "http://127.0.0.1:21090/choreography?wsdl";
+	private static final String WS_100_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21100/choreography?wsdl";
+	private static final String WS_99_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21099/choreography?wsdl";
+	private static final String WS_98_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21098/choreography?wsdl";
+	private static final String WS_97_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21097/choreography?wsdl";
+	private static final String WS_96_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21096/choreography?wsdl";
+	private static final String WS_95_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21095/choreography?wsdl";
+	private static final String WS_94_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21094/choreography?wsdl";
+	private static final String WS_93_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21093/choreography?wsdl";
+	private static final String WS_92_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21092/choreography?wsdl";
+	private static final String WS_91_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21091/choreography?wsdl";
+	private static final String WS_90_RELIABILITY_NOFT = "http://godzilla.ime.usp.br:21090/choreography?wsdl";
 
-	private static final String WS_100_RELIABILITY_FT = "http://127.0.0.1:22100/choreography?wsdl";
-	private static final String WS_99_RELIABILITY_FT = "http://127.0.0.1:22099/choreography?wsdl";
-	private static final String WS_98_RELIABILITY_FT = "http://127.0.0.1:22098/choreography?wsdl";
-	private static final String WS_97_RELIABILITY_FT = "http://127.0.0.1:22097/choreography?wsdl";
-	private static final String WS_96_RELIABILITY_FT = "http://127.0.0.1:22096/choreography?wsdl";
-	private static final String WS_95_RELIABILITY_FT = "http://127.0.0.1:22095/choreography?wsdl";
-	private static final String WS_94_RELIABILITY_FT = "http://127.0.0.1:22094/choreography?wsdl";
-	private static final String WS_93_RELIABILITY_FT = "http://127.0.0.1:22093/choreography?wsdl";
-	private static final String WS_92_RELIABILITY_FT = "http://127.0.0.1:22092/choreography?wsdl";
-	private static final String WS_91_RELIABILITY_FT = "http://127.0.0.1:22091/choreography?wsdl";
-	private static final String WS_90_RELIABILITY_FT = "http://127.0.0.1:22090/choreography?wsdl";
+	private static final String WS_100_RELIABILITY_FT = "http://godzilla.ime.usp.br:22100/choreography?wsdl";
+	private static final String WS_99_RELIABILITY_FT = "http://godzilla.ime.usp.br:22099/choreography?wsdl";
+	private static final String WS_98_RELIABILITY_FT = "http://godzilla.ime.usp.br:22098/choreography?wsdl";
+	private static final String WS_97_RELIABILITY_FT = "http://godzilla.ime.usp.br:22097/choreography?wsdl";
+	private static final String WS_96_RELIABILITY_FT = "http://godzilla.ime.usp.br:22096/choreography?wsdl";
+	private static final String WS_95_RELIABILITY_FT = "http://godzilla.ime.usp.br:22095/choreography?wsdl";
+	private static final String WS_94_RELIABILITY_FT = "http://godzilla.ime.usp.br:22094/choreography?wsdl";
+	private static final String WS_93_RELIABILITY_FT = "http://godzilla.ime.usp.br:22093/choreography?wsdl";
+	private static final String WS_92_RELIABILITY_FT = "http://godzilla.ime.usp.br:22092/choreography?wsdl";
+	private static final String WS_91_RELIABILITY_FT = "http://godzilla.ime.usp.br:22091/choreography?wsdl";
+	private static final String WS_90_RELIABILITY_FT = "http://godzilla.ime.usp.br:22090/choreography?wsdl";
 
 	private static Logger log;
 
@@ -97,7 +97,7 @@ public class ReliabilityFaultyResponseEvaluation {
 //		ArrayList<String> services = new ArrayList<String>();
 
 		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
-		// String wsdl = "http://127.0.0.1:21090/choreography?wsdl";
+		// String wsdl = "http://godzilla.ime.usp.br:21090/choreography?wsdl";
 		// setUp(wsdl, wsdl, services);// */
 
 		invokers.put(100, new WsInvoker(WS_100_RELIABILITY_NOFT));
@@ -178,7 +178,7 @@ public class ReliabilityFaultyResponseEvaluation {
 		// services.add("http://godzilla.ime.usp.br:22090/Linear?wsdl");
 		// services.add("http://godzilla.ime.usp.br:23090/Linear?wsdl");
 		// services.add("http://godzilla.ime.usp.br:24090/Linear?wsdl");
-		// String wsdl = "http://127.0.0.1:20090/choreography?wsdl";
+		// String wsdl = "http://godzilla.ime.usp.br:20090/choreography?wsdl";
 		// setUp(wsdl, wsdl, services);// */
 		// invokers.put(90, new WsInvoker(wsdl));
 
