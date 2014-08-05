@@ -71,7 +71,7 @@ public class RetryCreditCardFailSafeTest {
 		WsInvoker service = new WsInvoker(StartTestWebServices.CREDITCARD_WSDL);
 
 		retry.addAvailableInvoker(service);
-		retry.setRetryAmount(1);
+		retry.setRetryAmount(10);
 		retry.setTimeout(10000);
 
 		Object result = retry.invokeMethod("issuePayment");

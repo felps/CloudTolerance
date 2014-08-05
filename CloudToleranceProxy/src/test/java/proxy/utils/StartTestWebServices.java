@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import com.sun.xml.internal.ws.api.EndpointAddress;
 
 public class StartTestWebServices {
-	public static final String WEATHER_WSDL = "http://godzilla.ime.usp.br:2402/weather?wsdl";
-	public static final String CREDITCARD_WSDL = "http://godzilla.ime.usp.br:2302/creditcard?wsdl";
+	public static final String WEATHER_WSDL = "http://127.0.0.1:2402/weather?wsdl";
+	public static final String CREDITCARD_WSDL = "http://127.0.0.1:2302/creditcard?wsdl";
 
 	private static ArrayList<Thread> webServices = new ArrayList<Thread>();
 

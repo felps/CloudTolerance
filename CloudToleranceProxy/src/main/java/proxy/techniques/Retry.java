@@ -13,6 +13,15 @@ public class Retry implements FaultToleranceTechnique {
 	private WsInvoker currentWS;
 	private int retryAmount = 3;
 
+	public Retry(int amount){
+		retryAmount = amount;
+		invokerList = new ArrayList<WsInvoker>();
+	}
+
+	public Retry() {
+		invokerList = new ArrayList<WsInvoker>();
+	}
+
 	public List<WsInvoker> getInvokerList() {
 		return invokerList;
 	}
@@ -45,10 +54,6 @@ public class Retry implements FaultToleranceTechnique {
 
 	public void setTimeout(long timeout) {
 		this.timeout = timeout;
-	}
-
-	public Retry() {
-		invokerList = new ArrayList<WsInvoker>();
 	}
 
 	public void addAvailableInvoker(WsInvoker availableInvoker) {
