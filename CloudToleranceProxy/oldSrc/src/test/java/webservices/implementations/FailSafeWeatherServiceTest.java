@@ -40,7 +40,7 @@ public class FailSafeWeatherServiceTest {
 		System.out.println("Creating Web Service proxies");
 		if (weather.proxy == null)
 			weather.proxy = new GenericProxy();
-		weather.proxy.addWebService("http://127.0.0.1:2402/weather?wsdl",
+		weather.proxy.addWebService("http://godzilla.ime.usp.br:2402/weather?wsdl",
 				"realwebservices.GetTemperatureForecast");
 		System.out.println("Done creating Web Service proxies");
 	}

@@ -46,10 +46,10 @@ public class FailSafeRetryTechniqueTest {
 
 	}
 
-	private static final String CREDIT_CARD_WSDL_ENDPOINT = "http://127.0.0.1:2302/creditcard?wsdl";
-	private static final String CREDIT_CARD_WS_ENDPOINT = "http://127.0.0.1:2302/creditcard";
-	private static final String WEATHER_WSDL_ENDPOINT = "http://127.0.0.1:2402/weather?wsdl";
-	private static final String WEATHER_WS_ENDPOINT = "http://127.0.0.1:2402/weather";
+	private static final String CREDIT_CARD_WSDL_ENDPOINT = "http://godzilla.ime.usp.br:2302/creditcard?wsdl";
+	private static final String CREDIT_CARD_WS_ENDPOINT = "http://godzilla.ime.usp.br:2302/creditcard";
+	private static final String WEATHER_WSDL_ENDPOINT = "http://godzilla.ime.usp.br:2402/weather?wsdl";
+	private static final String WEATHER_WS_ENDPOINT = "http://godzilla.ime.usp.br:2402/weather";
 
 	private WsInvoker creditCardHandler;
 

@@ -57,9 +57,9 @@ public class FailSafeCreditCardServiceTest {
 		System.out.println("Creating Web Service proxies");
 		if(credit.proxy == null)
 			credit.proxy = new GenericProxy();
-		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "realwebservices.IssuePayment");
-		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "realwebservices.VerifyCreditAvailability");
-		credit.proxy.addWebService("http://127.0.0.1:2302/creditcard?wsdl", "realwebservices.VerifyPassword");
+		credit.proxy.addWebService("http://godzilla.ime.usp.br:2302/creditcard?wsdl", "realwebservices.IssuePayment");
+		credit.proxy.addWebService("http://godzilla.ime.usp.br:2302/creditcard?wsdl", "realwebservices.VerifyCreditAvailability");
+		credit.proxy.addWebService("http://godzilla.ime.usp.br:2302/creditcard?wsdl", "realwebservices.VerifyPassword");
 		System.out.println("Done creating Web Service proxies");
 	}
 	
