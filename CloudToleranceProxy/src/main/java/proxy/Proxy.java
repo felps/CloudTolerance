@@ -61,6 +61,7 @@ public class Proxy {
 					
 		}
 	}
+	
 	public void addWebService(String wsdlEndpoint) {
 		WsInvoker newService = new WsInvoker(wsdlEndpoint);
 		addWebService(newService);

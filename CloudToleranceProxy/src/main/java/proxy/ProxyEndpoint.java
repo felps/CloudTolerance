@@ -10,10 +10,12 @@ import proxy.webservice.handlers.WsInvoker;
 @WebService
 public class ProxyEndpoint {
 
-	private WsInvoker nextProxy;
+	private WsInvoker nextProxyInvoker;
+	private ProxyEndpoint nextProxy;
 	public Proxy myProxy;
 	public String wsMethodName;
 	public String nextProxyUrl;
+	private Endpoint ep;
 
 	public static void main(String[] args) {
 		if (args.length < 4){
@@ -24,22 +26,28 @@ public class ProxyEndpoint {
 
 		ProxyEndpoint proxy = new ProxyEndpoint();
 
-		System.out.println("Next proxy: "+args[1]);
-		proxy.nextProxyUrl = args[1];
-		System.out.println("Service Method: "+args[2]);
-		proxy.wsMethodName = args[2];
+		proxy.publishWS(args);
 
-		proxy.myProxy = new Proxy();
+		System.out.println("Done! Ready to warm up!");
+	}
+
+	public void publishWS(String[] args) {
+		
+		System.out.println("Next proxy: "+args[1]);
+		this.nextProxyUrl = args[1];
+		System.out.println("Service Method: "+args[2]);
+		this.wsMethodName = args[2];
+
+		this.myProxy = new Proxy();
 		for (int i = 3; i < args.length; i++){
 			System.out.println("Adding WS at: " + args[i]);
-			proxy.myProxy.addWebService(args[i]);
+			this.myProxy.addWebService(args[i]);
 			
 		}
 
 		System.out.println("Publishing Proxy at " + args[0]);
-		Endpoint.publish(args[0], proxy);
-
-		System.out.println("Done! Ready to warm up!");
+		this.ep = Endpoint.create(this);
+		this.ep.publish(args[0]);
 	}
 	
 	@WebMethod
@@ -59,11 +67,14 @@ public class ProxyEndpoint {
 	}
 
 	private void informNextLink(int parameter, int key) {
+		if (nextProxyInvoker == null)
+			nextProxyInvoker = new WsInvoker(nextProxyUrl);
 		
-		if (nextProxy == null)
-			nextProxy = new WsInvoker(nextProxyUrl);
-		
-		nextProxy.invokeWebMethod("playRole", parameter, key);
+		nextProxyInvoker.invokeWebMethod("playRole", parameter, key);
+	}
+	
+	public void stopService(){
+		ep.stop();
 	}
 
 }

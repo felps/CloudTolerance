@@ -80,7 +80,7 @@ public class ChoreographyEndpoint {
 			
 
 	@WebMethod
-	public int startChoreograph(int parameter) {
+	public int startChoreography(int parameter) {
 		System.out.println("Choreography Started...");
 		if (nextProxy == null)
 			nextProxy = new WsInvoker(nextProxyUrl);
