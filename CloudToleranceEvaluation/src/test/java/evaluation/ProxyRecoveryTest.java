@@ -54,7 +54,7 @@ public class ProxyRecoveryTest {
 		// java -jar ChoreographyEndpointService.jar
 		// http://0.0.0.0:2430/choreography http://127.0.0.1:2431/proxy?wsdl
 		// addOne http://godzilla.ime.usp.br:25100/Linear?wsdl &
-		BPMNTask task1 = new BPMNTask("http://0.0.0.0:2430/choreography",
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:2430/choreography",
 				"http://127.0.0.1:2431/proxy?wsdl", "addOne",
 				"http://127.0.0.1:2401/Linear?wsdl" );
 		chor = new ChoreographyEndpoint(task1);
@@ -64,7 +64,7 @@ public class ProxyRecoveryTest {
 		// java -jar ChoreographyEndpointService.jar
 		// http://0.0.0.0:2431/choreography http://127.0.0.1:2432/proxy?wsdl
 		// addOne http://godzilla.ime.usp.br:26100/Linear?wsdl &
-		BPMNTask task2 = new BPMNTask("http://0.0.0.0:2431/proxy",
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:2431/proxy",
 				"http://127.0.0.1:2432/proxy?wsdl", "addOne",
 				"http://127.0.0.1:2401/Linear?wsdl" );
 		proxy1 = new ProxyEndpoint(task2);
@@ -73,7 +73,7 @@ public class ProxyRecoveryTest {
 		// java -jar ProxyEndpoint.jar http://0.0.0.0:2432/proxy
 		// http://$server1:2430/choreography?wsdl addOne
 		// http://godzilla.ime.usp.br:27100/Linear?wsdl &
-		BPMNTask task3 = new BPMNTask("http://0.0.0.0:2432/proxy",
+		BPMNTask task3 = new BPMNTask("Task3", "http://0.0.0.0:2432/proxy",
 				"http://127.0.0.1:2430/choreography?wsdl", "addOne",
 				"http://127.0.0.1:2401/Linear?wsdl" );
 		proxy2 = new ProxyEndpoint(task3);
