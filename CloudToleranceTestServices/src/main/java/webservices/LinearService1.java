@@ -41,4 +41,9 @@ public class LinearService1 extends FaultyWebService {
 		return number + 1;
 
 	}
+	
+	@WebMethod
+	public int three() {
+		return 3;
+	}
 }

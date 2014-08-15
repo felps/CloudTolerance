@@ -5,6 +5,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
+import proxy.choreography.BPMNTask;
+import proxy.techniques.Retry;
 import proxy.webservice.handlers.WsInvoker;
 
 @WebService
@@ -16,6 +18,20 @@ public class ProxyEndpoint {
 	public String wsMethodName;
 	public String nextProxyUrl;
 	private Endpoint ep;
+
+	public ProxyEndpoint() {
+	}
+
+	public ProxyEndpoint(BPMNTask task) {
+		wsMethodName = task.getMethodName();
+		nextProxyUrl = task.getNextLink();
+		myProxy = new Proxy();
+		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
+			myProxy.addWebService(wsdlFile);
+		}
+		ep.create(this);
+	}
+
 
 	public static void main(String[] args) {
 		if (args.length < 4){
@@ -31,7 +47,7 @@ public class ProxyEndpoint {
 		System.out.println("Done! Ready to warm up!");
 	}
 
-	public void publishWS(String[] args) {
+	private void publishWS(String[] args) {
 		
 		System.out.println("Next proxy: "+args[1]);
 		this.nextProxyUrl = args[1];
@@ -46,12 +62,10 @@ public class ProxyEndpoint {
 		}
 
 		System.out.println("Publishing Proxy at " + args[0]);
-		this.ep = Endpoint.create(this);
-		this.ep.publish(args[0]);
+		this.publishWS(args[0]);
 	}
 	
 	@WebMethod
-	@Oneway
 	public void playRole(int parameter, int key) {
 		
 		int returnValue = 0;
@@ -67,14 +81,37 @@ public class ProxyEndpoint {
 	}
 
 	private void informNextLink(int parameter, int key) {
-		if (nextProxyInvoker == null)
+	/*	if (nextProxyInvoker == null)
 			nextProxyInvoker = new WsInvoker(nextProxyUrl);
 		
 		nextProxyInvoker.invokeWebMethod("playRole", parameter, key);
+	/**/
+		
+		WsInvoker nextLink;
+		nextLink = new WsInvoker(nextProxyUrl);
+		
+		Retry retry = new Retry(3);
+		
+		retry.setTimeout(500);
+		
+		retry.addAvailableInvoker(nextLink);
+		retry.setCurrentWS(nextLink);
+
+		Object result = retry.invokeMethod("playRole", parameter, key);
+		if (result==null){
+			System.out.println("Danger Will Robinson! Danger Will Robinson! Danger Will Robinson! Recovery is needed...");
+			
+		}
+		/**/	
 	}
 	
 	public void stopService(){
 		ep.stop();
 	}
 
+	@WebMethod(exclude=true)
+	public void publishWS(String publishURL) {
+		this.ep = Endpoint.create(this);
+		this.ep.publish(publishURL);
+	}
 }

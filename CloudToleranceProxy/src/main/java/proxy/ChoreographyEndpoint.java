@@ -12,6 +12,7 @@ import javax.xml.ws.Endpoint;
 
 import org.apache.cxf.endpoint.EndpointImpl;
 
+import proxy.choreography.BPMNTask;
 import proxy.utils.Result;
 import proxy.webservice.handlers.WsInvoker;
 
@@ -25,9 +26,21 @@ public class ChoreographyEndpoint {
 	public String wsMethodName;
 	public String nextProxyUrl;
 	public WsInvoker nextProxy;
+	private Endpoint ep;
 
 	public ChoreographyEndpoint() {
 		choreographyResults = new ArrayList<Result>();
+	}
+
+	public ChoreographyEndpoint(BPMNTask task) {
+		choreographyResults = new ArrayList<Result>();
+		wsMethodName = task.getMethodName();
+		nextProxyUrl = task.getNextLink();
+		myProxy = new Proxy();
+		ep.create(this);
+		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
+			myProxy.addWebService(wsdlFile);
+		}
 	}
 
 	public static void main(String[] args) {
@@ -82,9 +95,14 @@ public class ChoreographyEndpoint {
 	@WebMethod
 	public int startChoreography(int parameter) {
 		System.out.println("Choreography Started...");
-		if (nextProxy == null)
+		if (nextProxy == null){
+			System.out.println("Contacting proxy at " + nextProxyUrl);
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+			}
 			nextProxy = new WsInvoker(nextProxyUrl);
-
+		}
 		int currentKey;
 
 		synchronized (nextAvailableKey) {
@@ -126,6 +144,12 @@ public class ChoreographyEndpoint {
 
 	protected void informNextLink(int parameter, int key) {
 		nextProxy.invokeWebMethod("playRole", parameter, key);
+	}
+	
+	@WebMethod(exclude=true)
+	public void publishWS(String endpoint) {
+		this.ep = Endpoint.create(this);
+		this.ep.publish(endpoint);		
 	}
 
 }
