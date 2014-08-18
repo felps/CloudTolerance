@@ -80,11 +80,6 @@ public class ProxyEndpoint {
 	}
 
 	private void informNextLink(int parameter, int key) {
-		/*	if (nextProxyInvoker == null)
-			nextProxyInvoker = new WsInvoker(nextProxyUrl);
-
-		nextProxyInvoker.invokeWebMethod("playRole", parameter, key);
-	/**/
 
 		WsInvoker nextLink;
 		nextLink = new WsInvoker(nextProxyUrl);
@@ -101,7 +96,6 @@ public class ProxyEndpoint {
 			System.out
 					.println("Danger Will Robinson! Danger Will Robinson! Danger Will Robinson! Recovery is needed...");
 		}
-		/**/
 	}
 
 	public void stopService(){
