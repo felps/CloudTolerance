@@ -35,7 +35,7 @@ public class ProxyEndpoint {
 	public static void main(String[] args) {
 		if (args.length < 4){
 			System.out
-					.println("Usage: java -jar ProxyEndpoint <proxy publishable endpoint> <next proxy endpoint> <service method name> <services' WSDL url>");
+			.println("Usage: java -jar ProxyEndpoint <proxy publishable endpoint> <next proxy endpoint> <service method name> <services' WSDL url>");
 			System.exit(0);
 		}
 
@@ -47,7 +47,7 @@ public class ProxyEndpoint {
 	}
 
 	private void publishWS(String[] args) {
-		
+
 		System.out.println("Next proxy: "+args[1]);
 		this.nextProxyUrl = args[1];
 		System.out.println("Service Method: "+args[2]);
@@ -57,53 +57,53 @@ public class ProxyEndpoint {
 		for (int i = 3; i < args.length; i++){
 			System.out.println("Adding WS at: " + args[i]);
 			this.myProxy.addWebService(args[i]);
-			
+
 		}
 
 		System.out.println("Publishing Proxy at " + args[0]);
 		this.publishWS(args[0]);
 	}
-	
+
 	@WebMethod
 	public void playRole(int parameter, int key) {
-		
+
 		int returnValue = 0;
 
 		Object wsParameterValues = parameter;
 
 		Object returnedValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
-		if(returnedValue !=null)
+		if(returnedValue !=null) {
 			returnValue = (Integer) returnedValue;
-		else return;
-		
+		} else return;
+
 		informNextLink(returnValue, key);
 	}
 
 	private void informNextLink(int parameter, int key) {
-	/*	if (nextProxyInvoker == null)
+		/*	if (nextProxyInvoker == null)
 			nextProxyInvoker = new WsInvoker(nextProxyUrl);
-		
+
 		nextProxyInvoker.invokeWebMethod("playRole", parameter, key);
 	/**/
-		
+
 		WsInvoker nextLink;
 		nextLink = new WsInvoker(nextProxyUrl);
-		
+
 		Retry retry = new Retry(3);
-		
+
 		retry.setTimeout(500);
-		
+
 		retry.addAvailableInvoker(nextLink);
 		retry.setCurrentWS(nextLink);
 
 		Object result = retry.invokeMethod("playRole", parameter, key);
 		if (result==null){
-			System.out.println("Danger Will Robinson! Danger Will Robinson! Danger Will Robinson! Recovery is needed...");
-			
+			System.out
+					.println("Danger Will Robinson! Danger Will Robinson! Danger Will Robinson! Recovery is needed...");
 		}
-		/**/	
+		/**/
 	}
-	
+
 	public void stopService(){
 		ep.stop();
 	}
