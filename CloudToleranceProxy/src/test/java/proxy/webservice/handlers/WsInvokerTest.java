@@ -34,7 +34,7 @@ public class WsInvokerTest {
 
 	@AfterClass
 	public static void tearDown(){
-//		StartTestWebServices.killAllServices();
+		StartTestWebServices.killAllServices();
 	}
 	
 	@Test(timeout = 5000)

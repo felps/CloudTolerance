@@ -3,20 +3,23 @@ package proxy.techniques;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 import java.util.concurrent.TimeoutException;
 
-import org.junit.AfterClass;
+import javax.xml.ws.Endpoint;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.utils.StartTestWebServices;
-import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
+import webservices.LinearService1;
 
 public class RetryCreditCardFailSafeTest {
+
+	private Endpoint ep;
 
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
@@ -25,16 +28,22 @@ public class RetryCreditCardFailSafeTest {
 		System.out.println("Beginng WsInvokationThreadNoParametersTest");
 		System.out.println("----------------------");
 		System.out.println("----------------------");
-		
-		StartTestWebServices.raiseCreditAndWeatherServices(0.0, 0.0);
-		Thread.sleep(5000);
+	}
 
-		System.out.println("Done creating Web Service proxies");
-}
+	@Before
+	public void seTup() {
+		LinearService1 ws = new LinearService1(0.3, 0);
 
-	@AfterClass
-	public static void tearDown() {
-//		StartTestWebServices.killAllServices();
+		ep = Endpoint.create(ws);
+		ep.publish("http://0.0.0.0:2401/Linear");
+
+		waitAWhile();
+
+	}
+
+	@After
+	public void tearDown() {
+		ep.stop();
 	}
 
 	@Test
@@ -61,25 +70,33 @@ public class RetryCreditCardFailSafeTest {
 		retry.addAvailableInvoker(availableInvoker);
 
 		assertEquals(availableInvoker, retry.getCurrentWS());
-		
+
 	}
 
 	@Test(timeout = 10000)
 	public void shouldInvokeMethodWithNoParameters() throws TimeoutException {
 		Retry retry = new Retry();
 
-		WsInvoker service = new WsInvoker(StartTestWebServices.CREDITCARD_WSDL);
+		WsInvoker service = new WsInvoker("http://127.0.0.1:2401/Linear?wsdl");
 
 		retry.addAvailableInvoker(service);
 		retry.setRetryAmount(10);
 		retry.setTimeout(10000);
 
-		Object result = retry.invokeMethod("issuePayment");
+		Object result = retry.invokeMethod("three");
 
 		if (result == null)
 			fail("Got null as an answer");
-		assertTrue((Boolean) result);
+		assertEquals((Integer) 3, (Integer) result);
 
 	}
 
+	private void waitAWhile() {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

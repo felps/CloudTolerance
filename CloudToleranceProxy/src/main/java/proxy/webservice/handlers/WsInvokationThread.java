@@ -1,7 +1,5 @@
 package proxy.webservice.handlers;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.apache.cxf.endpoint.Client;
 
 import proxy.utils.Result;

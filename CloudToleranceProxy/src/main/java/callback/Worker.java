@@ -1,6 +1,5 @@
 package callback;
 
-import proxy.webservice.handlers.WsInvoker;
 
 public class Worker implements Runnable{
 
@@ -19,15 +18,6 @@ public class Worker implements Runnable{
 	        // ERROR!
 	        //myBoss.directMethod();
 	    }
-
-		private void sleep() {
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 
 		public void run() {
 			invokeService(myBoss, result);

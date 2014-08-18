@@ -4,12 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeoutException;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
-import utils.Shell;
 
 public class TwoProxiesOnly {
 

@@ -1,7 +1,7 @@
 package evaluation;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -9,6 +9,7 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,7 +17,6 @@ import org.junit.Test;
 import proxy.ChoreographyEndpoint;
 import proxy.ProxyEndpoint;
 import proxy.choreography.BPMNTask;
-import proxy.utils.StartTestWebServices;
 import proxy.utils.WSDLNotFoundException;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
@@ -28,6 +28,9 @@ public class ProxyRecoveryTest {
 	ChoreographyEndpoint chor;
 	ProxyEndpoint proxy1;
 	ProxyEndpoint proxy2;
+	private Endpoint ep1;
+	private Endpoint ep2;
+	private Endpoint ep3;
 
 	@BeforeClass
 	public static void setUpEnvironment() throws InterruptedException {
@@ -48,7 +51,8 @@ public class ProxyRecoveryTest {
 
 		LinearService1 ws = new LinearService1(0, 0);
 
-		Endpoint.publish("http://0.0.0.0:2401/Linear", ws);
+		ep1 = Endpoint.create(ws);
+		ep1.publish("http://0.0.0.0:2401/Linear");
 
 		// # 2430 --> 2431
 		// java -jar ChoreographyEndpointService.jar
@@ -88,6 +92,11 @@ public class ProxyRecoveryTest {
 		// (new java.util.Scanner(System.in)).nextLine();
 	}
 
+	@After
+	public void tearDown() {
+		ep1.stop();
+	}
+	
 	@Test(timeout = 10000)
 	public void shouldThereBeNoProxyAvailableAsNextCreateOneLocally()
 			throws TimeoutException {

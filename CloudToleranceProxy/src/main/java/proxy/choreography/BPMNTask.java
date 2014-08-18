@@ -2,8 +2,6 @@ package proxy.choreography;
 
 import java.util.ArrayList;
 
-import com.sun.xml.internal.ws.api.pipe.NextAction;
-
 public class BPMNTask {
 
 	private String name;

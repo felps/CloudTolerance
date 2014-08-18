@@ -1,12 +1,10 @@
 package evaluation;
 
-import static org.junit.Assert.assertEquals;
-
-import org.apache.log4j.Logger;
-
 import java.util.concurrent.TimeoutException;
 
-import org.junit.*;
+import org.apache.log4j.Logger;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;

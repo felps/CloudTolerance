@@ -10,8 +10,6 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
-import org.apache.cxf.endpoint.EndpointImpl;
-
 import proxy.choreography.BPMNTask;
 import proxy.utils.Result;
 import proxy.webservice.handlers.WsInvoker;
@@ -37,7 +35,7 @@ public class ChoreographyEndpoint {
 		wsMethodName = task.getMethodName();
 		nextProxyUrl = task.getNextLink();
 		myProxy = new Proxy();
-		ep.create(this);
+		ep = Endpoint.create(this);
 		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
 			myProxy.addWebService(wsdlFile);
 		}

@@ -1,6 +1,5 @@
 package proxy;
 
-import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
@@ -29,7 +28,7 @@ public class ProxyEndpoint {
 		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
 			myProxy.addWebService(wsdlFile);
 		}
-		ep.create(this);
+		ep = Endpoint.create(this);
 	}
 
 

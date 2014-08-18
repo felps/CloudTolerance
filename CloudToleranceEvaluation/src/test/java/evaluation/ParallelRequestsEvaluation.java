@@ -1,7 +1,5 @@
 package evaluation;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -10,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.apache.log4j.Logger;
-import org.apache.xml.resolver.apps.resolver;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -118,7 +115,7 @@ public class ParallelRequestsEvaluation {
 		multipleInvokations(CHOR_4_PROXIES, invokeAmount);
 		/**/
 	}
-
+/*
 	private int singleLoggedInvokation(WsInvoker invoker)
 			throws TimeoutException {
 		long startTime = System.currentTimeMillis();
@@ -126,7 +123,7 @@ public class ParallelRequestsEvaluation {
 		log.info("Time it took: " + (System.currentTimeMillis() - startTime));
 		return result;
 	}
-
+*/
 	private int singleInvokation(WsInvoker invoker) throws TimeoutException {
 		WsInvokation returnedValue = invoker.invokeWebMethod(
 				"startChoreograph", 0);

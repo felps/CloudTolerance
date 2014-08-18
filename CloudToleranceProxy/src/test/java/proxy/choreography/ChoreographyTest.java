@@ -1,6 +1,6 @@
 package proxy.choreography;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -8,14 +8,9 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
-import proxy.ChoreographyEndpoint;
-import proxy.ProxyEndpoint;
-import proxy.utils.StartTestWebServices;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;

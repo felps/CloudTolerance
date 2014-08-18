@@ -1,21 +1,12 @@
 package proxy.techniques;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
-import javax.xml.ws.Endpoint;
-
-import org.apache.cxf.endpoint.EndpointImpl;
 import org.apache.log4j.Logger;
-import org.eclipse.jetty.util.log.Log;
 
-import proxy.ChoreographyEndpoint;
-import proxy.Proxy;
 import proxy.utils.Result;
-import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
 public class Active implements FaultToleranceTechnique {

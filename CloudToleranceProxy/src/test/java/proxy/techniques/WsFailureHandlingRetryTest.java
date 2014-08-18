@@ -1,7 +1,6 @@
 package proxy.techniques;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeoutException;
@@ -9,13 +8,10 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.utils.StartTestWebServices;
-import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;
 
@@ -40,7 +36,7 @@ public class WsFailureHandlingRetryTest {
 		waitAWhile();
 
 		ep = Endpoint.create(ws);
-		ep.publish("http://0.0.0.0:2401/Linear", ws);
+		ep.publish("http://0.0.0.0:2401/Linear");
 
 	}
 
