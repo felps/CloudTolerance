@@ -20,6 +20,6 @@ set style data histogram
 set grid ytics
 set xlabel "WS Reliability"
 set ylabel "Average Response Time (in ms)"
-set yrange [0:*]
+set yrange [0:90]
 
 plot 'observedErrors-Time.data' using 2:3:xtic(1) t columnheader(2) linecolor rgb "#FF0000", "" using 4:5 t columnheader(4) lt 1 lc rgb "#00FF00"

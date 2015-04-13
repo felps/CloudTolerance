@@ -185,7 +185,7 @@ public class ReliabilityEvaluation {
 		 invokers.put(93, new WsInvoker(WS_93_FAILSTOP_WITH_FT));
 		 invokers.put(92, new WsInvoker(WS_92_FAILSTOP_WITH_FT));
 		 invokers.put(91, new WsInvoker(WS_91_FAILSTOP_WITH_FT));
-		 invokers.put(90, new WsInvoker(WS_90_FAILSTOP_WITH_FT));
+//		 invokers.put(90, new WsInvoker(WS_90_FAILSTOP_WITH_FT));
 
 		// warm up invokation
 		for (int key : invokers.keySet()) {

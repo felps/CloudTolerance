@@ -1,12 +1,12 @@
-Reliability	"FailStop - No FT"	"FailStop - With FT"	"Faulty Response - No FT"	"Faulty Response - With FT"
-100	0	0	0	0
-99	12	5	7	0
-98	19	6	25	1
-97	34	4	28	1
-96	27	12	42	1
-95	54	14	63	1
-94	54	12	65	3
-93	65	19	79	3
-92	93	17	85	5
-91	83	27	83	5
+Reliability	"FailStop - No FT"	"FailStop - Active"	"Faulty Response - No FT"	"Faulty Response - NVP" "FailStop - Retry" "FailStop - RB"
+100	0	0	0	0	0	0
+99	12	5	7	0	2	0
+98	19	6	25	1	9	0
+97	34	4	28	1	12	0
+96	27	12	42	1	18	0
+95	54	14	63	1	30	0
+94	54	12	65	3	31	0
+93	65	19	79	3	38	0
+92	93	17	85	5	35	0
+91	83	27	83	5	40	0
 

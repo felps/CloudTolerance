@@ -27,7 +27,7 @@ WindowLabel	/home/felps/workspace/CloudTolerance/CloudToleranceEvaluation/logs/e
 </table>
 <multiLayer>
 Graph1	1	1	4/30/13 3:57 PM
-geometry	1099	353	593	468	active
+geometry	1282	278	593	468	active
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -49,7 +49,7 @@ Margin	0
 Border	0	#ffffff
 grid	0	0	1	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
 EnabledAxes	1	0	1	0	
-AxesTitles	Amount of Exchanged Messages	Response Time (in ms)		%(?Y)	
+AxesTitles	Amount of Exchanged Messages	Response Time (in ms)<br>(log 10)		%(?Y)	
 AxesTitleColors	#000000	#000000	#000000	#000000	
 AxesTitleAlignment	5124	4	5124	4
 AxesTitleDistance	2	-1	2	-1
@@ -67,18 +67,9 @@ AxesNumberColors	#313739	#313739	#313739	#313739
 AxesBaseline	0	0	0	0	
 CanvasBackground	#ffffff	0
 curve	Table1_1	Table1_2	3	1	#000000	0	2.5	7	0	#000000	#000000	1	#c0c0c0	0	20	0	2	0	0	9	1
-<CurveLabels>
-	<column>Table1_1</column>
-	<color>#000000</color>
-	<whiteOut>0</whiteOut>
-	<Font>Ubuntu,11,-1,5,50,0,0,0,0,0</Font>
-	<angle>0</angle>
-	<justify>4</justify>
-	<yoffset>50</yoffset>
-</CurveLabels>
 ErrorBars	1	Table1_1	Table1_2	Table1_3	5	20	#ff0000	1	1	1	0
-scale	0	0	800000	0	9	5	0	0
-scale	1	0	800000	0	9	5	0	0
+scale	0	3541.478838211	800000	0	3	5	1	0
+scale	1	3541.478838211	800000	0	3	5	1	0
 scale	2	0	10	0	11	0	0	0
 scale	3	0	10	0	11	0	0	0
 LabelsFormat	0	6	0	6	0	6	0	6
@@ -101,8 +92,8 @@ EnabledTickLabels	1	1	1	1
 <LineStyle>0</LineStyle>
 <x>0.25062656641604</x>
 <y>773154.36241611</y>
-<right>5.23809523809524</right>
-<bottom>697986.577181208</bottom>
+<right>2.2156862745098</right>
+<bottom>701886.79245283</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
@@ -135,4 +126,5 @@ Adjusted R^2 = 0.993082221851449
 RMSE (Root Mean Squared Error) = 820.25606106056
 RSS (Residual Sum of Squares) = 5,382,560.04565268
 ---------------------------------------------------------------------------------------
+
 </log>

@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: FaultyResponse-Time.eps
-%%Creator: gnuplot 4.6 patchlevel 0
-%%CreationDate: Sun Apr 14 09:38:03 2013
+%%Creator: gnuplot 4.6 patchlevel 1
+%%CreationDate: Fri Jun 14 21:06:44 2013
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 302 238
 %%EndComments
@@ -47,7 +47,7 @@ gnudict begin
   } if
 } def
 %
-% Gnuplot Prolog Version 4.4 (August 2010)
+% Gnuplot Prolog Version 4.6 (September 2012)
 %
 %/SuppressPDFMark true def
 %
@@ -314,7 +314,8 @@ gnudict begin
 /PatternFill {gsave /PFa [ 9 2 roll ] def
   PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
   PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
-  gsave 1 setgray fill grestore clip
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
   currentlinewidth 0.5 mul setlinewidth
   /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
   0 0 M PFa 5 get rotate PFs -2 div dup translate
@@ -456,11 +457,11 @@ systemdict /pdfmark known not {
 SDict begin [
   /Title (FaultyResponse-Time.eps)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 4.6 patchlevel 0)
+  /Creator (gnuplot 4.6 patchlevel 1)
   /Author (felps)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Sun Apr 14 09:38:03 2013)
+  /CreationDate (Fri Jun 14 21:06:44 2013)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -625,8 +626,8 @@ LTb
 1.000 UL
 LTa
 686 3061 M
-1350 0 V
-2667 0 R
+1518 0 V
+2499 0 R
 84 0 V
 stroke
 LTb
@@ -777,7 +778,7 @@ LCb setrgbcolor
 ] -46.7 MCshow
 LTb
 2736 3561 M
-[ [(Helvetica) 160.0 0.0 true true 0 (Impact on Response Time due to Voting FTT Usage)]
+[ [(Helvetica) 160.0 0.0 true true 0 (Impact on Response Time due to NVP FTT Usage)]
 ] -53.3 MCshow
 1.000 UP
 1.000 UL
@@ -959,7 +960,7 @@ LT0
 LT0
 0.00 1.00 0.00 C LCb setrgbcolor
 4136 3078 M
-[ [(Helvetica) 140.0 0.0 true true 0 (Faulty Response - With FT)]
+[ [(Helvetica) 140.0 0.0 true true 0 (Faulty Response - NVP)]
 ] -46.7 MRshow
 LT0
 0.00 1.00 0.00 C 1.000 4220 3043 399 70 BoxColFill
