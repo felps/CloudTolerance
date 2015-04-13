@@ -3,8 +3,7 @@ package proxy.techniques;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 import java.util.concurrent.TimeoutException;
 
@@ -13,7 +12,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.StartTestWebServices;
-import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
 public class RetryWeatherFailSafeTest {

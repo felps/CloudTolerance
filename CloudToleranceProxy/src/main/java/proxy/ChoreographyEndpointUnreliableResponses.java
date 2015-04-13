@@ -10,8 +10,6 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
-import org.apache.cxf.endpoint.EndpointImpl;
-
 import proxy.utils.Result;
 import proxy.webservice.handlers.WsInvoker;
 

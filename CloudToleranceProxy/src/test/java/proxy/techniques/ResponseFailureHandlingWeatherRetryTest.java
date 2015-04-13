@@ -1,17 +1,14 @@
 package proxy.techniques;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeoutException;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.StartTestWebServices;
-import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
 public class ResponseFailureHandlingWeatherRetryTest {
@@ -24,7 +21,7 @@ public class ResponseFailureHandlingWeatherRetryTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
-		StartTestWebServices.raiseCreditAndWeatherServices(0.0, 0.2);
+		StartTestWebServices.raiseCreditAndWeatherServices(0.2, 0.0);
 		Thread.sleep(5000);
 
 		System.out.println("Done creating Web Service proxies");
@@ -37,8 +34,10 @@ public class ResponseFailureHandlingWeatherRetryTest {
 		WsInvoker weatherInvoker = new WsInvoker(
 				StartTestWebServices.WEATHER_WSDL);
 
-		Retry retry = new Retry();
+	
+		Retry retry = new Retry(15);
 		retry.addAvailableInvoker(weatherInvoker);
+		retry.setTimeout(1000);
 		retry.setRetryAmount(1);
 
 		for (int i = 0; i < 10; i++) {

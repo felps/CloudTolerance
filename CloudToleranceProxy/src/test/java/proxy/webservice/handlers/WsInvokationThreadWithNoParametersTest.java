@@ -4,15 +4,18 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeoutException;
 
+import javax.xml.ws.Endpoint;
+
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.Result;
 import proxy.utils.StartTestWebServices;
+import webservices.LinearService1;
 
 public class WsInvokationThreadWithNoParametersTest {
 
@@ -21,7 +24,8 @@ public class WsInvokationThreadWithNoParametersTest {
 	private String wsdlUrl = StartTestWebServices.CREDITCARD_WSDL;
 	private WsInvokationThread invokation;
 	private Result resultSetter;
-
+	private Endpoint ep;
+	
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
 		System.out.println("----------------------");
@@ -30,19 +34,17 @@ public class WsInvokationThreadWithNoParametersTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
-		StartTestWebServices.raiseCreditService(0, 0);
-		Thread.sleep(5000);
-
-	}
-
-	@AfterClass
-	public static void tearDown() {
-		StartTestWebServices.killAllServices();
 	}
 
 	@Before
 	public void setUp() throws InstantiationException, IllegalAccessException,
 			ClassNotFoundException, InterruptedException {
+		
+		LinearService1 ws = new LinearService1(0.3, 0);
+		waitAWhile();
+
+		ep = Endpoint.create(ws);
+		ep.publish("http://0.0.0.0:2401/Linear");
 
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
@@ -50,8 +52,14 @@ public class WsInvokationThreadWithNoParametersTest {
 		resultSetter = new Result();
 	}
 
+
+	@After
+	public void tearDown() {
+		ep.stop();
+	}
+	
 	@Test
-	public void shouldInvokeManuallyIssuePaymentMethod() throws Exception {
+	public void shouldInvokeManuallyThreeMethod() throws Exception {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		Client client = dcf.createClient(wsdlUrl, this.getClass()
 				.getClassLoader());
@@ -66,7 +74,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	}
 
 	@Test
-	public void shouldRepeatedlyManuallyInvokeIssuePaymentMethod()
+	public void shouldRepeatedlyManuallyInvokeThreeMethod()
 			throws Exception {
 		for (int i = 0; i < 10; i++) {
 
@@ -75,7 +83,7 @@ public class WsInvokationThreadWithNoParametersTest {
 			Client client = dcf.createClient(wsdlUrl, this.getClass()
 					.getClassLoader());
 
-			Object[] returnedValue = client.invoke("issuePayment");
+			Object[] returnedValue = client.invoke("three");
 
 			System.out.println(returnedValue[0]);
 			assertTrue((Boolean) returnedValue[0]);
@@ -85,7 +93,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	@Test
 	public void testInvoke() throws Exception {
 		invokation = new WsInvokationThread(client, resultSetter,
-				"issuePayment");
+				"three");
 		assertTrue((Boolean) invokation.invoke()[0]);
 	}
 
@@ -93,9 +101,17 @@ public class WsInvokationThreadWithNoParametersTest {
 	public void testRun() throws InstantiationException,
 			IllegalAccessException, ClassNotFoundException, TimeoutException {
 		invokation = new WsInvokationThread(client, resultSetter,
-				"issuePayment");
+				"three");
 		new Thread(invokation).start();
 		assertTrue((Boolean) resultSetter.getResultValue());
 	}
 
+	private void waitAWhile() {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

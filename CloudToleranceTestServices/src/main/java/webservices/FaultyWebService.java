@@ -32,10 +32,11 @@ public class FaultyWebService {
 		try {
 			return evaluateIfWillFailStop();
 		} catch (SystemCrash crash) {
-			exitManager.exit(1);
+			
+//			exitManager.exit(1);
 		}
-
 		return false;
+
 	}
 
 	protected void emulateUnresponsiveServiceFailures() {
@@ -75,7 +76,8 @@ public class FaultyWebService {
 
 		if (Math.random() < failstopProbability) {
 			System.out.println("Fail-stop failure emulated");
-			throw (new SystemCrash());
+			//throw (new SystemCrash());
+			emulateUnresponsiveServiceFailures();
 		}
 		return false;
 

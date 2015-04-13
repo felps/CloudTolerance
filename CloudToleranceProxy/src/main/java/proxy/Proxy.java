@@ -61,8 +61,13 @@ public class Proxy {
 					
 		}
 	}
+	
 	public void addWebService(String wsdlEndpoint) {
 		WsInvoker newService = new WsInvoker(wsdlEndpoint);
+		addWebService(newService);
+	}
+	
+	private void addWebService(WsInvoker newService) {
 		invokerList.add(newService);
 		if(invokerList.size()<=1) {
 			currentTechnique = availableTechniques.get("Retry");
@@ -95,5 +100,14 @@ public class Proxy {
 	
 	public FaultToleranceTechnique getCurrentTechnique(){
 		return currentTechnique;
+	}
+
+	public synchronized void dropWebService(String wsdl) {
+		ArrayList<WsInvoker> invokers = new ArrayList<WsInvoker>(invokerList);
+		invokerList.removeAll(invokers);
+		for (WsInvoker invoker : invokers) {
+			if(!invoker.getWsdlURL().contentEquals(wsdl))
+				addWebService(invoker);
+		}
 	}
 }

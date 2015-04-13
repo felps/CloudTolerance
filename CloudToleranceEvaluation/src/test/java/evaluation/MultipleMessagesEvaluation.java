@@ -1,27 +1,25 @@
 package evaluation;
 
-import static org.junit.Assert.assertEquals;
-
-import org.apache.log4j.Logger;
-
 import java.util.concurrent.TimeoutException;
 
-import org.junit.*;
+import org.apache.log4j.Logger;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 
 public class MultipleMessagesEvaluation {
 
-	public static final String CHOR4MSGS 	= "http://192.168.1.1:2101/choreography?wsdl";
-	public static final String CHOR8MSGS 	= "http://192.168.1.1:2102/choreography?wsdl";
-	public static final String CHOR16MSGS 	= "http://192.168.1.1:2103/choreography?wsdl";
-	public static final String CHOR32MSGS 	= "http://192.168.1.1:2104/choreography?wsdl";
-	public static final String CHOR64MSGS 	= "http://192.168.1.1:2105/choreography?wsdl";
-	public static final String CHOR128MSGS 	= "http://192.168.1.1:2106/choreography?wsdl";
-	public static final String CHOR256MSGS 	= "http://192.168.1.1:2107/choreography?wsdl";
-	public static final String CHOR512MSGS 	= "http://192.168.1.1:2108/choreography?wsdl";
-	public static final String CHOR1024MSGS = "http://192.168.1.1:2109/choreography?wsdl";
+	public static final String CHOR4MSGS 	= "http://127.0.0.1:2101/choreography?wsdl";
+	public static final String CHOR8MSGS 	= "http://127.0.0.1:2102/choreography?wsdl";
+	public static final String CHOR16MSGS 	= "http://127.0.0.1:2103/choreography?wsdl";
+	public static final String CHOR32MSGS 	= "http://127.0.0.1:2104/choreography?wsdl";
+	public static final String CHOR64MSGS 	= "http://127.0.0.1:2105/choreography?wsdl";
+	public static final String CHOR128MSGS 	= "http://127.0.0.1:2106/choreography?wsdl";
+	public static final String CHOR256MSGS 	= "http://127.0.0.1:2107/choreography?wsdl";
+	public static final String CHOR512MSGS 	= "http://127.0.0.1:2108/choreography?wsdl";
+	public static final String CHOR1024MSGS = "http://127.0.0.1:2109/choreography?wsdl";
 	private static Logger log;
 
 	@BeforeClass

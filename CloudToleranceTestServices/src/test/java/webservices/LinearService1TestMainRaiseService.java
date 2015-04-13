@@ -26,7 +26,7 @@ public class LinearService1TestMainRaiseService {
 	@Test
 	public void checkServiceAvailability() throws URISyntaxException, IOException {
 		EndpointAddress ep = new EndpointAddress(
-				"http://localhost:2304/linear?wsdl");
+				"http://localhost:2304/linear?wsdl"); 
 		ep.openConnection().getContent();
 		System.out.println("Service is running already");
 	}
