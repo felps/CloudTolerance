@@ -1,5 +1,7 @@
 package proxy;
 
+import java.util.ArrayList;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
@@ -17,11 +19,27 @@ public class ProxyEndpoint {
 	public String wsMethodName;
 	public String nextProxyUrl;
 	private Endpoint ep;
+	private String publishURL;
+	private ArrayList<String> myProvidingWebServices;
+	private ArrayList<ProxyEndpoint> otherProxies;
+
+	public String getPublishURL() {
+		return publishURL;
+	}
+	
+	public void setPublishURL(String url) {
+		publishURL = url;
+	}
 
 	public ProxyEndpoint() {
+		otherProxies = new ArrayList<ProxyEndpoint>();
+
+		myProvidingWebServices = new ArrayList<String>();
 	}
 
 	public ProxyEndpoint(BPMNTask task) {
+		otherProxies = new ArrayList<ProxyEndpoint>();
+		myProvidingWebServices = new ArrayList<String>();
 		wsMethodName = task.getMethodName();
 		nextProxyUrl = task.getNextLink();
 		myProxy = new Proxy();
@@ -41,12 +59,12 @@ public class ProxyEndpoint {
 
 		ProxyEndpoint proxy = new ProxyEndpoint();
 
-		proxy.publishWS(args);
+		proxy.startWS(args);
 
 		System.out.println("Done! Ready to warm up!");
 	}
 
-	private void publishWS(String[] args) {
+	private void startWS(String[] args) {
 
 		System.out.println("Next proxy: "+args[1]);
 		this.nextProxyUrl = args[1];
@@ -60,10 +78,18 @@ public class ProxyEndpoint {
 
 		}
 
-		System.out.println("Publishing Proxy at " + args[0]);
-		this.publishWS(args[0]);
+		publishURL = args[0];
+		System.out.println("Publishing Proxy at " + publishURL);
+		this.publishWS(publishURL);
 	}
 
+	
+	@WebMethod(exclude=true)
+	public void publishWS(String publishURL) {
+		this.ep = Endpoint.create(this);
+		this.ep.publish(publishURL);
+	}
+	
 	@WebMethod
 	public void playRole(int parameter, int key) {
 
@@ -102,9 +128,31 @@ public class ProxyEndpoint {
 		ep.stop();
 	}
 
-	@WebMethod(exclude=true)
-	public void publishWS(String publishURL) {
-		this.ep = Endpoint.create(this);
-		this.ep.publish(publishURL);
+	public String getNextProxyUrl() {
+		return nextProxyUrl;
+	}
+	
+	public void setNextProxyUrl(String newUrl) {
+		nextProxyUrl = newUrl;
+	}
+
+	public ArrayList<ProxyEndpoint> getOtherProxies() {
+		return otherProxies;
+	}
+
+	public ProxyEndpoint getOtherProxies(int index) {
+		return otherProxies.get(index);
+	}
+
+	public void addOtherProxy(ProxyEndpoint newProxy) {
+		otherProxies.add(newProxy);
+	}
+
+	public String getProvidingWebService(int index) {
+		return myProvidingWebServices.get(index);
+	}
+
+	public void addProvidingWebService(String wsEndpoint) {
+		myProvidingWebServices.add(wsEndpoint);
 	}
 }
