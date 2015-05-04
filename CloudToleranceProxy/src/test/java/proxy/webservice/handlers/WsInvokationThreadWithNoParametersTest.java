@@ -1,6 +1,6 @@
 package proxy.webservice.handlers;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeoutException;
 
@@ -14,14 +14,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import proxy.utils.Result;
-import proxy.utils.StartTestWebServices;
 import webservices.LinearService1;
 
 public class WsInvokationThreadWithNoParametersTest {
 
 	Object serviceHandler;
 	Client client;
-	private String wsdlUrl = StartTestWebServices.CREDITCARD_WSDL;
+	private String wsdlUrl = "http://127.0.0.1:2401/Linear?wsdl";
 	private WsInvokationThread invokation;
 	private Result resultSetter;
 	private Endpoint ep;
@@ -41,10 +40,11 @@ public class WsInvokationThreadWithNoParametersTest {
 			ClassNotFoundException, InterruptedException {
 		
 		LinearService1 ws = new LinearService1(0.3, 0);
-		waitAWhile();
 
 		ep = Endpoint.create(ws);
 		ep.publish("http://0.0.0.0:2401/Linear");
+
+		waitAWhile();
 
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		client = dcf.createClient(wsdlUrl);
@@ -55,7 +55,7 @@ public class WsInvokationThreadWithNoParametersTest {
 
 	@After
 	public void tearDown() {
-		ep.stop();
+	//	ep.stop();
 	}
 	
 	@Test
@@ -65,11 +65,9 @@ public class WsInvokationThreadWithNoParametersTest {
 				.getClassLoader());
 
 		for (int i = 0; i < 10; i++) {
-			Object[] returnedValue = client.invoke("issuePayment");
+			Object[] returnedValue = client.invoke("three");
 
-			System.out.println(returnedValue[0]);
-			if ((Boolean) returnedValue[0])
-				System.out.println("Teste");
+			assertEquals(3, returnedValue[0]);
 		}
 	}
 
@@ -86,7 +84,7 @@ public class WsInvokationThreadWithNoParametersTest {
 			Object[] returnedValue = client.invoke("three");
 
 			System.out.println(returnedValue[0]);
-			assertTrue((Boolean) returnedValue[0]);
+			assertEquals(3, returnedValue[0]);
 		}
 	}
 
@@ -94,7 +92,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	public void testInvoke() throws Exception {
 		invokation = new WsInvokationThread(client, resultSetter,
 				"three");
-		assertTrue((Boolean) invokation.invoke()[0]);
+		assertEquals(3, invokation.invoke()[0]);
 	}
 
 	@Test(timeout = 5000)
@@ -103,12 +101,12 @@ public class WsInvokationThreadWithNoParametersTest {
 		invokation = new WsInvokationThread(client, resultSetter,
 				"three");
 		new Thread(invokation).start();
-		assertTrue((Boolean) resultSetter.getResultValue());
+		assertEquals(3, resultSetter.getResultValue());
 	}
 
 	private void waitAWhile() {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
