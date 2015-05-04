@@ -1,5 +1,8 @@
 package proxy;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.xml.ws.Endpoint;
@@ -69,7 +72,11 @@ public class MultipleMessagesChoreography extends ChoreographyEndpoint {
 		else{
 			System.out.println("[Multiple at "+ myURL + "] Up to now, " + integerReturnedValue + " messages exchanged");
 			System.out.println("Invoking proxy again, parameter " + integerReturnedValue);
-			informNextLink(integerReturnedValue, key);
+			try {
+				informNextLink(integerReturnedValue, key);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

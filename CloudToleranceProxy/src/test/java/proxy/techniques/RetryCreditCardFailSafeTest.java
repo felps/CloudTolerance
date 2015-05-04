@@ -10,6 +10,7 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import webservices.LinearService1;
 
 public class RetryCreditCardFailSafeTest {
 
-	private Endpoint ep;
+	private static Endpoint ep;
 
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
@@ -30,8 +31,8 @@ public class RetryCreditCardFailSafeTest {
 		System.out.println("----------------------");
 	}
 
-	@Before
-	public void seTup() {
+	@BeforeClass
+	public static void seTup() {
 		LinearService1 ws = new LinearService1(0.3, 0);
 
 		ep = Endpoint.create(ws);
@@ -41,10 +42,6 @@ public class RetryCreditCardFailSafeTest {
 
 	}
 
-	@After
-	public void tearDown() {
-		ep.stop();
-	}
 
 	@Test
 	public void shouldStartWithNoServicesAndNullCurrentWS() {
@@ -91,7 +88,7 @@ public class RetryCreditCardFailSafeTest {
 
 	}
 
-	private void waitAWhile() {
+	private static void waitAWhile() {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

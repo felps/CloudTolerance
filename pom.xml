@@ -7,7 +7,7 @@
 	<packaging> pom </packaging>
 
 	<properties>
-		<cxf.version>2.6.8</cxf.version>
+		<cxf.version>3.0.4</cxf.version>
 	</properties>
 
 	<dependencies>
@@ -38,7 +38,7 @@
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-bundle</artifactId>
+			<artifactId>cxf-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,8 +18,8 @@ import webservices.LinearService1;
 
 public class WsFailureHandlingRetryTest {
 
-	private Endpoint ep;
-	
+	private static Endpoint	ep;
+
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
 		System.out.println("----------------------");
@@ -27,11 +28,10 @@ public class WsFailureHandlingRetryTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
-
 	}
 
-	@Before
-	public void seTup() {
+	@BeforeClass
+	public static void setUp() {
 		LinearService1 ws = new LinearService1(0.3, 0);
 		waitAWhile();
 
@@ -40,12 +40,8 @@ public class WsFailureHandlingRetryTest {
 
 	}
 
-	@After
-	public void tearDown() {
-		ep.stop();
-	}
-	
-	private void waitAWhile() {
+
+	private static void waitAWhile() {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -55,8 +51,7 @@ public class WsFailureHandlingRetryTest {
 	}
 
 	@Test(timeout = 10000)
-	public void shouldInvokeFaultyMethodWithNoParameters()
-			throws TimeoutException {
+	public void shouldInvokeFaultyMethodWithNoParameters() throws TimeoutException {
 		Retry retry = new Retry();
 
 		WsInvoker service = new WsInvoker("http://0.0.0.0:2401/Linear?wsdl");
@@ -70,7 +65,7 @@ public class WsFailureHandlingRetryTest {
 
 			if (result == null)
 				fail("Got null as an answer");
-			
+
 			int integerValue = (Integer) result;
 			assertEquals(3, integerValue);
 		}
