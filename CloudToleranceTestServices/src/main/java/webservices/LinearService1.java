@@ -2,9 +2,13 @@ package webservices;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
 import javax.xml.ws.Endpoint;
 
 @WebService
+@SOAPBinding(style = Style.RPC)
 public class LinearService1 extends FaultyWebService {
 
 	public LinearService1(double failStop, double faultyResponse) {
