@@ -95,7 +95,7 @@ public class Retry implements FaultToleranceTechnique {
 		try {
 			if (wsParameterValues != null && wsParameterValues.length > 0)
 				System.out.println("RETRY: currentWS.invokeWebMethod(" + wsMethodName
-						+ ", ("+wsParameterValues[0].getClass().getName()+")"+ wsParameterValues[0].toString() + ");");
+						+ ", ("+wsParameterValues[0].getClass().getName()+")"+ wsParameterValues[0].toString() + ") at " +currentWS.getWsdlURL());
 			invokation = currentWS.invokeWebMethod(wsMethodName,
 					wsParameterValues);
 
