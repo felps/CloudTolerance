@@ -1,44 +1,38 @@
 package proxy;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
-import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 import javax.xml.ws.Endpoint;
 
 import proxy.choreography.BPMNTask;
 import proxy.utils.Result;
-import proxy.webservice.handlers.WsInvoker;
 
 @WebService
-public class ChoreographyEndpoint {
+@SOAPBinding(style = Style.RPC)
+
+public class ChoreographyEndpoint extends ChoreographyActor {
 
 	protected List<Result> choreographyResults;
 	protected static Integer nextAvailableKey = 0;
 
-	public Proxy myProxy;
-	public String wsMethodName;
-	public String nextProxyUrl;
-	public WsInvoker nextProxy;
-	private Endpoint ep;
-
 	public ChoreographyEndpoint() {
+		super();
 		choreographyResults = new ArrayList<Result>();
 	}
 
 	public ChoreographyEndpoint(BPMNTask task) {
+		super(task);
 		choreographyResults = new ArrayList<Result>();
-		wsMethodName = task.getMethodName();
-		nextProxyUrl = task.getNextLink();
-		myProxy = new Proxy();
-		ep = Endpoint.create(this);
-		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
-			myProxy.addWebService(wsdlFile);
-		}
+		
 	}
 
 	public static void main(String[] args) {
@@ -57,7 +51,7 @@ public class ChoreographyEndpoint {
 		System.out.println("Publishing Proxy at " + args[0]);
 		String publish = args[0];
 
-		ChoreographyEndpoint chor = new ChoreographyEndpoint();
+		ChoreographyActor chor = new ChoreographyEndpoint();
 		for (String string : Arrays.copyOfRange(args, 3, args.length)) {
 			System.out.println("WSDL: "+ string);
 		}
@@ -69,38 +63,9 @@ public class ChoreographyEndpoint {
 		
 	}
 
-	private void setUpWebService(String nextProxyWSDL, String wsMethodName,
-			String... webServices) {
-
-		this.nextProxyUrl = nextProxyWSDL;
-
-		this.wsMethodName = wsMethodName;
-
-		myProxy = new Proxy();
-		for (String webServiceEndpoint : webServices) {
-			System.out.println("Adding WS at: " + webServiceEndpoint);
-			myProxy.addWebService(webServiceEndpoint);
-		}
-
-	}
-	
-	@WebMethod
-	public void setUpWebService(String webServiceWSDL){
-		setUpWebService(nextProxyUrl, wsMethodName, webServiceWSDL);
-	}
-			
-
 	@WebMethod
 	public int startChoreography(int parameter) {
 		System.out.println("Choreography Started...");
-		if (nextProxy == null){
-			System.out.println("Contacting proxy at " + nextProxyUrl);
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {
-			}
-			nextProxy = new WsInvoker(nextProxyUrl);
-		}
 		int currentKey;
 
 		synchronized (nextAvailableKey) {
@@ -109,23 +74,14 @@ public class ChoreographyEndpoint {
 		}
 
 		System.out.println("Informing next link...");
-		informNextLink(parameter, currentKey);
+		try {
+			informNextLink(parameter, currentKey);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
 
 		return getResponse(currentKey);
-	}
-
-	@WebMethod
-	@Oneway
-	public void playRole(int parameter, int key) {
-
-		System.out.println("Performing my role...");
-		Object returnValue = null;
-
-		Object wsParameterValues = parameter;
-
-		returnValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
-
-		choreographyResults.get(key).setResultValue(returnValue);
 	}
 
 	private int getResponse(int key) {
@@ -140,14 +96,18 @@ public class ChoreographyEndpoint {
 
 	}
 
-	protected void informNextLink(int parameter, int key) {
-		nextProxy.invokeWebMethod("playRole", parameter, key);
-	}
+	@WebMethod
+	public void playRole(int parameter, int key) {
+		
+		System.out.println("Performing my role...");
+		Object returnValue = null;
 	
-	@WebMethod(exclude=true)
-	public void publishWS(String endpoint) {
-		this.ep = Endpoint.create(this);
-		this.ep.publish(endpoint);		
+		Object wsParameterValues = parameter;
+	
+		returnValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
+	
+		choreographyResults.get(key).setResultValue(returnValue);
+		
 	}
 
 }

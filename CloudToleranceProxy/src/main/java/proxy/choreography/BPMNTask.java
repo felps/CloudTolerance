@@ -9,12 +9,8 @@ public class BPMNTask {
 	private String nextLink;
 	private String methodName;
 	private ArrayList<String> providingServicesWsdlList;
-	private String nextAction;
-	
-	private String port;
-	private String path;
 
-	// <proxy publishable endpoint> <next proxy endpoint> <service method name> <services' WSDL url>
+	// <name> <proxy publishable endpoint> <next proxy endpoint> <service method name> <services' WSDL url>
 	public BPMNTask( String name, String publishEndpoint, String nextLink, String methodName, String wsdlFile) {
 		setEndpoint(publishEndpoint);
 		this.nextLink = nextLink;

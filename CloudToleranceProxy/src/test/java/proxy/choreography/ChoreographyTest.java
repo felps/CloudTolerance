@@ -10,8 +10,7 @@ import java.util.concurrent.TimeoutException;
 import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,7 +21,8 @@ import webservices.LinearService1;
 public class ChoreographyTest {
 
 	private static Logger log;
-	private Endpoint ep;
+	private static Endpoint ep;
+	
 	@BeforeClass
 	public static void setUpEnvironment() throws InterruptedException {
 		log = Logger.getLogger(ChoreographyTest.class);
@@ -36,19 +36,19 @@ public class ChoreographyTest {
 		System.out.println("----------------------");
 	}
 	
-	@Before
-	public void setUp(){
+	@BeforeClass
+	public static void setUp(){
 		LinearService1 ws = new LinearService1(0, 0);
 		ep = Endpoint.create(ws);
 		ep.publish("http://0.0.0.0:2401/Linear");
 	}
 	
-	@After
-	public void tearDown() {
-		ep.stop();
+	@AfterClass
+	public static void tearDown() {
+		//ep.stop();
 	}
 	
-	@Test
+//	@Test
 	public void shouldRemoveEndpointFromProcessingTasks(){
 		
 	}
@@ -94,7 +94,7 @@ public class ChoreographyTest {
 
 		chor.addTask(task2);
 		chor.addTask(task3);
-		chor.setEndpoint(task1);
+		chor.setEndpoint(task3);
 		
 		assertFalse(chor.validate());
 
@@ -115,16 +115,34 @@ public class ChoreographyTest {
 		Choreography chor;
 		BPMNTask task1, task2, task3;
 
-		task1 = new BPMNTask("Task1", "http://0.0.0.0:2430/task",
-				"http://127.0.0.1:2431/task?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl");
-		task2 = new BPMNTask("Task2", "http://0.0.0.0:2431/task",
-				"http://127.0.0.1:2432/task?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl");
-		task3 = new BPMNTask("Task3", "http://0.0.0.0:2432/task",
-				"http://127.0.0.1:2430/task?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl");
+		String name;
+		String publishEndpoint;
+		String nextLink;
+		String methodName = "addOne";
+		String wsdlFile = "http://127.0.0.1:2401/Linear?wsdl";
 
+		
+		name = "Task1";
+		publishEndpoint = "http://0.0.0.0:2430/task";
+		nextLink = "http://127.0.0.1:2431/task?wsdl";
+		task1 = new BPMNTask(name, publishEndpoint,
+				nextLink, methodName,
+				wsdlFile);
+		
+		name = "Task2";
+		publishEndpoint = "http://0.0.0.0:2431/task";
+		nextLink = "http://127.0.0.1:2432/task?wsdl";
+		task2 = new BPMNTask(name, publishEndpoint,
+				nextLink, methodName,
+				wsdlFile);
+		
+		name = "Task3";
+		publishEndpoint = "http://0.0.0.0:2432/task";
+		nextLink = "http://127.0.0.1:2430/task?wsdl";
+		task3 = new BPMNTask(name, publishEndpoint,
+				nextLink, methodName,
+				wsdlFile);
+		
 		chor = new Choreography();
 
 		chor.addTask(task1);
@@ -135,7 +153,7 @@ public class ChoreographyTest {
 		chor.setEndpoint(task1);
 		assertEquals(2, chor.getProcessingTasks().size());
 
-		Choreography.enact(chor);
+		chor.enact();
 		
 		try {
 			Thread.sleep(5000);
@@ -144,7 +162,7 @@ public class ChoreographyTest {
 			e.printStackTrace();
 		}
 		
-		WsInvoker wsInvoker = new WsInvoker("http://0.0.0.0:2430/task?wsdl");
+		WsInvoker wsInvoker = new WsInvoker("http://127.0.0.1:2430/task?wsdl");
 		warmUpInvokation(wsInvoker);
 		
 		assertEquals(singleInvokation(wsInvoker), 3);
