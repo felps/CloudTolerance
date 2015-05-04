@@ -4,11 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+import proxy.ChoreographyActor;
 import proxy.ProxyEndpoint;
 
 public class ProxyFactory {
 
-	public ProxyEndpoint createProxy(File configFile) throws IOException {
+	public ChoreographyActor createProxy(File configFile) throws IOException {
 		Scanner fileReader = new Scanner(configFile);
 		if (!configFile.exists() || !configFile.canRead()) {
 			fileReader.close();
@@ -20,7 +21,7 @@ public class ProxyFactory {
 			throw new IOException("Empty configuration file");
 		}
 
-		ProxyEndpoint proxy = generateProxyEndpointFromFile(fileReader);
+		ChoreographyActor proxy = generateProxyEndpointFromFile(fileReader);
 		while(fileReader.hasNextLine()){
 			proxy.addOtherProxy(generateProxyEndpointFromFile(fileReader));
 		}
@@ -28,8 +29,8 @@ public class ProxyFactory {
 		return proxy;
 	}
 
-	private ProxyEndpoint generateProxyEndpointFromFile(Scanner fileReader) {
-		ProxyEndpoint proxy = new ProxyEndpoint();
+	private ChoreographyActor generateProxyEndpointFromFile(Scanner fileReader) {
+		ChoreographyActor proxy = new ProxyEndpoint();
 
 		String line = fileReader.nextLine();
 		while (fileReader.hasNextLine() && !line.contentEquals("Proxy:")) {

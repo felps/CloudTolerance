@@ -13,8 +13,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import proxy.ChoreographyActor;
 import proxy.Proxy;
-import proxy.ProxyEndpoint;
 
 public class ProxyFactoryTest {
 
@@ -72,7 +72,7 @@ public class ProxyFactoryTest {
 	public void shouldReadTheProxyInformationFromConfigurationFile() throws IOException {
 		ProxyFactory factory = new ProxyFactory();
 
-		ProxyEndpoint proxy = factory.createProxy(configFile);
+		ChoreographyActor proxy = factory.createProxy(configFile);
 
 		assertEquals("http://localhost:3301/proxy1", proxy.getPublishURL());
 		assertEquals("http://localhost:3302/proxy2", proxy.getNextProxyUrl());
@@ -86,7 +86,7 @@ public class ProxyFactoryTest {
 	public void shouldReadAllTheOtherProxiesUrlFromConfigurationFile() throws IOException {
 		ProxyFactory factory = new ProxyFactory();
 
-		ProxyEndpoint proxy = factory.createProxy(configFile);
+		ChoreographyActor proxy = factory.createProxy(configFile);
 
 		assertEquals(4, proxy.getOtherProxies().size());
 		
