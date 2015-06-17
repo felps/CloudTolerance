@@ -2,10 +2,9 @@ package proxy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
-import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
@@ -20,17 +19,17 @@ import proxy.utils.Result;
 
 public class ChoreographyEndpoint extends ChoreographyActor {
 
-	protected List<Result> choreographyResults;
+	protected HashMap<Integer, Result> choreographyResults;
 	protected static Integer nextAvailableKey = 0;
 
 	public ChoreographyEndpoint() {
 		super();
-		choreographyResults = new ArrayList<Result>();
+		choreographyResults = new HashMap<Integer, Result>();
 	}
 
 	public ChoreographyEndpoint(BPMNTask task) {
 		super(task);
-		choreographyResults = new ArrayList<Result>();
+		choreographyResults = new HashMap<Integer, Result>();
 		
 	}
 
@@ -69,7 +68,7 @@ public class ChoreographyEndpoint extends ChoreographyActor {
 
 		synchronized (nextAvailableKey) {
 			currentKey = nextAvailableKey++;
-			choreographyResults.add(new Result());
+			choreographyResults.put(currentKey, new Result());
 		}
 
 		//System.out.println("Informing next link...");
