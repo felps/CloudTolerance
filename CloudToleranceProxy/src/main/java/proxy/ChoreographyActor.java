@@ -237,9 +237,7 @@ public abstract class ChoreographyActor {
 				otherProxies.add(recoveredProxy);
 				return recoveredProxy;
 
-			} else {
-				System.out.println(proxyURL + " != " + url);
-			}
+			} 
 		}
 		return null;
 	}
