@@ -83,7 +83,7 @@ public class Retry implements FaultToleranceTechnique {
 		for (int i = 0; i < retryAmount; i++) {
 			result = singleTry(wsMethodName, wsParameterValues);
 			if (result != null){
-				System.out.println("Success! Returned value: " + result);
+				System.out.println("Success! Method " + wsMethodName + " returned value: " + result);
 				return result;
 			} else
 				System.out.println("Got null as an answer from " + currentWS.getWsdlURL());
@@ -94,9 +94,9 @@ public class Retry implements FaultToleranceTechnique {
 	private Object singleTry(String wsMethodName, Object[] wsParameterValues) {
 		WsInvokation invokation;
 		try {
-			if (wsParameterValues != null && wsParameterValues.length > 0)
-				System.out.println("RETRY: currentWS.invokeWebMethod(" + wsMethodName
-						+ ", ("+wsParameterValues[0].getClass().getName()+")"+ wsParameterValues[0].toString() + ") at " +currentWS.getWsdlURL());
+//			if (wsParameterValues != null && wsParameterValues.length > 0)
+//				System.out.println("RETRY: currentWS.invokeWebMethod(" + wsMethodName
+//						+ ", ("+wsParameterValues[0].getClass().getName()+")"+ wsParameterValues[0].toString() + ") at " +currentWS.getWsdlURL());
 			invokation = currentWS.invokeWebMethod(wsMethodName,
 					wsParameterValues);
 

@@ -64,7 +64,7 @@ public class ChoreographyEndpoint extends ChoreographyActor {
 
 	@WebMethod
 	public int startChoreography(int parameter) {
-		System.out.println("Choreography Started...");
+		//System.out.println("Choreography Started...");
 		int currentKey;
 
 		synchronized (nextAvailableKey) {
@@ -72,7 +72,7 @@ public class ChoreographyEndpoint extends ChoreographyActor {
 			choreographyResults.add(new Result());
 		}
 
-		System.out.println("Informing next link...");
+		//System.out.println("Informing next link...");
 		try {
 			informNextLink(parameter, currentKey);
 		} catch (Exception e) {
