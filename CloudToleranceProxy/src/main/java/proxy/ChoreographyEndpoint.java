@@ -1,12 +1,11 @@
 package proxy;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
+import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
@@ -97,9 +96,9 @@ public class ChoreographyEndpoint extends ChoreographyActor {
 	}
 
 	@WebMethod
-	public void playRole(int parameter, int key) {
+	public int playRole(int parameter, int key) {
 		
-		System.out.println("Performing my role...");
+		System.out.println("Actor: " + publishURL + ". Performing my role as proxy...");
 		Object returnValue = null;
 	
 		Object wsParameterValues = parameter;
@@ -107,7 +106,9 @@ public class ChoreographyEndpoint extends ChoreographyActor {
 		returnValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
 	
 		choreographyResults.get(key).setResultValue(returnValue);
+//		choreographyResults.get(key).setResultValue(parameter);
 		
+		return 1;
 	}
 
 }

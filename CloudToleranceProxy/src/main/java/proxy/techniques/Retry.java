@@ -82,10 +82,11 @@ public class Retry implements FaultToleranceTechnique {
 			currentWS.setTimeout(timeout);
 		for (int i = 0; i < retryAmount; i++) {
 			result = singleTry(wsMethodName, wsParameterValues);
-			if (result != null)
+			if (result != null){
+				System.out.println("Success! Returned value: " + result);
 				return result;
-			else
-				System.out.println("Got null as an answer");
+			} else
+				System.out.println("Got null as an answer from " + currentWS.getWsdlURL());
 		}
 		return null;
 	}

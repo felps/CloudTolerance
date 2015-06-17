@@ -52,7 +52,7 @@ public class MultipleMessagesChoreography extends ChoreographyEndpoint {
 	@WebMethod
 	@Oneway
 	@Override
-	public void playRole(int parameter, int key) {
+	public int playRole(int parameter, int key) {
 
 		Object returnValue = null;
 		int integerReturnedValue; 
@@ -78,5 +78,6 @@ public class MultipleMessagesChoreography extends ChoreographyEndpoint {
 				e.printStackTrace();
 			}
 		}
+		return 1;
 	}
 }

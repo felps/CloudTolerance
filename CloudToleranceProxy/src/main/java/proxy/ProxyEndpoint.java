@@ -62,9 +62,10 @@ public class ProxyEndpoint extends ChoreographyActor{
 	}
 
 	@WebMethod
-	public void playRole(int parameter, int key) {
+	public int playRole(int parameter, int key) {
 
-		System.out.println("Performing my role as proxy...");
+		System.out.println("Actor: " + publishURL + ". Performing my role as proxy...");
+		System.out.println("Invoking "+wsMethodName);
 		int returnValue = 0;
 
 		Object wsParameterValues = parameter;
@@ -72,14 +73,15 @@ public class ProxyEndpoint extends ChoreographyActor{
 		Object returnedValue = myProxy.invokeMethod(wsMethodName, wsParameterValues);
 		if (returnedValue != null) {
 			returnValue = (Integer) returnedValue;
-		} else
-			return;
+		} 
 
 		try {
 			informNextLink(returnValue, key);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return 1;
 	}
 
 }

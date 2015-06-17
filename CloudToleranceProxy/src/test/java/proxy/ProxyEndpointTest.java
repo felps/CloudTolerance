@@ -29,34 +29,31 @@ public class ProxyEndpointTest {
 		ep = Endpoint.create(ws);
 		ep.publish("http://0.0.0.0:2401/Linear");
 		
-//		Scanner scan = new Scanner(System.in);
-//		scan.next();
 	}
 	
 	@AfterClass
 	public static void tearDownClass(){
-		//ep.stop();
 	}
 	
-	@Test
+	@Test(timeout=10000)
 	public void shouldRaiseASecondProxyEndpointIfItDoesNotExist() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
-		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/task1", "http://localhost:3312/task2?wsdl", "addOne", "http://localhost:2401/Linear?wsdl");
-		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/task2", "http://localhost:3311/task1?wsdl", "addOne", "http://localhost:2401/Linear?wsdl");
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/task1", "http://127.0.0.1:3312/task2?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/task2", "http://127.0.0.1:3311/task1?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
 		
 		ChoreographyActor proxy1 = new ChoreographyEndpoint(task1);
 		ChoreographyActor newProxy = new ProxyEndpoint(task2);
 		
-		assertEquals("http://localhost:3312/task2?wsdl", proxy1.getNextProxyUrl());
-		assertEquals("addOne", proxy1.getWsMethodName());
 		assertEquals("http://0.0.0.0:3311/task1", proxy1.getPublishURL());
+		assertEquals("http://127.0.0.1:3312/task2?wsdl", proxy1.getNextProxyUrl());
+		assertEquals("addOne", proxy1.getWsMethodName());
 
 		proxy1.setNextProxyUrl(newProxy.getPublishURL());
 		proxy1.addOtherProxy(newProxy);
 		
-		proxy1.publishWS(proxy1.getPublishURL());
-		newProxy.publishWS(proxy1.getPublishURL());
+		proxy1.publishWS();
+//		newProxy.publishWS(newProxy.getPublishURL());
 
-		String wsdlURL = "http://localhost:3311/task1?wsdl";
+		String wsdlURL = "http://127.0.0.1:3311/task1?wsdl";
 
 		try{
 			checkServiceAvailability(wsdlURL);
@@ -66,6 +63,43 @@ public class ProxyEndpointTest {
 		
 		WsInvoker wsInvoker = new WsInvoker(wsdlURL);
 		warmUpInvokation(wsInvoker);
+		
+		Thread.sleep(1000);
+		assertEquals(2, singleInvokation(wsInvoker));
+		
+	}
+
+	//@Test(timeout=10000)
+	public void shouldRaiseASecondAndThirdProxyEndpointIfItDoesNotExist() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/task1", "http://127.0.0.1:3312/task2?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/task2", "http://127.0.0.1:3311/task3?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task3 = new BPMNTask("Task3", "http://0.0.0.0:3313/task3", "http://127.0.0.1:3311/task1?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		
+		ChoreographyActor proxy1 = new ChoreographyEndpoint(task1);
+		ChoreographyActor newProxy = new ProxyEndpoint(task2);
+		
+		assertEquals("http://0.0.0.0:3311/task1", proxy1.getPublishURL());
+		assertEquals("http://127.0.0.1:3312/task2?wsdl", proxy1.getNextProxyUrl());
+		assertEquals("addOne", proxy1.getWsMethodName());
+
+		proxy1.setNextProxyUrl(newProxy.getPublishURL());
+		proxy1.addOtherProxy(newProxy);
+		
+		proxy1.publishWS();
+//		newProxy.publishWS(newProxy.getPublishURL());
+
+		String wsdlURL = "http://127.0.0.1:3311/task1?wsdl";
+
+		try{
+			checkServiceAvailability(wsdlURL);
+		} catch (Exception e){
+			fail("WS not available");
+		}
+		
+		WsInvoker wsInvoker = new WsInvoker(wsdlURL);
+		warmUpInvokation(wsInvoker);
+		
+		Thread.sleep(1000);
 		assertEquals(2, singleInvokation(wsInvoker));
 		
 	}

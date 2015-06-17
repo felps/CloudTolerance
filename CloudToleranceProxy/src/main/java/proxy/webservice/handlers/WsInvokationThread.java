@@ -39,7 +39,7 @@ public class WsInvokationThread implements Runnable {
 			throw new RuntimeException("Error invoking method "+ methodName);
 		}
 		synchronized (resultSetter) {
-			if (response != null)
+			if (response != null && response.length>0)
 				resultSetter.setResultValue(response[0]);
 			else
 				resultSetter.setResultValue(null);

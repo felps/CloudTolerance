@@ -37,6 +37,8 @@ public class WsInvoker {
 
 	public WsInvoker(String wsdlURL) {
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+		if(!wsdlURL.endsWith("?wsdl")) 
+			wsdlURL += "?wsdl";
 		webServiceClient = dcf.createClient(wsdlURL);
 		this.wsdlURL = wsdlURL;
 	}

@@ -1,7 +1,9 @@
 package proxy;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,13 +24,16 @@ public abstract class ChoreographyActor {
 	protected WsInvoker						nextProxyInvoker;
 	protected Proxy							myProxy;
 	protected String						wsMethodName;
-	protected ProxyEndpoint					nextProxy;
+	protected ChoreographyActor				nextProxy;
 	protected String						nextProxyUrl;
 	protected Endpoint						ep;
 	protected String						publishURL;
 	protected ArrayList<String>				myProvidingWebServices;
+	private URL								detailedPublishUrl;
 
-	private long							timeout = 10000;
+	private long							timeout	= 10000;
+
+	private BPMNTask						task;
 
 	public ChoreographyActor() {
 		ep = Endpoint.create(this);
@@ -48,19 +53,21 @@ public abstract class ChoreographyActor {
 			myProxy.addWebService(wsdlFile);
 		}
 		ep = Endpoint.create(this);
+		this.task = task;
 	}
 
-	public ProxyEndpoint getNextProxy() {
+	public ChoreographyActor getNextActor() {
 		return nextProxy;
 	}
 
 	public void setNextProxy(ProxyEndpoint nextProxy) {
 		this.nextProxy = nextProxy;
+		task.setNextLink(nextProxy.publishURL);
 	}
 
-	public void setNextProxy(String nextProxyUrl) {
-		// TODO
-	}
+	// public void setNextProxy(String nextProxyUrl) {
+	// // TODO
+	// }
 
 	public String getWsMethodName() {
 		return wsMethodName;
@@ -68,6 +75,7 @@ public abstract class ChoreographyActor {
 
 	public void setWsMethodName(String wsMethodName) {
 		this.wsMethodName = wsMethodName;
+		task.setMethodName(wsMethodName);
 	}
 
 	public Endpoint getEp() {
@@ -84,6 +92,9 @@ public abstract class ChoreographyActor {
 
 	public void setMyProvidingWebServices(ArrayList<String> myProvidingWebServices) {
 		this.myProvidingWebServices = myProvidingWebServices;
+		for (String wsdlFile : myProvidingWebServices) {
+			task.addProvidingServiceWsdl(wsdlFile);
+		}
 	}
 
 	public void setOtherProxies(ArrayList<ChoreographyActor> otherProxies) {
@@ -91,8 +102,7 @@ public abstract class ChoreographyActor {
 	}
 
 	@WebMethod
-	@Oneway
-	public abstract void playRole(int parameter, int key);
+	public abstract int playRole(int parameter, int key);
 
 	public Proxy getMyProxy() {
 		return myProxy;
@@ -108,6 +118,13 @@ public abstract class ChoreographyActor {
 
 	public void setPublishURL(String url) {
 		publishURL = url;
+		task.setEndpoint(url);
+		//TODO : This is lazy...
+		try {
+			detailedPublishUrl = new URL(publishURL);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@WebMethod(exclude = true)
@@ -126,6 +143,7 @@ public abstract class ChoreographyActor {
 
 	public void setNextProxyUrl(String newUrl) {
 		nextProxyUrl = newUrl;
+		task.setNextLink(newUrl);
 	}
 
 	public ArrayList<ChoreographyActor> getOtherProxies() {
@@ -146,10 +164,16 @@ public abstract class ChoreographyActor {
 
 	public void addProvidingWebService(String wsEndpoint) {
 		myProvidingWebServices.add(wsEndpoint);
+		task.addProvidingServiceWsdl(wsEndpoint);
 	}
 
 	public void publishWS() {
-		publishWS(publishURL);
+		if (publishURL.contains("127.0.0.1"))
+			publishWS(publishURL.replace("127.0.0.1", "0.0.0.0"));
+		else if (publishURL.contains("localhost"))
+			publishWS(publishURL.replace("localhost", "0.0.0.0"));
+		else
+			publishWS(publishURL);
 
 	}
 
@@ -165,37 +189,62 @@ public abstract class ChoreographyActor {
 
 	protected void informNextLink(int parameter, int key) throws URISyntaxException, IOException {
 
-		nextProxyInvoker = getNextProxyInvoker();
-		Retry retry = new Retry(3);
+		try {
+			System.out.println("Actor: " + publishURL + "\n Notifying: " + nextProxyUrl);
+			nextProxyInvoker = getNextProxyInvoker();
+			Retry retry = new Retry(3);
 
-		retry.setTimeout(timeout);
+			retry.setTimeout(timeout);
 
-		retry.addAvailableInvoker(nextProxyInvoker);
-		retry.setCurrentWS(nextProxyInvoker);
+			retry.addAvailableInvoker(nextProxyInvoker);
+			retry.setCurrentWS(nextProxyInvoker);
 
-		Object result = retry.invokeMethod("playRole", parameter, key);
-		while (result == null || nextProxyInvoker == null) {
-			result = retry.invokeMethod("playRole", parameter, key);
-			
+			Object result = retry.invokeMethod("playRole", parameter, key);
+			while (result == null || nextProxyInvoker == null) {
+				result = retry.invokeMethod("playRole", parameter, key);
+			}
+		} catch (ProxyNotOnlineException e) {
+			System.out.println("Actor: " + publishURL + "Next proxy not reachable at " + e.url);
+			ChoreographyActor newProxy = redeployNextProxy();
+			newProxy.playRole(parameter, key);
 		}
 	}
 
-	private void redeployNextProxy() {
+	private ChoreographyActor redeployNextProxy() {
 		System.err.println("Recovery is needed... Redeploying next proxy");
 		for (ChoreographyActor erroredProxy : otherProxies) {
-			if (erroredProxy.publishURL.contentEquals(nextProxyUrl)) {
-				ProxyEndpoint recoveredProxy = new ProxyEndpoint();
-				System.out.println("Replacing missing proxy at " + erroredProxy.publishURL + " with new proxy at \"" + publishURL+"recovered\"");
-				recoveredProxy.setPublishURL(publishURL + "recovered");
-				recoveredProxy.setNextProxyUrl(erroredProxy.getNextProxyUrl());
+			if (erroredProxy.getPublishURL().contentEquals(nextProxyUrl)) {
+				ProxyEndpoint recoveredProxy = new ProxyEndpoint(erroredProxy.getTask());
+
+				// recoveredProxy.setNextProxyUrl(erroredProxy.getNextProxyUrl());
 				recoveredProxy.addProvidingWebServices(erroredProxy.getMyProvidingWebServices());
+				recoveredProxy.setMyProxy(erroredProxy.getMyProxy());
+
+				System.out.println("Replacing missing proxy at " + erroredProxy.getPublishURL()
+						+ " with new proxy at \"" + publishURL + "recovered\"");
+				System.out.println("Recovered proxy data:\n" + "recoveredProxy.setNextProxyUrl("
+						+ erroredProxy.getNextProxyUrl() + ")\n" + "recoveredProxy.addProvidingWebServices("
+						+ erroredProxy.getMyProvidingWebServices() + ");" + '\n' + "recoveredProxy.setMyProxy("
+						+ erroredProxy.getMyProxy() + ")\n" +
+
+						"setNextProxyUrl(" + recoveredProxy.getPublishURL() + ");\n" + "recoveredProxy.setPublishURL("
+						+ publishURL + "recovered)");
+
+				recoveredProxy.setPublishURL(publishURL.replace("0.0.0.0", "127.0.0.1") + "recovered");
 				setNextProxyUrl(recoveredProxy.getPublishURL());
+				recoveredProxy.publishWS();
+
 				otherProxies.remove(erroredProxy);
 				otherProxies.add(recoveredProxy);
-				recoveredProxy.publishWS();
+				return recoveredProxy;
 
 			}
 		}
+		return null;
+	}
+
+	private BPMNTask getTask() {
+		return task;
 	}
 
 	@SuppressWarnings("restriction")
@@ -205,29 +254,32 @@ public abstract class ChoreographyActor {
 		return true;
 	}
 
-	protected WsInvoker getNextProxyInvoker() {
+	protected WsInvoker getNextProxyInvoker() throws ProxyNotOnlineException {
 		try {
-			System.out.println("Contacting proxy at " + nextProxyUrl + "?wsdl");
-			if (nextProxyInvoker == null && checkServiceAvailability(nextProxyUrl+ "?wsdl")) {
-				nextProxyInvoker = new WsInvoker(nextProxyUrl+ "?wsdl");
+			String url = nextProxyUrl;
+			if (!url.endsWith("?wsdl"))
+				url += "?wsdl";
+			System.out.println("Contacting proxy at " + nextProxyUrl);
+			if (nextProxyInvoker == null && checkServiceAvailability(nextProxyUrl)) {
+				nextProxyInvoker = new WsInvoker(nextProxyUrl);
 				nextProxyInvoker.setTimeout(timeout);
 			}
-		} catch (URISyntaxException e1) {
-			System.out.println("URI Syntax Exception");
-			redeployNextProxy();
-		} catch (IOException e1) {
-			System.out.println("IO Exception");
-			redeployNextProxy();
-		}
-		
-		
-		try {
 			if (checkServiceAvailability(nextProxyUrl))
 				return new WsInvoker(nextProxyUrl);
-		} catch (Exception e) {
+		} catch (URISyntaxException e1) {
+			System.out.println("URI Syntax Exception");
 			System.out.println("Next proxy is not online, recovery needed");
-
+			ProxyNotOnlineException exc = new ProxyNotOnlineException();
+			exc.url = nextProxyUrl;
+			throw exc;
+		} catch (IOException e1) {
+			System.out.println("IO Exception");
+			System.out.println("Next proxy is not online, recovery needed");
+			ProxyNotOnlineException exc = new ProxyNotOnlineException();
+			exc.url = nextProxyUrl;
+			throw exc;
 		}
+
 		return null;
 	}
 
