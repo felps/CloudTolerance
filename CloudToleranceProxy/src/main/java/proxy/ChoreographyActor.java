@@ -48,7 +48,7 @@ public abstract class ChoreographyActor {
 		myProxy = new Proxy();
 		wsMethodName = task.getMethodName();
 		nextProxyUrl = task.getNextLink();
-		publishURL = task.getEndpoint();
+		publishURL = task.getEndpoint() + task.getName();
 		for (String wsdlFile : task.getProvidingServicesWsdlList()) {
 			myProxy.addWebService(wsdlFile);
 		}
@@ -205,32 +205,30 @@ public abstract class ChoreographyActor {
 			}
 		} catch (ProxyNotOnlineException e) {
 			System.out.println("Actor: " + publishURL + "Next proxy not reachable at " + e.url);
-			ChoreographyActor newProxy = redeployNextProxy();
+			ChoreographyActor newProxy = redeployProxy(nextProxyUrl);
 			newProxy.playRole(parameter, key);
 		}
 	}
 
-	private ChoreographyActor redeployNextProxy() {
+	private ChoreographyActor redeployProxy(String url) {
 		System.err.println("Recovery is needed... Redeploying next proxy");
+		
+		url = url.replace("?wsdl", "");
+		url = url.replace("127.0.0.1", "0.0.0.0");
+		
 		for (ChoreographyActor erroredProxy : otherProxies) {
-			if (erroredProxy.getPublishURL().contentEquals(nextProxyUrl)) {
+			String proxyURL = erroredProxy.getPublishURL().replace("127.0.0.1", "0.0.0.0");
+			if (proxyURL.contentEquals(url)) {
+				String recoveredPublishURL = publishURL.replace(this.task.getName(), erroredProxy.getTask().getName());
+				
 				System.err.println("Replacing missing proxy at " + erroredProxy.getPublishURL()
-						+ " with new proxy at \"" + publishURL + "recovered\"");
+						+ " with new proxy at \"" + recoveredPublishURL + "recovered\"");
 
 				ProxyEndpoint recoveredProxy = new ProxyEndpoint(erroredProxy.getTask());
-
-				// recoveredProxy.setNextProxyUrl(erroredProxy.getNextProxyUrl());
+				recoveredProxy.otherProxies.addAll(getOtherProxies());
 				recoveredProxy.addProvidingWebServices(erroredProxy.getMyProvidingWebServices());
 				recoveredProxy.setMyProxy(erroredProxy.getMyProxy());
-				recoveredProxy.setPublishURL(publishURL + "recovered");
-
-//				System.out.println("Recovered proxy data:\n" + "recoveredProxy.setNextProxyUrl("
-//						+ erroredProxy.getNextProxyUrl() + ")\n" + "recoveredProxy.addProvidingWebServices("
-//						+ erroredProxy.getMyProvidingWebServices() + ");" + '\n' + "recoveredProxy.setMyProxy("
-//						+ erroredProxy.getMyProxy() + ")\n" +
-//
-//						"setNextProxyUrl(" + recoveredProxy.getPublishURL() + ");\n" + "recoveredProxy.setPublishURL("
-//						+ publishURL + "recovered)");
+				recoveredProxy.setPublishURL(recoveredPublishURL);
 
 				setNextProxyUrl(recoveredProxy.getPublishURL()+"?wsdl");
 				recoveredProxy.publishWS();
@@ -239,6 +237,8 @@ public abstract class ChoreographyActor {
 				otherProxies.add(recoveredProxy);
 				return recoveredProxy;
 
+			} else {
+				System.out.println(proxyURL + " != " + url);
 			}
 		}
 		return null;
