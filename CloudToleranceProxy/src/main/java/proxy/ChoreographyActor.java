@@ -214,24 +214,25 @@ public abstract class ChoreographyActor {
 		System.err.println("Recovery is needed... Redeploying next proxy");
 		for (ChoreographyActor erroredProxy : otherProxies) {
 			if (erroredProxy.getPublishURL().contentEquals(nextProxyUrl)) {
+				System.err.println("Replacing missing proxy at " + erroredProxy.getPublishURL()
+						+ " with new proxy at \"" + publishURL + "recovered\"");
+
 				ProxyEndpoint recoveredProxy = new ProxyEndpoint(erroredProxy.getTask());
 
 				// recoveredProxy.setNextProxyUrl(erroredProxy.getNextProxyUrl());
 				recoveredProxy.addProvidingWebServices(erroredProxy.getMyProvidingWebServices());
 				recoveredProxy.setMyProxy(erroredProxy.getMyProxy());
+				recoveredProxy.setPublishURL(publishURL + "recovered");
 
-				System.out.println("Replacing missing proxy at " + erroredProxy.getPublishURL()
-						+ " with new proxy at \"" + publishURL + "recovered\"");
-				System.out.println("Recovered proxy data:\n" + "recoveredProxy.setNextProxyUrl("
-						+ erroredProxy.getNextProxyUrl() + ")\n" + "recoveredProxy.addProvidingWebServices("
-						+ erroredProxy.getMyProvidingWebServices() + ");" + '\n' + "recoveredProxy.setMyProxy("
-						+ erroredProxy.getMyProxy() + ")\n" +
+//				System.out.println("Recovered proxy data:\n" + "recoveredProxy.setNextProxyUrl("
+//						+ erroredProxy.getNextProxyUrl() + ")\n" + "recoveredProxy.addProvidingWebServices("
+//						+ erroredProxy.getMyProvidingWebServices() + ");" + '\n' + "recoveredProxy.setMyProxy("
+//						+ erroredProxy.getMyProxy() + ")\n" +
+//
+//						"setNextProxyUrl(" + recoveredProxy.getPublishURL() + ");\n" + "recoveredProxy.setPublishURL("
+//						+ publishURL + "recovered)");
 
-						"setNextProxyUrl(" + recoveredProxy.getPublishURL() + ");\n" + "recoveredProxy.setPublishURL("
-						+ publishURL + "recovered)");
-
-				recoveredProxy.setPublishURL(publishURL.replace("0.0.0.0", "127.0.0.1") + "recovered");
-				setNextProxyUrl(recoveredProxy.getPublishURL());
+				setNextProxyUrl(recoveredProxy.getPublishURL()+"?wsdl");
 				recoveredProxy.publishWS();
 
 				otherProxies.remove(erroredProxy);
