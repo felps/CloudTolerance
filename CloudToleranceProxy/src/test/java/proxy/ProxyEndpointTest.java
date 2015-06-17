@@ -37,14 +37,17 @@ public class ProxyEndpointTest {
 	
 	@Test(timeout=10000)
 	public void shouldRaiseASecondProxyEndpointIfItDoesNotExist() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
-		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/task1", "http://127.0.0.1:3312/task2?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
-		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/task2", "http://127.0.0.1:3311/task1?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		String task1wsdl = "http://127.0.0.1:3311/Task1?wsdl";
+		String task2wsdl = "http://127.0.0.1:3312/Task2?wsdl";
+
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/", task2wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/", task1wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
 		
 		ChoreographyActor proxy1 = new ChoreographyEndpoint(task1);
 		ChoreographyActor newProxy = new ProxyEndpoint(task2);
 		
-		assertEquals("http://0.0.0.0:3311/task1", proxy1.getPublishURL());
-		assertEquals("http://127.0.0.1:3312/task2?wsdl", proxy1.getNextProxyUrl());
+		assertEquals("http://0.0.0.0:3311/Task1", proxy1.getPublishURL());
+		assertEquals(task2wsdl, proxy1.getNextProxyUrl());
 		assertEquals("addOne", proxy1.getWsMethodName());
 
 		proxy1.setNextProxyUrl(newProxy.getPublishURL());
@@ -53,7 +56,7 @@ public class ProxyEndpointTest {
 		proxy1.publishWS();
 //		newProxy.publishWS(newProxy.getPublishURL());
 
-		String wsdlURL = "http://127.0.0.1:3311/task1?wsdl";
+		String wsdlURL = task1wsdl;
 
 		try{
 			checkServiceAvailability(wsdlURL);
@@ -69,26 +72,33 @@ public class ProxyEndpointTest {
 		
 	}
 
-	//@Test(timeout=10000)
+	@Test(timeout=10000)
 	public void shouldRaiseASecondAndThirdProxyEndpointIfItDoesNotExist() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
-		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3311/task1", "http://127.0.0.1:3312/task2?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
-		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3312/task2", "http://127.0.0.1:3311/task3?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
-		BPMNTask task3 = new BPMNTask("Task3", "http://0.0.0.0:3313/task3", "http://127.0.0.1:3311/task1?wsdl", "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		String task1Wsdl = "http://127.0.0.1:3313/Task1?wsdl";
+		String task2Wsdl = "http://127.0.0.1:3314/Task2?wsdl";
+		String task3wsdl = "http://127.0.0.1:3315/Task3?wsdl";
+		
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:3313/", task2Wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:3314/", task3wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task3 = new BPMNTask("Task3", "http://0.0.0.0:3315/", task1Wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
 		
 		ChoreographyActor proxy1 = new ChoreographyEndpoint(task1);
-		ChoreographyActor newProxy = new ProxyEndpoint(task2);
+		ChoreographyActor proxy2 = new ProxyEndpoint(task2);
+		ChoreographyActor proxy3 = new ProxyEndpoint(task3);
 		
-		assertEquals("http://0.0.0.0:3311/task1", proxy1.getPublishURL());
-		assertEquals("http://127.0.0.1:3312/task2?wsdl", proxy1.getNextProxyUrl());
+		assertEquals("http://0.0.0.0:3313/Task1", proxy1.getPublishURL());
+		assertEquals(task2Wsdl, proxy1.getNextProxyUrl());
 		assertEquals("addOne", proxy1.getWsMethodName());
 
-		proxy1.setNextProxyUrl(newProxy.getPublishURL());
-		proxy1.addOtherProxy(newProxy);
+		proxy1.setNextProxyUrl(proxy2.getPublishURL());
+		proxy1.addOtherProxy(proxy2);
+		proxy1.addOtherProxy(proxy3);
+		
 		
 		proxy1.publishWS();
-//		newProxy.publishWS(newProxy.getPublishURL());
+		//proxy2.publishWS(proxy2.getPublishURL());
 
-		String wsdlURL = "http://127.0.0.1:3311/task1?wsdl";
+		String wsdlURL = task1Wsdl;
 
 		try{
 			checkServiceAvailability(wsdlURL);
@@ -100,7 +110,7 @@ public class ProxyEndpointTest {
 		warmUpInvokation(wsInvoker);
 		
 		Thread.sleep(1000);
-		assertEquals(2, singleInvokation(wsInvoker));
+		assertEquals(3, singleInvokation(wsInvoker));
 		
 	}
 
