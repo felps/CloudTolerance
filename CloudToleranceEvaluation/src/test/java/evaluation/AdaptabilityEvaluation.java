@@ -49,16 +49,16 @@ public class AdaptabilityEvaluation {
 		ProxyEndpoint proxy = new ProxyEndpoint();
 
 		System.out.println("Next proxy: http://127.0.0.1:30000/void");
-		proxy.nextProxyUrl = "http://127.0.0.1:30000/void?wsdl";
+		proxy.setNextProxyUrl("http://127.0.0.1:30000/void?wsdl");
 		System.out.println("Service Method: addOne");
-		proxy.wsMethodName = "addOne";
+		proxy.setWsMethodName("addOne");
 
-		proxy.myProxy = new Proxy();
+		proxy.setMyProxy(new Proxy());
 
 		System.out.println("Adding WS at: " + WS_98_FAILSTOP);
-		proxy.myProxy.addWebService(WS_98_FAILSTOP);
+		proxy.getMyProxy().addWebService(WS_98_FAILSTOP);
 		System.out.println("Adding WS at: " + WS_95_FAILSTOP);
-		proxy.myProxy.addWebService(WS_95_FAILSTOP);
+		proxy.getMyProxy().addWebService(WS_95_FAILSTOP);
 
 		System.out.println("Done! Ready to warm up!");
 		// warm up invokation
@@ -85,7 +85,7 @@ public class AdaptabilityEvaluation {
 		log.info("Starting evaluation with 1000 parallel requests and three WSs (90 + 95 + 98)");
 		
 		System.out.println("adding " + WS_90_FAILSTOP);
-		proxy.myProxy.addWebService(WS_90_FAILSTOP);
+		proxy.getMyProxy().addWebService(WS_90_FAILSTOP);
 		
 		performRequests(proxy, amount);
 		Thread.sleep(4500);
@@ -94,7 +94,7 @@ public class AdaptabilityEvaluation {
 		voidProxy.invoked = 0;
 
 		System.out.println("Dropping " + WS_98_FAILSTOP);
-		proxy.myProxy.dropWebService(WS_98_FAILSTOP);
+		proxy.getMyProxy().dropWebService(WS_98_FAILSTOP);
 
 		log.info("Starting evaluation with 1000 parallel requests and two WSs (90 + 95)");
 		performRequests(proxy, amount);
@@ -104,7 +104,7 @@ public class AdaptabilityEvaluation {
 		voidProxy.invoked = 0;
 
 		System.out.println("Dropping " + WS_95_FAILSTOP);
-		proxy.myProxy.dropWebService(WS_95_FAILSTOP);
+		proxy.getMyProxy().dropWebService(WS_95_FAILSTOP);
 
 		log.info("Starting evaluation with 1000 parallel requests and a single WSs (90)");
 		performRequests(proxy, amount);

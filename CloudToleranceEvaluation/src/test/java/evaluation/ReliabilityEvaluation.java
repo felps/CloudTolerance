@@ -342,18 +342,18 @@ public class ReliabilityEvaluation {
 	static void setUp(String wsdl, String endpoint, List<String> webServices, boolean reliable) {
 		ChoreographyEndpoint chor = new ChoreographyEndpoint();
 
-		chor.nextProxyUrl = wsdl;
-		chor.wsMethodName = "addOne";
+		chor.setNextProxyUrl(wsdl);
+		chor.setWsMethodName("addOne");
 
-		chor.myProxy = new Proxy();
+		chor.setMyProxy(new Proxy());
 
 		for (String currentEndpoint : webServices) {
 			System.out.println("adding " + currentEndpoint);
-			chor.myProxy.addWebService(currentEndpoint);
+			chor.getMyProxy().addWebService(currentEndpoint);
 
 		}
 
-		chor.myProxy.setUnreliableServices();
+		chor.getMyProxy().setUnreliableServices();
 		
 		System.out.println("Publishing Proxy at " + endpoint);
 		Endpoint.publish(endpoint, chor);
@@ -365,13 +365,13 @@ public class ReliabilityEvaluation {
 			String webService) {
 		ChoreographyEndpoint chor = new ChoreographyEndpoint();
 
-		chor.nextProxyUrl = wsdl;
-		chor.wsMethodName = "addOne";
+		chor.setNextProxyUrl(wsdl);
+		chor.setWsMethodName("addOne");
 
-		chor.myProxy = new Proxy();
+		chor.setMyProxy(new Proxy());
 
 		System.out.println("adding " + webService);
-		chor.myProxy.addWebService(webService);
+		chor.getMyProxy().addWebService(webService);
 
 		System.out.println("Publishing Proxy at " + endpoint);
 		Endpoint.publish(endpoint, chor);

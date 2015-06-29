@@ -28,7 +28,6 @@ public class MultipleProxies {
 	public static void setUp() {
 		log = Logger.getLogger(MultipleProxies.class);
 		log.info("Initiating Multiple Proxies Evaluation");
-		TimeUnit unit = TimeUnit.MINUTES;
 	}
 
 	@Test
