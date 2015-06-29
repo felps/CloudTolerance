@@ -3,145 +3,105 @@ package evaluation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.concurrent.TimeoutException;
 
 import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.sun.xml.internal.ws.api.EndpointAddress;
+
+import proxy.ChoreographyActor;
 import proxy.ChoreographyEndpoint;
 import proxy.ProxyEndpoint;
 import proxy.choreography.BPMNTask;
-import proxy.utils.WSDLNotFoundException;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;
 
 public class ProxyRecoveryTest {
 
+	private static Endpoint ep;
 	private static Logger log;
-	ChoreographyEndpoint chor;
-	ProxyEndpoint proxy1;
-	ProxyEndpoint proxy2;
-	private Endpoint ep1;
-	private Endpoint ep2;
-	private Endpoint ep3;
-
+	
 	@BeforeClass
-	public static void setUpEnvironment() throws InterruptedException {
+	public static void setUpClass(){
+		LinearService1 ws = new LinearService1(0, 0);
+		ep = Endpoint.create(ws);
+		ep.publish("http://0.0.0.0:2401/Linear");
 		log = Logger.getLogger(ProxyRecoveryTest.class);
 		log.info("Initiating Proxy Recovery Evaluation");
-		TimeUnit unit = TimeUnit.MINUTES;
 
-		System.out.println("----------------------");
-		System.out.println("----------------------");
-		System.out.println("Beginng WsInvokationThreadNoParametersTest");
-		System.out.println("----------------------");
-		System.out.println("----------------------");
-
-	}
-
-	@Before
-	public void raiseChoreography() throws InterruptedException {
-
-		LinearService1 ws = new LinearService1(0, 0);
-
-		ep1 = Endpoint.create(ws);
-		ep1.publish("http://0.0.0.0:2401/Linear");
-
-		// # 2430 --> 2431
-		// java -jar ChoreographyEndpointService.jar
-		// http://0.0.0.0:2430/choreography http://127.0.0.1:2431/proxy?wsdl
-		// addOne http://godzilla.ime.usp.br:25100/Linear?wsdl &
-		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:2430/choreography",
-				"http://127.0.0.1:2431/proxy?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl" );
-		chor = new ChoreographyEndpoint(task1);
-		chor.publishWS(task1.getEndpoint());
-
-		// # 2431 --> 2432
-		// java -jar ChoreographyEndpointService.jar
-		// http://0.0.0.0:2431/choreography http://127.0.0.1:2432/proxy?wsdl
-		// addOne http://godzilla.ime.usp.br:26100/Linear?wsdl &
-		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:2431/proxy",
-				"http://127.0.0.1:2432/proxy?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl" );
-		proxy1 = new ProxyEndpoint(task2);
-		proxy1.publishWS(task2.getEndpoint());
-		// # 2432 --> 2430
-		// java -jar ProxyEndpoint.jar http://0.0.0.0:2432/proxy
-		// http://$server1:2430/choreography?wsdl addOne
-		// http://godzilla.ime.usp.br:27100/Linear?wsdl &
-		BPMNTask task3 = new BPMNTask("Task3", "http://0.0.0.0:2432/proxy",
-				"http://127.0.0.1:2430/choreography?wsdl", "addOne",
-				"http://127.0.0.1:2401/Linear?wsdl" );
-		proxy2 = new ProxyEndpoint(task3);
-		proxy2.publishWS(task3.getEndpoint());
-		Thread.sleep(5000);
-
-		WsInvoker testRun = new WsInvoker(
-				"http://127.0.0.1:2430/choreography?wsdl");
-
-		// warm up invokation
-		warmUpInvokation(testRun);
-		// (new java.util.Scanner(System.in)).nextLine();
-	}
-
-	@After
-	public void tearDown() {
-		ep1.stop();
+		
 	}
 	
-	@Test(timeout = 10000)
-	public void shouldThereBeNoProxyAvailableAsNextCreateOneLocally()
-			throws TimeoutException {
-		WsInvoker testRun = new WsInvoker(
-				"http://127.0.0.1:2430/choreography?wsdl");
-
-		try {
-			int result;
-			result = singleInvokation(testRun);
-			assertEquals("Failed to execute warm-up invokation", 3, result);
-		} catch (WSDLNotFoundException e) {
-			fail("WSDL not found");
-		}
-
-		System.out
-				.println("\n\n\n\n\n\n\nEverything is fine in this parts of Macedonia\n\n\n\n\n");
-		// kill proxy2
-		proxy2.stopService();
-
-		warmUpInvokation(testRun);
-		// result = singleInvokation(testRun);
-		// assertEquals("Failed to either raise or connect new proxy", 3,
-		// result);
-
+	@AfterClass
+	public static void tearDownClass(){
+	}
+	@Test
+	public void elapsedTimeToRecoverAProxy() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
+		int i, port = 3313;
+		for(i=0;i<100;i++)
+		singleLoggedInvokation(port+(3*i));
+		
 	}
 
-	private int singleInvokation(WsInvoker invoker) throws TimeoutException, WSDLNotFoundException {
+	private void singleLoggedInvokation(int port) throws TimeoutException {
+		String task1Wsdl = "http://127.0.0.1:"+ port +"/Task1?wsdl";
+		String task2Wsdl = "http://127.0.0.1:"+ (port+1) +"/Task2?wsdl";
+		
+		BPMNTask task1 = new BPMNTask("Task1", "http://0.0.0.0:"+ port +"/", task2Wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		BPMNTask task2 = new BPMNTask("Task2", "http://0.0.0.0:"+ (port+1) +"/", task1Wsdl, "addOne", "http://127.0.0.1:2401/Linear?wsdl");
+		
+		ChoreographyActor proxy1 = new ChoreographyEndpoint(task1);
+		ChoreographyActor proxy2 = new ProxyEndpoint(task2);
+		
+		proxy1.setNextProxyUrl(proxy2.getPublishURL());
+		proxy1.addOtherProxy(proxy2);
+		
+		
+		proxy1.publishWS();
+		
+		
+		String wsdlURL = task1Wsdl;
+		WsInvoker wsInvoker = new WsInvoker(wsdlURL);
+	
+		long start = System.nanoTime();
+		singleInvokation(wsInvoker);
+		log.info("Time to recover: " + (System.nanoTime() - start)+ " ns");
+		assertEquals(2, singleInvokation(wsInvoker));
+	}
+
+
+	@SuppressWarnings("restriction")
+	public boolean checkServiceAvailability(String wsdlURL) throws URISyntaxException, IOException {
+		EndpointAddress ep = new EndpointAddress(
+				wsdlURL); 
+		ep.openConnection().getContent();
+		return true;
+	}
+
+	private int singleInvokation(WsInvoker invoker) throws TimeoutException {
 		WsInvokation returnedValue = invoker.invokeWebMethod(
 				"startChoreography", 0);
-		if (returnedValue != null){
-			int result = (Integer) returnedValue.getResultSetter().getResultValue();
-			return result;
-		}
-		else
-			throw (new WSDLNotFoundException());
+		int result = (Integer) returnedValue.getResultSetter().getResultValue();
+		return result;
 	}
-
+	
 	private int warmUpInvokation(WsInvoker invoker) {
 		int result = 0;
-		try {
+		try { 
 			result = singleInvokation(invoker);
 			System.out.println(result);
 		} catch (Exception e) {
-			log.warn("Don't panic! In this first warm up execution it is normal to have a timeout." + '\n');
+			System.err.println("Don't panic! In this first warm up execution it is normal to have a timeout." + '\n');
 		}
 		return result;
 	}
+
 }
