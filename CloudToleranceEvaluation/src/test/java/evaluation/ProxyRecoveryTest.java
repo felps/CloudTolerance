@@ -47,11 +47,21 @@ public class ProxyRecoveryTest {
 	public void elapsedTimeToRecoverAProxy() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
 		int i, port = 3313;
 		for(i=0;i<100;i++)
-		singleLoggedInvokation(port+(3*i));
+		singleLoggedInvokation("Time to recover", port+(3*i));
 		
 	}
 
-	private void singleLoggedInvokation(int port) throws TimeoutException {
+	@Test
+	public void elapsedTimeWithNoProxyRecovery() throws TimeoutException, URISyntaxException, IOException, InterruptedException {
+		int i, port = 3313;
+		singleLoggedInvokation("Raised the choreography in", port);
+		for(i=0;i<100;i++){
+			singleLoggedInvokation("Time to execute error-free", port);	
+		}
+		
+	}
+
+	private void singleLoggedInvokation( String message, int port) throws TimeoutException {
 		String task1Wsdl = "http://127.0.0.1:"+ port +"/Task1?wsdl";
 		String task2Wsdl = "http://127.0.0.1:"+ (port+1) +"/Task2?wsdl";
 		
@@ -73,7 +83,7 @@ public class ProxyRecoveryTest {
 	
 		long start = System.nanoTime();
 		singleInvokation(wsInvoker);
-		log.info("Time to recover: " + (System.nanoTime() - start)+ " ns");
+		log.info(message + ": " + (System.nanoTime() - start)+ " ns");
 		assertEquals(2, singleInvokation(wsInvoker));
 	}
 
