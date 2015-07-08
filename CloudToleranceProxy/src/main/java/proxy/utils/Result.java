@@ -28,7 +28,7 @@ public class Result {
 
 	private synchronized void waitUntilIsSet() {
 		try {
-			if (timeout == -1)
+			if (timeout < 0)
 				wait();
 			else
 				wait(timeout);
@@ -47,5 +47,4 @@ public class Result {
 			notify();
 		}
 	}
-
 }
