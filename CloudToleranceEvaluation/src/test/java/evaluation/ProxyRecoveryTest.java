@@ -1,7 +1,6 @@
 package evaluation;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,7 +13,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.sun.xml.internal.ws.api.EndpointAddress;
+import com.sun.xml.ws.api.EndpointAddress;
 
 import proxy.ChoreographyActor;
 import proxy.ChoreographyEndpoint;
@@ -88,7 +87,6 @@ public class ProxyRecoveryTest {
 	}
 
 
-	@SuppressWarnings("restriction")
 	public boolean checkServiceAvailability(String wsdlURL) throws URISyntaxException, IOException {
 		EndpointAddress ep = new EndpointAddress(
 				wsdlURL); 

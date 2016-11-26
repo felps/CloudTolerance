@@ -45,7 +45,8 @@ public class ChoreographyTest {
 	
 	@AfterClass
 	public static void tearDown() {
-		//ep.stop();
+		if(ep!=null)
+			ep.stop();
 	}
 	
 //	@Test

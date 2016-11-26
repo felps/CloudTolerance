@@ -9,9 +9,7 @@ import java.util.concurrent.TimeoutException;
 
 import javax.xml.ws.Endpoint;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -29,17 +27,19 @@ public class RetryCreditCardFailSafeTest {
 		System.out.println("Beginng WsInvokationThreadNoParametersTest");
 		System.out.println("----------------------");
 		System.out.println("----------------------");
-	}
 
-	@BeforeClass
-	public static void seTup() {
 		LinearService1 ws = new LinearService1(0.3, 0);
-
+		
 		ep = Endpoint.create(ws);
 		ep.publish("http://0.0.0.0:2401/Linear");
-
+		
 		waitAWhile();
+	}
 
+	@AfterClass
+	public static void tearDown() {
+		if(ep!=null)
+			ep.stop();
 	}
 
 

@@ -1,6 +1,6 @@
 package proxy.webservice.handlers;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeoutException;
 
@@ -8,7 +8,7 @@ import javax.xml.ws.Endpoint;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class WsInvokationThreadWithNoParametersTest {
 	private String wsdlUrl = "http://127.0.0.1:2401/Linear?wsdl";
 	private WsInvokationThread invokation;
 	private Result resultSetter;
-	private Endpoint ep;
+	private static Endpoint ep;
 	
 	@BeforeClass
 	public static void setEnvironment() throws InterruptedException {
@@ -33,17 +33,17 @@ public class WsInvokationThreadWithNoParametersTest {
 		System.out.println("----------------------");
 		System.out.println("----------------------");
 
+		LinearService1 ws = new LinearService1(0.3, 0);
+		
+		ep = Endpoint.create(ws);
+		ep.publish("http://0.0.0.0:2401/Linear");
+		
 	}
 
 	@Before
 	public void setUp() throws InstantiationException, IllegalAccessException,
 			ClassNotFoundException, InterruptedException {
 		
-		LinearService1 ws = new LinearService1(0.3, 0);
-
-		ep = Endpoint.create(ws);
-		ep.publish("http://0.0.0.0:2401/Linear");
-
 		waitAWhile();
 
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
@@ -53,9 +53,10 @@ public class WsInvokationThreadWithNoParametersTest {
 	}
 
 
-	@After
-	public void tearDown() {
-	//	ep.stop();
+	@AfterClass
+	public static void tearDown() {
+		if(ep!=null)
+			ep.stop();
 	}
 	
 	@Test

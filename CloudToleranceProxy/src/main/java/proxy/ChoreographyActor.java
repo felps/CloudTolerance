@@ -7,15 +7,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.xml.ws.Endpoint;
+
+import com.sun.xml.ws.api.EndpointAddress;
 
 import proxy.choreography.BPMNTask;
 import proxy.techniques.Retry;
 import proxy.webservice.handlers.WsInvoker;
-
-import com.sun.xml.internal.ws.api.EndpointAddress;
 
 public abstract class ChoreographyActor {
 
@@ -246,7 +245,6 @@ public abstract class ChoreographyActor {
 		return task;
 	}
 
-	@SuppressWarnings("restriction")
 	protected boolean checkServiceAvailability(String wsdlURL) throws URISyntaxException, IOException {
 		EndpointAddress ep = new EndpointAddress(wsdlURL);
 		ep.openConnection().getContent();

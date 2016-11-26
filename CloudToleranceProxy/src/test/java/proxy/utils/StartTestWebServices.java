@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-import com.sun.xml.internal.ws.api.EndpointAddress;
+import com.sun.xml.ws.api.EndpointAddress;
 
 public class StartTestWebServices {
 	public static final String WEATHER_WSDL = "http://127.0.0.1:2402/weather?wsdl";

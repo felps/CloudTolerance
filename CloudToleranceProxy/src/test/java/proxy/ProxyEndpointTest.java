@@ -1,10 +1,10 @@
 package proxy;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Scanner;
 import java.util.concurrent.TimeoutException;
 
 import javax.xml.ws.Endpoint;
@@ -13,12 +13,14 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.sun.xml.ws.api.EndpointAddress;
+
 import proxy.choreography.BPMNTask;
 import proxy.webservice.handlers.WsInvokation;
 import proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;
 
-import com.sun.xml.internal.ws.api.EndpointAddress;
+	
 
 public class ProxyEndpointTest {
 	private static Endpoint ep;
@@ -33,6 +35,8 @@ public class ProxyEndpointTest {
 	
 	@AfterClass
 	public static void tearDownClass(){
+		if(ep!=null)
+			ep.stop();
 	}
 	
 	@Test(timeout=10000)
@@ -114,7 +118,6 @@ public class ProxyEndpointTest {
 		
 	}
 
-	@SuppressWarnings("restriction")
 	public boolean checkServiceAvailability(String wsdlURL) throws URISyntaxException, IOException {
 		EndpointAddress ep = new EndpointAddress(
 				wsdlURL); 
