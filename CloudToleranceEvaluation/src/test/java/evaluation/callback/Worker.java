@@ -4,9 +4,9 @@ import java.util.concurrent.TimeoutException;
 
 import org.apache.log4j.Logger;
 
-import proxy.utils.Result;
-import proxy.webservice.handlers.WsInvokation;
-import proxy.webservice.handlers.WsInvoker;
+import br.ime.usp.improv.proxy.utils.Result;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvokation;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 
 public class Worker implements Runnable {
 

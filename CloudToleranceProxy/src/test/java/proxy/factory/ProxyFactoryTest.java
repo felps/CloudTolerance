@@ -14,7 +14,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.ChoreographyActor;
+import br.ime.usp.improv.proxy.ChoreographyActor;
+import br.ime.usp.improv.proxy.factory.ProxyFactory;
 
 public class ProxyFactoryTest {
 

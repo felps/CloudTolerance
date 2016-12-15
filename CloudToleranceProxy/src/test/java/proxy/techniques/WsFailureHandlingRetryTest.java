@@ -10,7 +10,8 @@ import javax.xml.ws.Endpoint;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.webservice.handlers.WsInvoker;
+import br.ime.usp.improv.proxy.techniques.Retry;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;
 
 public class WsFailureHandlingRetryTest {

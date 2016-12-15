@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import proxy.choreography.BPMNTask;
+import br.ime.usp.improv.proxy.choreography.BPMNTask;
 
 public class BPMNTaskTest {
 

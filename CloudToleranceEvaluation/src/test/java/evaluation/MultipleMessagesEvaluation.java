@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.webservice.handlers.WsInvokation;
-import proxy.webservice.handlers.WsInvoker;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvokation;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 
 public class MultipleMessagesEvaluation {
 

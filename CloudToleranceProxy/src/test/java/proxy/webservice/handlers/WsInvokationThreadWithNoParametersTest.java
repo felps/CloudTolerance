@@ -13,7 +13,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.utils.Result;
+import br.ime.usp.improv.proxy.utils.Result;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvokationThread;
 import webservices.LinearService1;
 
 public class WsInvokationThreadWithNoParametersTest {

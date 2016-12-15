@@ -9,6 +9,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvokation;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 import proxy.utils.StartTestWebServices;
 
 public class WsInvokerTest {

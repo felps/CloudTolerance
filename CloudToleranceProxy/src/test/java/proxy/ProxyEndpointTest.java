@@ -15,9 +15,12 @@ import org.junit.Test;
 
 import com.sun.xml.ws.api.EndpointAddress;
 
-import proxy.choreography.BPMNTask;
-import proxy.webservice.handlers.WsInvokation;
-import proxy.webservice.handlers.WsInvoker;
+import br.ime.usp.improv.proxy.ChoreographyActor;
+import br.ime.usp.improv.proxy.ChoreographyEndpoint;
+import br.ime.usp.improv.proxy.ProxyEndpoint;
+import br.ime.usp.improv.proxy.choreography.BPMNTask;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvokation;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 import webservices.LinearService1;
 
 	

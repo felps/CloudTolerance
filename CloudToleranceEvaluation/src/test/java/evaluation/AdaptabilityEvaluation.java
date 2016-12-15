@@ -9,8 +9,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import proxy.Proxy;
-import proxy.ProxyEndpoint;
+import br.ime.usp.improv.proxy.Proxy;
+import br.ime.usp.improv.proxy.ProxyEndpoint;
 
 public class AdaptabilityEvaluation {
 

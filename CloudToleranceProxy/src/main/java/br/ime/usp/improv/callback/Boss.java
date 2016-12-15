@@ -1,43 +1,31 @@
-package evaluation.callback;
+package br.ime.usp.improv.callback;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
-import org.apache.log4j.Logger;
-
-import br.ime.usp.improv.proxy.utils.Result;
-import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
-
 public class Boss implements Callable {
 
 	private HashMap<Integer, Result> resultMap;
-	public Logger log;
 
-	public Boss(int workerAmount, String wsdl, Logger externalLog) throws InterruptedException {
-		
-		this.log=externalLog;
-		
+	public Boss(int workerAmount) throws InterruptedException {
 		int key = 0;
 		resultMap = new HashMap<Integer, Result>();
-		WsInvoker invoker = new WsInvoker(wsdl);
 
 		// Boss creates many worker objects, and tells them to do some work.
 		for (key = 0; key < workerAmount; key++) {
 			Worker w1 = new Worker();
-
+			
 			Result resultSetter = new Result();
 			resultMap.put(key, resultSetter);
-
-			w1.result = resultSetter;
+			
+			w1.result=resultSetter;
 			w1.myBoss = this;
-			w1.log = externalLog;
-			w1.wsdl = wsdl;
-			w1.invoker = invoker;
 			new Thread(w1).start();
 
 		}
-
-		for (key = 0; key < workerAmount; key++)
+		
+		// Notice, we're passing a reference of the boss to the worker.
+		for(key=0; key<workerAmount; key++)
 			waitCallback(key);
 
 		System.out.println("Whatever!");
@@ -52,14 +40,12 @@ public class Boss implements Callable {
 		}
 	}
 
-	public int reportExecutionCompletion(long elapsedTime, int key) {
+	public void callBackMethod(Result result) {
 		System.out.println("What do you want?");
-		
-		return -1;
+		result.setResultValue(null);
 	}
 
 	public void directMethod() {
 		System.out.println("I'm out for coffee.");
 	}
-
 }

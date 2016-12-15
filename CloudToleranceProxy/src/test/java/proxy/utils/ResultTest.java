@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.ime.usp.improv.proxy.utils.Result;
+
 public class ResultTest {
 
 	Result resultSetter ;

@@ -8,8 +8,9 @@ import java.util.concurrent.TimeoutException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.ime.usp.improv.proxy.techniques.Retry;
+import br.ime.usp.improv.proxy.webservice.handlers.WsInvoker;
 import proxy.utils.StartTestWebServices;
-import proxy.webservice.handlers.WsInvoker;
 
 public class ResponseFailureHandlingWeatherRetryTest {
 
